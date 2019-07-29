@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void gotocargar (View view){
         setContentView(R.layout.cargar);
-        //DatabaseHandler databaseHandler = new DatabaseHandler(this);
+        DatabaseHandler databaseHandler = new DatabaseHandler(this);
     }
 
 
