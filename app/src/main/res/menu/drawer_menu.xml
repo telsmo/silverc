@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view" >
+
+    <group android:checkableBehavior="single" >
+        <item
+            android:id="@+id/nav_cargar"
+            android:icon="@drawable/ic_cargar"
+            android:title="Cargar gasto"
+            />
+        <item
+            android:id="@+id/nav_bolsillo"
+            android:icon="@drawable/ic_bolsillo"
+            android:title="Bolsillo" />
+        <item
+            android:id="@+id/nav_ahorros"
+            android:icon="@drawable/ahorros"
+            android:title="Ahorros" />
+    </group>
+    <item>
+        <menu>
+            <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_profile"
+                android:title="Perfil" />
+            <item
+                android:id="@+id/nav_exportar"
+                android:icon="@drawable/ic_exportar"
+                android:title="Exportar datos" />
+        </menu>
+    </item>
+</menu>
