@@ -58,7 +58,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:background="@color/prim3"
+        android:background="@color/prim2"
         android:text="Cargar ingreso"
         android:textColor="@color/prim0"
         android:textSize="19dp"

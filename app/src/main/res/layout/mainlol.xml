@@ -154,13 +154,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="8dp"
-        android:text="Ver más..."
         android:background="@color/prim0"
-        android:textColor="@color/prim3"
+        android:text="Ver más..."
+        android:textColor="@color/prim2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
 
 </android.support.constraint.ConstraintLayout>

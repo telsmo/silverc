@@ -28,7 +28,10 @@
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+
+        </FrameLayout>
 
     </LinearLayout>
 
@@ -47,6 +50,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/prim0">
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Bolsillos"
+            android:textColor="@color/prim1"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+            app:layout_constraintEnd_toStartOf="@+id/imageView10"
+            app:layout_constraintTop_toTopOf="@+id/imageView10" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:tint="@color/prim1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_bolsillo" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -91,8 +117,9 @@
             android:layout_marginEnd="8dp"
             android:gravity="center"
             android:text="Placeholder"
-            android:textColor="@color/prim2"
+            android:textColor="@color/prim1"
             android:textSize="36sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView26" />
@@ -109,41 +136,88 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
         <ScrollView
-            android:layout_width="348dp"
-            android:layout_height="440dp"
+            android:id="@+id/scrollView2"
+            android:layout_width="336dp"
+            android:layout_height="355dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView25">
+            app:layout_constraintTop_toBottomOf="@+id/textView29">
 
-            <LinearLayout
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/prim3"
-                    android:text="Nombrebolsillo"/>
+                android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/textView28"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="Nombrebolsillo"
+                    android:textColor="@color/prim3"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="26dp" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
                     android:text="Montobolsillo"
-                    android:textColor="@color/prim2" />
+                    android:textColor="@color/prim1"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView28"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView28" />
+
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/prim3"
+                    android:id="@+id/button6"
+                    android:layout_width="288dp"
+                    android:layout_height="26dp"
+                    android:layout_marginTop="8dp"
                     android:background="@color/prim0"
-                    android:text="Ver los movimientos de este bolsillo"/>
+                    android:gravity="right"
+                    android:text="Ver los movimientos"
+                    android:textAllCaps="false"
+                    android:textColor="@color/prim2"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="@+id/textView27"
+                    app:layout_constraintTop_toBottomOf="@+id/textView27"
+                    tools:textSize="14sp" />
 
-        </Linearlayout>
+
+            </android.support.constraint.ConstraintLayout>
         </ScrollView>
-
-
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:text="Bolsillos individuales"
+            android:textColor="@color/prim3"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="222dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/prim2"
+            android:text="Agregar un bolsillo"
+            android:textColor="@color/prim0"
+            android:textSize="19dp"
+            app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+            app:layout_constraintStart_toStartOf="@+id/scrollView2"
+            app:layout_constraintTop_toBottomOf="@+id/scrollView2"/>
 
     </android.support.constraint.ConstraintLayout>
 </android.support.v4.widget.DrawerLayout>
