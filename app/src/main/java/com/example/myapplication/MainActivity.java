@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.mainlol);
         DatabaseHelper databaseHandler = new DatabaseHelper(this, name);
     }
+    public void cargagasto (View view){
 
+        setContentView(R.layout.cargar);
+
+    }
 
 }
