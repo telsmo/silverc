@@ -24,13 +24,13 @@ android:background="@color/prim0">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/contra"
         app:layout_constraintVertical_bias="0.312" />
 
 
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/contra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -69,7 +69,7 @@ android:background="@color/prim0">
         android:textColor="@color/prim3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/nom_us" />
 
     <TextView
         android:id="@+id/textView5"
@@ -86,7 +86,7 @@ android:background="@color/prim0">
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/nom_us"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
