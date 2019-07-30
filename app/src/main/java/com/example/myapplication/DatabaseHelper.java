@@ -8,37 +8,56 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import java.util.ArrayList;
 
-/**
- * Created by Parsania Hardik on 11/01/2016.
- */
+
+// El nombre de la base de datos se asigna en la variable "name" que llega del main
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static String DATABASE_NAME = "student_database";
     private static final int DATABASE_VERSION = 1;
-    private static final String TABLE_STUDENTS = "students";
-    private static final String KEY_ID = "id";
-    private static final String KEY_FIRSTNAME = "name";
+    //tabla que tiene lo de gastos e ingresos
+    private static final String TABLE_MOV = "movimientos";
+    private static final String KEY_ID = "id_mov";
+    private static final String MOV= "mov";
+    private static final String NOM = "nombre_mov";
+    private static final String FECHA = "fecha";
+    private static final String MONTO = "monto";
+    private static final String CAT = "categoria";
+    private static final String BOL = "bolsillo";
+    private static final String CANT = "cantidad";
+
+    //Tabla de los bolsillos
+    private static final String TABLE_BOL = "bolsillos";
+    private static final String BOLSILLOS= "nombre_bolsillo";
+    private static final String MONTO2 = "monto";
+
 
     /*CREATE TABLE students ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, phone_number TEXT......);*/
 
-    private static final String CREATE_TABLE_STUDENTS = "CREATE TABLE "
-            + TABLE_STUDENTS + "(" + KEY_ID
-            + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_FIRSTNAME + " TEXT );";
+    private static final String CREATE_TABLE_USER = "CREATE TABLE "
+            + TABLE_MOV + "(" + KEY_ID
+            + " INTEGER PRIMARY KEY AUTOINCREMENT," + MOV + " TEXT ," + NOM + " TEXT ," + FECHA + " DATETIME DEFAULT CURRENT_TIMESTAMP ," + MONTO + " INTEGER ," + CAT + " TEXT ," + BOL + " TEXT ," + CANT + " INTEGER );";
 
-    public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    private static final String CREATE_TABLE_BOLSILLOS = "CREATE TABLE "
+            + TABLE_BOL+ "(" + BOLSILLOS
+            + " STRING PRIMARY KEY," + MONTO2+ " TEXT );";
 
-        Log.d("table", CREATE_TABLE_STUDENTS);
+
+    public DatabaseHelper(Context context, String name) {
+        super(context, name, null, DATABASE_VERSION);
+
+        Log.d("table", CREATE_TABLE_USER);
+        Log.d("table", CREATE_TABLE_BOLSILLOS);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_TABLE_STUDENTS);
+        db.execSQL(CREATE_TABLE_USER);
+        db.execSQL(CREATE_TABLE_BOLSILLOS);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS '" + TABLE_STUDENTS + "'");
+        db.execSQL("DROP TABLE IF EXISTS '" + TABLE_MOV + "'");
+        db.execSQL("DROP TABLE IF EXISTS '" + TABLE_BOL + "'");
         onCreate(db);
     }
 
@@ -46,14 +65,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         // Creating content values
         ContentValues values = new ContentValues();
-        values.put(KEY_FIRSTNAME, student);
+        values.put(NOM, student);
         // insert row in students table
-        long insert = db.insert(TABLE_STUDENTS, null, values);
+        long insert = db.insert(TABLE_MOV, null, values);
 
         return insert;
     }
 
-    public ArrayList<String> getAllStudentsList() {
+    /*public ArrayList<String> getAllStudentsList() {
         ArrayList<String> studentsArrayList = new ArrayList<String>();
         String name="";
         String selectQuery = "SELECT  * FROM " + TABLE_STUDENTS;
@@ -69,5 +88,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Log.d("array", studentsArrayList.toString());
         }
         return studentsArrayList;
-    }
+    }*/
 }

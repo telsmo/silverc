@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,13 +12,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Toolbar toolbar= findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
     public void gotocargar (View view){
+//agarro lo de user y lo pongo en la variable name, para despues crear la base con ese nombre
+        final EditText us = (EditText) findViewById(R.id.nom_us);
+        final EditText ps = (EditText) findViewById(R.id.contra);
+
+        String user = us.getText().toString();
+        String pass = ps.getText().toString();
+        String name= user+pass;
+
+
         setContentView(R.layout.mainlol);
-        DatabaseHelper databaseHandler = new DatabaseHelper(this);
+        DatabaseHelper databaseHandler = new DatabaseHelper(this, name);
     }
 
 
