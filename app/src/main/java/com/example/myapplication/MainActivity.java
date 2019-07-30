@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
     public void gotocargar (View view){
-        setContentView(R.layout.cargar);
-        DatabaseHandler databaseHandler = new DatabaseHandler(this);
+        setContentView(R.layout.mainlol);
+        DatabaseHelper databaseHandler = new DatabaseHelper(this);
     }
 
 
