@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
+
     //tabla que tiene lo de gastos e ingresos
     private static final String TABLE_MOV = "movimientos";
     private static final String KEY_ID = "id_mov";
@@ -29,6 +30,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String BOLSILLOS= "nombre_bolsillo";
     private static final String MONTO2 = "monto";
 
+    //tabla que tiene lo de metas
+    private static final String TABLE_METAS = "metas";
+    private static final String ID_META = "id_meta";
+    private static final String NOM_META= "nombre_meta";
+    private static final String POS = "posicion";
+    private static final String DESC = "descripcion";
+    private static final String VALOR = "valor";
+    private static final String LOGRADO = "logrado";
+
+    //tabla que tiene lo de suscripciones
+    private static final String TABLE_SUSC = "metas";
+    private static final String NOM_SUSC= "nombre_sub";
+    private static final String MONTO3 = "monto";
+    private static final String PER = "periodicidad";
+    private static final String ESTADO = "estado";
+    private static final String TIPO = "tipo";
+    private static final String FALTA = "falta";
+
 
     /*CREATE TABLE students ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, phone_number TEXT......);*/
 
@@ -38,29 +57,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE_BOLSILLOS = "CREATE TABLE "
             + TABLE_BOL+ "(" + BOLSILLOS
-            + " STRING PRIMARY KEY," + MONTO2+ " TEXT );";
+            + " TEXT PRIMARY KEY," + MONTO2+ " TEXT );";
 
+    private static final String CREATE_TABLE_METAS = "CREATE TABLE "
+            + TABLE_METAS + "(" + ID_META
+            + " INTEGER PRIMARY KEY AUTOINCREMENT," + NOM_META + " TEXT ," + POS + " INTEGER ," + LOGRADO + " DATETIME ," + DESC + " TEXT ," + VALOR + " TEXT );";
+
+    private static final String CREATE_TABLE_SUSC = "CREATE TABLE "
+            + TABLE_SUSC + "(" + NOM_SUSC
+            + " TEXT PRIMARY KEY ," + MONTO3 + " INTEGER ," + PER + " INTEGER ," + ESTADO + " TEXT ," + TIPO + " TEXT ," + FALTA + " INTEGER);";
 
     public DatabaseHelper(Context context, String name) {
         super(context, name, null, DATABASE_VERSION);
 
         Log.d("table", CREATE_TABLE_USER);
         Log.d("table", CREATE_TABLE_BOLSILLOS);
+        Log.d("table", CREATE_TABLE_METAS);
+        Log.d("table", CREATE_TABLE_SUSC);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_USER);
         db.execSQL(CREATE_TABLE_BOLSILLOS);
+        db.execSQL(CREATE_TABLE_METAS);
+        db.execSQL(CREATE_TABLE_SUSC);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS '" + TABLE_MOV + "'");
         db.execSQL("DROP TABLE IF EXISTS '" + TABLE_BOL + "'");
+        db.execSQL("DROP TABLE IF EXISTS '" + TABLE_METAS + "'");
+        db.execSQL("DROP TABLE IF EXISTS '" + TABLE_SUSC + "'");
         onCreate(db);
     }
-
+/*
     public long addStudentDetail(String student) {
         SQLiteDatabase db = this.getWritableDatabase();
         // Creating content values
@@ -71,7 +103,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return insert;
     }
-
+*/
     /*public ArrayList<String> getAllStudentsList() {
         ArrayList<String> studentsArrayList = new ArrayList<String>();
         String name="";
