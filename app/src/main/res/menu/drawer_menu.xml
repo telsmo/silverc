@@ -10,6 +10,11 @@
             android:title="Cargar gasto"
             />
         <item
+            android:id="@+id/nav_ingreso"
+            android:icon="@drawable/getinpaid"
+            android:title="Cargar ingreso"
+            />
+        <item
             android:id="@+id/nav_bolsillo"
             android:icon="@drawable/ic_bolsillo"
             android:title="Bolsillo" />
