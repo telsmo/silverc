@@ -49,7 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String FALTA = "falta";
 
 
-    /*CREATE TABLE students ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, phone_number TEXT......);*/
+    /*CREATE TABLE students ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, phone_number TEXT.......);*/
 
     private static final String CREATE_TABLE_USER = "CREATE TABLE "
             + TABLE_MOV + "(" + KEY_ID
