@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar= findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
-    public void gotocargar (View view){
+    public void gotomainlolinicial (View view){
 //agarro lo de user y lo pongo en la variable name, para despues crear la base con ese nombre
         final EditText us = (EditText) findViewById(R.id.nom_us);
         final EditText ps = (EditText) findViewById(R.id.contra);

@@ -4,16 +4,16 @@
     android:layout_height="176dp"
     android:background="@color/prim0"
     android:gravity="bottom"
-    android:padding="16dp"
+    android:padding="20dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:orientation="vertical"
     >
 
     <ImageView
+
         android:layout_width="99dp"
         android:layout_height="94dp"
-        android:src="@drawable/icono_del_proyecto"
-        />
+        android:src="@drawable/icono_del_proyecto" />
 
     <TextView
         android:layout_width="106dp"
