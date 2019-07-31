@@ -28,10 +28,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.mainlol);
         DatabaseHelper databaseHandler = new DatabaseHelper(this, name);
     }
-    public void cargagasto (View view){
+    public void gotocargar (View view){
 
         setContentView(R.layout.cargar);
 
     }
+    public void gotoingreso (View view){
+
+        setContentView(R.layout.ingreso);
+
+    }
+    public void gotomainlol (View view){
+
+        setContentView(R.layout.mainlol);
+
+    }
+    public void gotobolsillo (View view){
+
+        setContentView(R.layout.bolsillo);
+
+    }
+    public void gotocrearbolsillo (View view){
+
+        setContentView(R.layout.crearbolsillo);
+
+    }
+
 
 }
