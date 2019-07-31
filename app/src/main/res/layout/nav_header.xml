@@ -7,12 +7,13 @@
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:orientation="vertical"
-    android:onClick="gotomainlol">
+    >
 
     <ImageView
         android:layout_width="99dp"
         android:layout_height="94dp"
-        android:src="@drawable/icono_del_proyecto" />
+        android:src="@drawable/icono_del_proyecto"
+        />
 
     <TextView
         android:layout_width="106dp"

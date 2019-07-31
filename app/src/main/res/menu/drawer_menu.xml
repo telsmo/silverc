@@ -8,23 +8,24 @@
             android:id="@+id/nav_cargar"
             android:icon="@drawable/ic_cargar"
             android:title="Cargar gasto"
-            android:onClick="gotocargar"
+
             />
         <item
             android:id="@+id/nav_ingreso"
             android:icon="@drawable/getinpaid"
             android:title="Cargar ingreso"
-            android:onClick="gotoingreso"
+
             />
         <item
             android:id="@+id/nav_bolsillo"
             android:icon="@drawable/ic_bolsillo"
             android:title="Bolsillo"
-            android:onclick="gotobolsillo"/>
+            />
         <item
             android:id="@+id/nav_ahorros"
             android:icon="@drawable/ahorros"
-            android:title="Ahorros UNUSABLE" />
+            android:title="Ahorros "
+            />
     </group>
     <item>
         <menu>
