@@ -8,14 +8,14 @@ import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-
+        private DatabaseHelper databaseHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if(sesion_iniciada()){
             setContentView(R.layout.mainlol);
             String name = nom_us() + contra();
-            DatabaseHelper databaseHandler = new DatabaseHelper(this, name);
+            databaseHandler = new DatabaseHelper(this, name);
         }else{
             setContentView(R.layout.activity_main);
         }
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
     }
+
     public void gotomainlolinicial (View view){
 //agarro lo de user y lo pongo en la variable name, para despues crear la base con ese nombre
         final EditText us = (EditText) findViewById(R.id.nom_us);
@@ -35,11 +36,31 @@ public class MainActivity extends AppCompatActivity {
         registrar(user,pass);
 
         setContentView(R.layout.mainlol);
-        DatabaseHelper databaseHandler = new DatabaseHelper(this, name);
+        databaseHandler = new DatabaseHelper(this, name);
     }
+
+    //seleccionar para ir a cargar un gasto o ingreso.
     public void gotocargar (View view){
 
         setContentView(R.layout.cargar);
+
+    }
+    public void cargar (View view){
+        final EditText c1 = (EditText) findViewById(R.id.c1);
+        final EditText c2 = (EditText) findViewById(R.id.c2);
+        final EditText c3 = (EditText) findViewById(R.id.c3);
+        final EditText c4 = (EditText) findViewById(R.id.c4);
+        final EditText c5 = (EditText) findViewById(R.id.c5);
+        final EditText c6 = (EditText) findViewById(R.id.c6);
+        String c11 = c1.getText().toString();
+        String c12 = c2.getText().toString();
+        String c13 = c3.getText().toString();
+        String c14 = c4.getText().toString();
+        String c15 = c5.getText().toString();
+        String c16 = c6.getText().toString();
+
+        long result= databaseHandler.addMov("ingreso",c11,Integer.parseInt(c12),c13,c16,Integer.parseInt(c14));
+        setContentView(R.layout.mainlol);
 
     }
     public void gotoingreso (View view){
@@ -47,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.ingreso);
 
     }
+
     public void gotomainlol (View view){
 
         setContentView(R.layout.mainlol);

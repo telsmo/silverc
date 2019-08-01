@@ -51,7 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /*CREATE TABLE students ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, phone_number TEXT.......);*/
 
-    private static final String CREATE_TABLE_USER = "CREATE TABLE "
+    private static final String CREATE_TABLE_MOV = "CREATE TABLE "
             + TABLE_MOV + "(" + KEY_ID
             + " INTEGER PRIMARY KEY AUTOINCREMENT," + MOV + " TEXT ," + NOM + " TEXT ," + FECHA + " DATETIME DEFAULT CURRENT_TIMESTAMP ," + MONTO + " INTEGER ," + CAT + " TEXT ," + BOL + " TEXT ," + CANT + " INTEGER );";
 
@@ -70,7 +70,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(Context context, String name) {
         super(context, name, null, DATABASE_VERSION);
 
-        Log.d("table", CREATE_TABLE_USER);
+        Log.d("table", CREATE_TABLE_MOV);
         Log.d("table", CREATE_TABLE_BOLSILLOS);
         Log.d("table", CREATE_TABLE_METAS);
         Log.d("table", CREATE_TABLE_SUSC);
@@ -78,7 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_TABLE_USER);
+        db.execSQL(CREATE_TABLE_MOV);
         db.execSQL(CREATE_TABLE_BOLSILLOS);
         db.execSQL(CREATE_TABLE_METAS);
         db.execSQL(CREATE_TABLE_SUSC);
@@ -92,18 +92,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS '" + TABLE_SUSC + "'");
         onCreate(db);
     }
-/*
-    public long addStudentDetail(String student) {
+
+    public long addMov(String mov2, String nom2, int monto2, String cat2, String bol2, int cant2) {
         SQLiteDatabase db = this.getWritableDatabase();
         // Creating content values
         ContentValues values = new ContentValues();
-        values.put(NOM, student);
+        values.put(MOV, mov2);
+        values.put(NOM, nom2);
+        values.put(MONTO, monto2);
+        values.put(CAT, cat2);
+        values.put(BOL, bol2);
+        values.put(CANT, cant2);
         // insert row in students table
         long insert = db.insert(TABLE_MOV, null, values);
 
         return insert;
     }
-*/
+
     /*public ArrayList<String> getAllStudentsList() {
         ArrayList<String> studentsArrayList = new ArrayList<String>();
         String name="";
