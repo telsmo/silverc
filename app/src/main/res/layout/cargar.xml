@@ -50,7 +50,8 @@
         android:layout_marginStart="8dp"
         android:text="C"
         android:textColor="@color/prim2"
-        android:textSize="18dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView13"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toTopOf="@+id/textView13" />
@@ -62,7 +63,8 @@
         android:layout_marginStart="8dp"
         android:text="Silver"
         android:textColor="@color/prim3"
-        android:textSize="18dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/imageView3" />
@@ -181,10 +183,10 @@
         android:id="@+id/imageView5"
         android:layout_width="65dp"
         android:layout_height="65dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/edit" />
 
  <!--   <EditText
@@ -283,31 +285,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" /> -->
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="Cargar compra"
-        android:textColor="@color/prim1"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
-
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="393dp"
-        android:layout_height="509dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="112dp"
-        android:fillViewport="true">
+        android:layout_width="392dp"
+        android:layout_height="479dp"
+        android:layout_marginTop="16dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        tools:layout_editor_absoluteX="8dp">
 
-        <android.support.constraint.ConstraintLayout
+        <!--<android.support.constraint.ConstraintLayout
             android:id="@+id/constraintlayout89"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
+            app:layout_constraintTop_toTopOf="@+id/textView3">
 
             <TextView
                 android:id="@+id/textView2"
@@ -489,7 +480,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView11" />
-        </android.support.constraint.ConstraintLayout>
+        </android.support.constraint.ConstraintLayout>-->
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
 </android.support.v4.widget.DrawerLayout>

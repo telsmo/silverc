@@ -21,5 +21,6 @@
         android:paddingTop="8dp"
         android:text="Silver C"
         android:textColor="@color/prim3"
-        android:textSize="27dp" />
+        android:textSize="27dp"
+        android:textStyle="bold" />
 </LinearLayout>

@@ -51,18 +51,6 @@
         android:layout_height="match_parent"
         android:background="@color/prim0">
 
-        <TextView
-            android:id="@+id/textView31"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="Bolsillos"
-            android:textColor="@color/prim1"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView10"
-            app:layout_constraintEnd_toStartOf="@+id/imageView10"
-            app:layout_constraintTop_toTopOf="@+id/imageView10" />
-
         <ImageView
             android:id="@+id/imageView10"
             android:layout_width="65dp"
@@ -92,6 +80,7 @@
             android:text="Silver"
             android:textColor="@color/prim3"
             android:textSize="18dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imageView7"
             app:layout_constraintStart_toEndOf="@+id/imageView7"
             app:layout_constraintTop_toTopOf="@+id/imageView7" />
@@ -104,6 +93,7 @@
             android:text="C"
             android:textColor="@color/prim2"
             android:textSize="18dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textView23"
             app:layout_constraintStart_toEndOf="@+id/textView23"
             app:layout_constraintTop_toTopOf="@+id/textView23" />
