@@ -127,9 +127,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return studentsArrayList;
     }*/
     /*public ArrayList<String> getAllStudentsList() {
-        ArrayList<String> studentsArrayList = new ArrayList<String>();
+        ArrayList<String> movthiArrayList = new ArrayList<String>();
         String name="";
-        String selectQuery = "SELECT  * FROM " + TABLE_STUDENTS;
+        String selectQuery = "SELECT  * FROM " + TABLE_MOV;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);
         // looping through all rows and adding to list
