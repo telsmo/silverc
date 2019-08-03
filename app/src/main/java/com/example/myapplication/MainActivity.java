@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
+import android.os.Bundle;
+import android.app.Activity;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
 
 public class MainActivity extends AppCompatActivity {
         private DatabaseHelper databaseHandler;
@@ -23,6 +28,37 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
     }
+   /*
+   //REVIEW
+   public class MainActivity extends Activity {
+
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+
+            // identificamos el spinner a cambiar xd
+            Spinner spinner = (Spinner) findViewById(R.id.c3);
+
+            // Poniendo las categorias en un vector (eventualmente la idea es sacar las cat de la base de datos)
+
+            String[] categorias = new String[]{
+                    "Entretenimiento",
+                    "Comida",
+                    "Transporte",
+                    "Impuestos",
+                    "Otros"
+            };
+
+            // Inicializar XD
+            ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
+                    this,R.layout.spinner_item,categorias
+            );
+            spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
+            spinner.setAdapter(spinnerArrayAdapter);
+        }
+    }*/
 
     public void gotomainlolinicial (View view){
 //agarro lo de user y lo pongo en la variable name, para despues crear la base con ese nombre
