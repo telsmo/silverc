@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/prim0"
     android:fitsSystemWindows="true"
-
+    tools:context=".InitializeCatSpinner"
     >
 
     <LinearLayout
@@ -302,7 +302,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="@+id/textView3"
-            tools:context=".InitializeCatSpinner">
+            >
 
             <TextView
                 android:id="@+id/textView2"
@@ -481,11 +481,10 @@
                 android:id="@+id/spinner1"
                 android:layout_width="211dp"
                 android:layout_height="44dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/c2"
+                app:layout_constraintStart_toStartOf="@+id/c2"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
