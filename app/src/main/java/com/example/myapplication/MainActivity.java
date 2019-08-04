@@ -6,9 +6,6 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
-import android.os.Bundle;
-import android.app.Activity;
-import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 
@@ -27,38 +24,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar= findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
     }
-   /*
-   //REVIEW
-   public class MainActivity extends Activity {
 
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-
-            // identificamos el spinner a cambiar xd
-            Spinner spinner = (Spinner) findViewById(R.id.c3);
-
-            // Poniendo las categorias en un vector (eventualmente la idea es sacar las cat de la base de datos)
-
-            String[] categorias = new String[]{
-                    "Entretenimiento",
-                    "Comida",
-                    "Transporte",
-                    "Impuestos",
-                    "Otros"
-            };
-
-            // Inicializar XD
-            ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
-                    this,R.layout.spinner_item,categorias
-            );
-            spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
-            spinner.setAdapter(spinnerArrayAdapter);
-        }
-    }*/
 
     public void gotomainlolinicial (View view){
 //agarro lo de user y lo pongo en la variable name, para despues crear la base con ese nombre
@@ -84,13 +53,13 @@ public class MainActivity extends AppCompatActivity {
     public void cargar (View view){
         final EditText c1 = (EditText) findViewById(R.id.c1);
         final EditText c2 = (EditText) findViewById(R.id.c2);
-        final EditText c3 = (EditText) findViewById(R.id.c3);
+        final Spinner c3 = (Spinner) findViewById(R.id.spinner1);
         final EditText c4 = (EditText) findViewById(R.id.c4);
         final EditText c5 = (EditText) findViewById(R.id.c5);
         final EditText c6 = (EditText) findViewById(R.id.c6);
         String c11 = c1.getText().toString();
         String c12 = c2.getText().toString();
-        String c13 = c3.getText().toString();
+        String c13 = c3.getSelectedItem().toString();
         String c14 = c4.getText().toString();
         String c15 = c5.getText().toString();
         String c16 = c6.getText().toString();
