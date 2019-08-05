@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         String c15 = c5.getText().toString();
         String c16 = c6.getText().toString();
 
-        long result= databaseHandler.addMov("ingreso",c11,Integer.parseInt(c12),c13,c16,Integer.parseInt(c14));
+        long result= databaseHandler.addMov("egreso",c11,Integer.parseInt(c12),c13,c16,Integer.parseInt(c14));
         setContentView(R.layout.mainlol);
 
     }
@@ -80,7 +80,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.ingreso);
 
     }
+    public void ingresar (View view){
+        final EditText i1 = (EditText) findViewById(R.id.i1);
+        final EditText i2 = (EditText) findViewById(R.id.i2);
+        String c11 = i1.getText().toString();
+        String c12 = i2.getText().toString();
 
+        long result= databaseHandler.addMov("ingreso",c11,Integer.parseInt(c12),c11,c11,1);
+        setContentView(R.layout.mainlol);
+
+    }
+    ///////////////////////////////////////////////////////////////////////////////
     public void gotomainlol (View view){
 
         setContentView(R.layout.mainlol);
