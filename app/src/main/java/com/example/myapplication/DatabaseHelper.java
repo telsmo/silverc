@@ -12,7 +12,7 @@ import java.util.ArrayList;
 // El nombre de la base de datos se asigna en la variable "name" que llega del main
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 1;
+    private  final int DATABASE_VERSION = 1;
 
     //tabla que tiene lo de gastos e ingresos
     private static final String TABLE_MOV = "movimientos";
@@ -109,6 +109,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return insert;
     }
 
+    public Cursor getTableMov(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor datos = db.rawQuery("SELECT * FROM "+ TABLE_MOV,null);
+        return datos;
+    }
     /*public ArrayList<String> getAllStudentsList() {
         ArrayList<String> studentsArrayList = new ArrayList<String>();
         String name="";

@@ -13,13 +13,18 @@ import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
         private DatabaseHelper databaseHandler;
+        public String name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if(sesion_iniciada()){
-            setContentView(R.layout.mainlol);
+            //setContentView(R.layout.mainlol);
             String name = nom_us() + contra();
             databaseHandler = new DatabaseHelper(this, name);
+            Intent mostrar_mov = new Intent(MainActivity.this,VerTabla.class);
+            mostrar_mov.putExtra("name",name);
+            startActivity(mostrar_mov);
         }else{
             setContentView(R.layout.activity_main);
         }
