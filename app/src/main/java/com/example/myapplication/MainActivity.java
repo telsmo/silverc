@@ -2,13 +2,19 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -19,12 +25,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if(sesion_iniciada()){
-            //setContentView(R.layout.mainlol);
-            String name = nom_us() + contra();
-            databaseHandler = new DatabaseHelper(this, name);
-            Intent mostrar_mov = new Intent(MainActivity.this,VerTabla.class);
-            mostrar_mov.putExtra("name",name);
-            startActivity(mostrar_mov);
+            name = nom_us() + contra();
+            mitablita();
         }else{
             setContentView(R.layout.activity_main);
         }
@@ -124,5 +126,25 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("user", us);
         editor.putString("pass", pass);
         editor.apply();
+
+
+    }
+
+    public void mitablita() {
+        setContentView(R.layout.mainlol);
+        ListView lista =findViewById(R.id.listview);
+        databaseHandler = new DatabaseHelper(this,name);
+
+        ArrayList<String> la_lista = new ArrayList<>();
+        Cursor datos = databaseHandler.getTableMov();
+        if (datos.getCount() == 0){
+            Toast.makeText(MainActivity.this,"La tabla esta vacía",Toast.LENGTH_LONG).show();
+        }else{
+            while (datos.moveToNext()){
+                la_lista.add(datos.getString(1));
+                ListAdapter listAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,la_lista);
+                lista.setAdapter(listAdapter);
+            }
+        }
     }
 }

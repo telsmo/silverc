@@ -68,7 +68,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + " TEXT PRIMARY KEY ," + MONTO3 + " INTEGER ," + PER + " INTEGER ," + ESTADO + " TEXT ," + TIPO + " TEXT ," + FALTA + " INTEGER);";
 
     public DatabaseHelper(Context context, String name) {
-        super(context, name, null, DATABASE_VERSION);
+        super(context, name, null, 1);
 
         Log.d("table", CREATE_TABLE_MOV);
         Log.d("table", CREATE_TABLE_BOLSILLOS);
