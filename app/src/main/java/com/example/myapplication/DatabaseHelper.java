@@ -81,7 +81,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_MOV);
         db.execSQL(CREATE_TABLE_BOLSILLOS);
         db.execSQL(CREATE_TABLE_METAS);
-        db.execSQL(CREATE_TABLE_SUSC);
+       // db.execSQL(CREATE_TABLE_SUSC);
     }
 
     @Override
@@ -127,7 +127,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return studentsArrayList;
     }*/
     /*public ArrayList<String> getAllStudentsList() {
-        ArrayList<String> movthiArrayList = new ArrayList<String>();
+        ArrayList<String> movArrayList = new ArrayList<String>();
         String name="";
         String selectQuery = "SELECT  * FROM " + TABLE_MOV;
         SQLiteDatabase db = this.getReadableDatabase();

@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
         }else{
             setContentView(R.layout.activity_main);
         }
-        Toolbar toolbar= findViewById(R.id.toolbar);
+       /* Toolbar toolbar= findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        */
 
     }
 
@@ -46,50 +47,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //seleccionar para ir a cargar un gasto o ingreso.
+    //antes de ttodo esto, fijate que en AndroidManifest.xml pongo todas las nuevas clases, si no, no funciona la nueva actividad y crashea la app
     public void gotocargar (View view){
-
-        setContentView(R.layout.cargar);
-        Spinner spinner = (Spinner) findViewById(R.id.spinner1);
-        String[] categorias = new String[]{
-                "Entretenimiento", "Comida", "Transporte", "Impuestos", "Otros"};
-        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, categorias);
-        spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
-        spinner.setAdapter(spinnerArrayAdapter);
-
-    }
-    public void cargar (View view){
-        final EditText c1 = (EditText) findViewById(R.id.c1);
-        final EditText c2 = (EditText) findViewById(R.id.c2);
-        final Spinner c3 = (Spinner) findViewById(R.id.spinner1);
-        final EditText c4 = (EditText) findViewById(R.id.c4);
-        final EditText c5 = (EditText) findViewById(R.id.c5);
-        final EditText c6 = (EditText) findViewById(R.id.c6);
-        String c11 = c1.getText().toString();
-        String c12 = c2.getText().toString();
-        String c13 = c3.getSelectedItem().toString();
-        String c14 = c4.getText().toString();
-        String c15 = c5.getText().toString();
-        String c16 = c6.getText().toString();
-
-        long result= databaseHandler.addMov("egreso",c11,Integer.parseInt(c12),c13,c16,Integer.parseInt(c14));
-        setContentView(R.layout.mainlol);
+    //siempre antes de pasar a otra screen se ingresa una intención. Con esto le decimos a android qué .java o actividad queremos iniciar
+        Intent getNameScreenIntent= new Intent(this,
+        Cargar.class);
+        //No se puede pasar el handler de la base por parámetros, entonces pasamos los datos necesarios por parámetros para poder volver a pedir el handler
+        // en la actividad que queremos iniciar.
+        String name = nom_us() + contra();
+        //Bundle nos permite empaquetar varios strings, esto nos sirve para pasar multiples parámetros
+        Bundle extras = new Bundle();
+        //acá el "callingactivity" no era necesario, pero, de nuevo, era para ejemplificar como se podían pasar multiples parámetros por un solo "putextra"
+        extras.putString("CallingActivity","MainActivity");
+        extras.putString("namexd",name);
+        //acá se tiene que notar que se pone .putExtras, porque es un bundle
+        getNameScreenIntent.putExtras(extras);
+        //startActivity usa el intent que declaramos antes para empezar .Cargar
+        startActivity(getNameScreenIntent);
 
     }
     public void gotoingreso (View view){
-
-        setContentView(R.layout.ingreso);
-
-    }
-    public void ingresar (View view){
-        final EditText i1 = (EditText) findViewById(R.id.i1);
-        final EditText i2 = (EditText) findViewById(R.id.i2);
-        String c11 = i1.getText().toString();
-        String c12 = i2.getText().toString();
-
-        long result= databaseHandler.addMov("ingreso",c11,Integer.parseInt(c12),c11,c11,1);
-        setContentView(R.layout.mainlol);
+        Intent getNameScreenIntent= new Intent(this,
+                Ingreso.class);
+        String name = nom_us() + contra();
+        //acá un ejemplo pasando sólo un parametro, entonces sólo se pone putExtra, (1)
+        getNameScreenIntent.putExtra("namexd",name);
+        startActivity(getNameScreenIntent);
 
     }
+
     ///////////////////////////////////////////////////////////////////////////////
     public void gotomainlol (View view){
 

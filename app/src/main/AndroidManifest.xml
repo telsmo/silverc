@@ -19,6 +19,8 @@ package="com.example.myapplication">
     </activity>
 
     <activity
-        android:name=".InitializeCatSpinner"></activity>
+        android:name=".Cargar"></activity>
+    <activity
+        android:name=".Ingreso"></activity>
 </application>
 </manifest>

@@ -30,7 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.myapplication.InitializeCatSpinner" />
+        <activity android:name="com.example.myapplication.Cargar" />
+        <activity android:name="com.example.myapplication.Ingreso" />
 
         <provider
             android:name="com.amitshekhar.DebugDBInitProvider"

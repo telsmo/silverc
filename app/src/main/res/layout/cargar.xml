@@ -30,15 +30,16 @@
 
     <android.support.design.widget.NavigationView
 
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:id="@+id/nav_view"
         android:background="@color/prim0"
+        android:onClick="gotomainlol"
         app:headerLayout="@layout/nav_header"
         app:itemIconTint="@color/prim2"
         app:itemTextColor="@color/prim3"
-        app:menu="@menu/drawer_menu"/>
+        app:menu="@menu/drawer_menu" />
 <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -79,11 +80,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/prim2"
         android:onClick="cargar"
         android:text="Cargar compra"
         android:textColor="@color/prim0"
         android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
@@ -178,7 +181,7 @@
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/icono_del_proyecto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -187,7 +190,7 @@
         android:id="@+id/imageView5"
         android:layout_width="65dp"
         android:layout_height="65dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -293,10 +296,14 @@
         android:id="@+id/scrollView3"
         android:layout_width="392dp"
         android:layout_height="479dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        tools:layout_editor_absoluteX="8dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintlayout89"
             android:layout_width="match_parent"

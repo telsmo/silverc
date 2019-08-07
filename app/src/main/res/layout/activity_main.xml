@@ -28,7 +28,6 @@ android:background="@color/prim0">
         app:layout_constraintVertical_bias="0.312" />
 
 
-
     <EditText
         android:id="@+id/contra"
         android:layout_width="wrap_content"
@@ -37,12 +36,14 @@ android:background="@color/prim0">
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:inputType="text"
-        android:text="Ingrese su contraseña"
         android:textColor="@color/prim2"
+        android:textColorHint="@color/prim2"
+        android:hint="Ingrese su contraseña"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+         />
 
     <TextView
         android:id="@+id/textView"
@@ -90,12 +91,13 @@ android:background="@color/prim0">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
+        android:hint="Ingrese su nombre"
         android:inputType="textPersonName"
-
-        android:text="Ingrese su nombre"
         android:textColor="@color/prim2"
+        android:textColorHint="@color/prim2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
