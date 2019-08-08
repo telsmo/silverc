@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
         private DatabaseHelper databaseHandler;
         public String name;
+        ArrayList<registros> la_lista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,19 +133,32 @@ public class MainActivity extends AppCompatActivity {
 
     public void mitablita() {
         setContentView(R.layout.mainlol);
+        ArrayList<registros> reg1;
+        ListView listView;
+        registros registro;
         ListView lista =findViewById(R.id.listview);
         databaseHandler = new DatabaseHelper(this,name);
 
-        ArrayList<String> la_lista = new ArrayList<>();
+        //ArrayList<String> la_lista = new ArrayList<>();
+        la_lista = new ArrayList<>();
         Cursor datos = databaseHandler.getTableMov();
         if (datos.getCount() == 0){
             Toast.makeText(MainActivity.this,"La tabla esta vacía",Toast.LENGTH_LONG).show();
         }else{
+            int i=0;
             while (datos.moveToNext()){
-                la_lista.add(datos.getString(1));
-                ListAdapter listAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,la_lista);
-                lista.setAdapter(listAdapter);
+                registro = new registros(datos.getString(1),datos.getString(3),datos.getString(4));
+                //la_lista.add(datos.getString(1));
+                la_lista.add(i,registro);
+                //ListAdapter listAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,la_lista);
+                //lista.setAdapter(listAdapter);
+                System.out.println(datos.getString(1)+" "+datos.getString(3)+" "+datos.getString(4));
+                System.out.println(la_lista.get(i).getuno());
+                i++;
             }
+            ThreeColumn_ListAdapter adapter =  new ThreeColumn_ListAdapter(this,R.layout.columnas, la_lista);
+            listView = (ListView) findViewById(R.id.listview);
+            listView.setAdapter(adapter);
         }
     }
 }
