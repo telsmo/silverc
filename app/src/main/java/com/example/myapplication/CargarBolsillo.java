@@ -9,23 +9,21 @@ import android.widget.Toast;
 
 public class CargarBolsillo extends Activity {
         private DatabaseHelper databaseHandler;
-        private String name;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             Intent intent = getIntent();
-            name = intent.getExtras().getString("nombre");
+            String name = intent.getExtras().getString("nombre");
             databaseHandler = new DatabaseHelper(this, name);
             setContentView(R.layout.crearbolsillo);
         }
     public void agregar_bol (View view){
-        databaseHandler = new DatabaseHelper(this, name);
         final EditText b1 = (EditText) findViewById(R.id.cb1);
         final EditText b2 = (EditText) findViewById(R.id.cb2);
         String cb1 = b1.getText().toString();
         String cb2 = b2.getText().toString();
         long result= databaseHandler.addBol("a",2);
         Toast.makeText(CargarBolsillo.this,Long.toString(result),Toast.LENGTH_LONG).show();
-        setContentView(R.layout.bolsillo);
+        finish();
     }
 }

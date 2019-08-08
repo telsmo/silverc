@@ -10,12 +10,11 @@ import android.widget.Spinner;
 
 public class bolsillo extends Activity {
     private DatabaseHelper databaseHandler;
-    private String name;
+    Intent intent = getIntent();
+    String name = intent.getExtras().getString("nombre");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent intent = getIntent();
-        name = intent.getExtras().getString("nombre");
         databaseHandler = new DatabaseHelper(this, name);
         setContentView(R.layout.bolsillo);
     }
