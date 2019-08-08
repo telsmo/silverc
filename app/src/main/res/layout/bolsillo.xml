@@ -136,52 +136,107 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView29">
 
-            <android.support.constraint.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView28"
-                    android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+                app:layout_constraintStart_toStartOf="@+id/scrollView2"
+                app:layout_constraintTop_toTopOf="@+id/scrollView2">
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:text="Nombrebolsillo"
-                    android:textColor="@color/prim3"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="26dp" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView27"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:text="Nombrebolsillo"
+                        android:textColor="@color/prim3"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:layout_editor_absoluteY="26dp" />
+
+                    <TextView
+                        android:id="@+id/textView27"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:text="Montobolsillo"
+                        android:textColor="@color/prim1"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView28"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textView28" />
+
+                    <Button
+                        android:id="@+id/button6"
+                        android:layout_width="288dp"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/prim0"
+                        android:gravity="right"
+                        android:text="Ver los movimientos"
+                        android:textAllCaps="false"
+                        android:textColor="@color/prim2"
+                        android:textStyle="italic"
+                        app:layout_constraintEnd_toEndOf="@+id/textView27"
+                        app:layout_constraintTop_toBottomOf="@+id/textView27"
+                        tools:textSize="14sp" />
+
+
+                </android.support.constraint.ConstraintLayout>
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="24dp"
-                    android:text="Montobolsillo"
-                    android:textColor="@color/prim1"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView28"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView28" />
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/button6"
-                    android:layout_width="288dp"
-                    android:layout_height="26dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/prim0"
-                    android:gravity="right"
-                    android:text="Ver los movimientos"
-                    android:textAllCaps="false"
-                    android:textColor="@color/prim2"
-                    android:textStyle="italic"
-                    app:layout_constraintEnd_toEndOf="@+id/textView27"
-                    app:layout_constraintTop_toBottomOf="@+id/textView27"
-                    tools:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/ejemplotextview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:text="Nombrebolsillo"
+                        android:textColor="@color/prim3"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:layout_editor_absoluteY="26dp" />
+
+                    <TextView
+                        android:id="@+id/ejemplotextview2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:text="Montobolsillo"
+                        android:textColor="@color/prim1"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/ejemplotextview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/ejemplotextview" />
+
+                    <Button
+                        android:id="@+id/ejemplobutton"
+                        android:layout_width="288dp"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/prim0"
+                        android:gravity="right"
+                        android:text="Ver los movimientos"
+                        android:textAllCaps="false"
+                        android:textColor="@color/prim2"
+                        android:textStyle="italic"
+                        app:layout_constraintEnd_toEndOf="@+id/ejemplotextview2"
+                        app:layout_constraintTop_toBottomOf="@+id/ejemplotextview2"
+                        tools:textSize="14sp" />
 
 
-            </android.support.constraint.ConstraintLayout>
+                </android.support.constraint.ConstraintLayout>
+                </LinearLayout>
+
         </ScrollView>
         <TextView
             android:id="@+id/textView29"
@@ -208,6 +263,9 @@
             app:layout_constraintEnd_toEndOf="@+id/scrollView2"
             app:layout_constraintStart_toStartOf="@+id/scrollView2"
             app:layout_constraintTop_toBottomOf="@+id/scrollView2"/>
+
+
+
 
     </android.support.constraint.ConstraintLayout>
 </android.support.v4.widget.DrawerLayout>
