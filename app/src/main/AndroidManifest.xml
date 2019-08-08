@@ -22,5 +22,9 @@ package="com.example.myapplication">
         android:name=".Cargar"></activity>
     <activity
         android:name=".Ingreso"></activity>
+    <activity
+        android:name=".bolsillo"></activity>
+    <activity
+        android:name=".CargarBolsillo"></activity>
 </application>
 </manifest>

@@ -56,8 +56,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + " INTEGER PRIMARY KEY AUTOINCREMENT," + MOV + " TEXT ," + NOM + " TEXT ," + FECHA + " DATETIME DEFAULT CURRENT_TIMESTAMP ," + MONTO + " INTEGER ," + CAT + " TEXT ," + BOL + " TEXT ," + CANT + " INTEGER );";
 
     private static final String CREATE_TABLE_BOLSILLOS = "CREATE TABLE "
-            + TABLE_BOL+ "(" + BOLSILLOS
-            + " TEXT PRIMARY KEY," + MONTO2+ " TEXT );";
+            + TABLE_BOL+ "(" + KEY_ID
+            + " INTEGER PRIMARY KEY AUTOINCREMENT," + BOLSILLOS
+            + " TEXT ," + MONTO2+ " TEXT );";
 
     private static final String CREATE_TABLE_METAS = "CREATE TABLE "
             + TABLE_METAS + "(" + ID_META
@@ -103,12 +104,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(CAT, cat2);
         values.put(BOL, bol2);
         values.put(CANT, cant2);
-        // insert row in students table
         long insert = db.insert(TABLE_MOV, null, values);
 
         return insert;
     }
 
+    public long addBol(String nom, int cant) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        // Creating content values
+        ContentValues values = new ContentValues();
+        values.put(BOLSILLOS, nom);
+        values.put(MONTO2, cant);
+        // insert row in students table
+        long insert = db.insert(TABLE_BOL, null, values);
+        return insert;
+    }
     public Cursor getTableMov(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor datos = db.rawQuery("SELECT * FROM "+ TABLE_MOV,null);

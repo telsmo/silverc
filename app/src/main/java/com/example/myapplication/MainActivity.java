@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void gotoingreso (View view){
         Intent getNameScreenIntent= new Intent(this,
-                Ingreso.class);
+                bolsillo.class);
         String name = nom_us() + contra();
         //acá un ejemplo pasando sólo un parametro, entonces sólo se pone putExtra, (1)
         getNameScreenIntent.putExtra("namexd",name);
@@ -85,19 +85,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     ///////////////////////////////////////////////////////////////////////////////
+    //SE APRETA EL BOTON DE BOLSILLO
+    public void gotobolsillo(View view){
+        Intent bol = new Intent(this,bolsillo.class);
+        String name = nom_us() + contra();
+        bol.putExtra("nombre",name);
+        startActivity(bol);
+    }
     public void gotomainlol (View view){
 
         setContentView(R.layout.mainlol);
-
-    }
-    public void gotobolsillo (View view){
-
-        setContentView(R.layout.bolsillo);
-
-    }
-    public void gotocrearbolsillo (View view){
-
-        setContentView(R.layout.crearbolsillo);
 
     }
 
