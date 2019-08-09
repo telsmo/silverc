@@ -114,48 +114,78 @@
             android:id="@+id/cb1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:hint="Ingrese el nombre del bolsillo"
+            android:inputType="textPersonName"
+            android:textColor="@color/prim2"
+            android:textColorHint="@color/prim2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+        <EditText
+            android:id="@+id/cb3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Ingrese el nombre del bolsillo"
+            android:hint="Ingrese el nombre del bolsillo"
+            android:inputType="number"
             android:textColor="@color/prim2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView39" />
+            android:textColorHint="@color/prim2"
+            app:layout_constraintEnd_toEndOf="@+id/cb1"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/cb1"
+            app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
         <TextView
             android:id="@+id/textView40"
             android:layout_width="223dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
-            android:text="Nombre del bolsillo"
+            android:text="Descripcion del bolsillo"
             android:textColor="@color/prim3"
             android:textSize="14dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.529"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView39"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="@+id/textView39"
             app:layout_constraintTop_toBottomOf="@+id/cb1" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="223dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="Monto inicial"
+            android:textColor="@color/prim3"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="@+id/textView39"
+            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintStart_toStartOf="@+id/textView39"
+            app:layout_constraintTop_toBottomOf="@+id/cb2" />
 
         <EditText
             android:id="@+id/cb2"
-            android:layout_width="225dp"
-            android:layout_height="127dp"
-            android:layout_marginStart="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="126dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:ems="10"
             android:gravity="start|top"
+            android:hint="Ingrese descripcion"
             android:inputType="textMultiLine"
-            android:text="Ingrese descripción"
             android:textColor="@color/prim2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textColorHint="@color/prim2"
+            app:layout_constraintEnd_toEndOf="@+id/cb1"
+            app:layout_constraintStart_toStartOf="@+id/cb1"
             app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
         <Button
@@ -163,7 +193,7 @@
             android:layout_width="222dp"
             android:layout_height="67dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:background="@color/prim2"
             android:onClick="agregar_bol"
@@ -171,8 +201,8 @@
             android:textColor="@color/prim0"
             android:textSize="19dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cb2" />
+            app:layout_constraintTop_toBottomOf="@+id/cb3" />
     </android.support.constraint.ConstraintLayout>
 </android.support.v4.widget.DrawerLayout>

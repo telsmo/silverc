@@ -27,10 +27,14 @@ public class bolsillo extends Activity {
     public void agregar_bol (View view){
         final EditText b1 = (EditText) findViewById(R.id.cb1);
         final EditText b2 = (EditText) findViewById(R.id.cb2);
+        final EditText b3 = (EditText) findViewById(R.id.cb3);
         String cb1 = b1.getText().toString();
         String cb2 = b2.getText().toString();
-        long result= databaseHandler.addBol("a",2);
+        String wea =b3.getText().toString();
+        Integer cb3 = Integer.parseInt(wea);
+        long result= databaseHandler.addBol(cb1,cb2,cb3);
         Toast.makeText(this,Long.toString(result),Toast.LENGTH_LONG).show();
-        setContentView(R.layout.bolsillo);;
+        String movcreacion= databaseHandler.addMov("Ingreso","Creacion del bolsillo "+cb1,cb3,"carga",cb1,1);
+        setContentView(R.layout.bolsillo);
     }
 }

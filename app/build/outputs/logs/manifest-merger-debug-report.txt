@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-30:12
-INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-30:12
-INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-30:12
-INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-30:12
+ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
+INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
+INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
+INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
 MERGED from [com.amitshekhar.android:debug-db:1.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\cf096dab3cd53bd9cf6ea81a2921ae22\AndroidManifest.xml:20:1-40:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\dbac7453f6f4682a96c9e460b20f85eb\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\a5fadf01fabd6bcbd20cb3d458f87c5c\AndroidManifest.xml:17:1-22:12
@@ -36,25 +36,25 @@ MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Cristian\.gradle\
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\b95bae46427f729adeba8127f9139e87\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\6bf2d10017f20e5ea5eab9d5ccaf0d32\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\bff022cff11f8290976c78edde7b0290\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-30:12
-INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-30:12
-INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-30:12
+INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
+INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
+INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
 	package
 		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:2:1-36
 		INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-30:12
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
 		INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-30:12
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
 		INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:49-107
 application
-ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:4:1-29:15
+ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:4:1-27:15
 MERGED from [com.amitshekhar.android:debug-db:1.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\cf096dab3cd53bd9cf6ea81a2921ae22\AndroidManifest.xml:32:5-38:19
 MERGED from [com.amitshekhar.android:debug-db:1.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\cf096dab3cd53bd9cf6ea81a2921ae22\AndroidManifest.xml:32:5-38:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\dbac7453f6f4682a96c9e460b20f85eb\AndroidManifest.xml:22:5-20
@@ -107,10 +107,6 @@ activity#com.example.myapplication.bolsillo
 ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:25:5-26:45
 	android:name
 		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:26:9-33
-activity#com.example.myapplication.CargarBolsillo
-ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:27:5-28:51
-	android:name
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:28:9-39
 uses-sdk
 INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml

@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="100">
+    android:weightSum="100"
+    >
 
     <TextView
         android:textStyle="bold"
@@ -10,20 +11,26 @@
         android:layout_weight="33"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/col1"/>
+        android:id="@+id/col1"
+        android:textColor="@color/prim1"
+        android:layout_gravity="center"/>
     <TextView
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_weight="33"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/col2"/>
+        android:id="@+id/col2"
+        android:textColor="@color/prim1"
+        android:layout_gravity="center"/>
     <TextView
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_weight="33"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/col3"/>
+        android:id="@+id/col3"
+        android:textColor="@color/prim1"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

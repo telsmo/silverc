@@ -33,7 +33,6 @@
         <activity android:name="com.example.myapplication.Cargar" />
         <activity android:name="com.example.myapplication.Ingreso" />
         <activity android:name="com.example.myapplication.bolsillo" />
-        <activity android:name="com.example.myapplication.CargarBolsillo" />
 
         <provider
             android:name="com.amitshekhar.DebugDBInitProvider"

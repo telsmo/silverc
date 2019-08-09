@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void gotoingreso (View view){
         Intent getNameScreenIntent= new Intent(this,
-                bolsillo.class);
+                Ingreso.class);
         String name = nom_us() + contra();
         //acá un ejemplo pasando sólo un parametro, entonces sólo se pone putExtra, (1)
         getNameScreenIntent.putExtra("namexd",name);
@@ -144,12 +144,12 @@ public class MainActivity extends AppCompatActivity {
         }else{
             int i=0;
             while (datos.moveToNext()){
-                registro = new registros(datos.getString(1),datos.getString(3),datos.getString(4));
+                registro = new registros(datos.getString(1),datos.getString(2),datos.getString(4));
                 //la_lista.add(datos.getString(1));
                 la_lista.add(i,registro);
                 //ListAdapter listAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,la_lista);
                 //lista.setAdapter(listAdapter);
-                System.out.println(datos.getString(1)+" "+datos.getString(3)+" "+datos.getString(4));
+                System.out.println(datos.getString(1)+" "+datos.getString(2)+" "+datos.getString(4));
                 System.out.println(la_lista.get(i).getuno());
                 i++;
             }

@@ -424,12 +424,12 @@
                 android:layout_marginEnd="8dp"
 
                 android:ems="10"
-                android:inputType="textPersonName"
-
                 android:hint="Ingrese la cantidad comprada"
-                android:textColorHint="@color/prim2"
 
+                android:inputType="number"
                 android:textColor="@color/prim2"
+
+                android:textColorHint="@color/prim2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -444,7 +444,7 @@
                 android:layout_marginEnd="8dp"
                 android:ems="10"
                 android:hint="Ingrese el precio individual"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textColor="@color/prim2"
                 android:textColorHint="@color/prim2"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -468,22 +468,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-            <EditText
-                android:id="@+id/c6"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Ingrese con que pago"
-                android:textColorHint="@color/prim2"
-                android:textColor="@color/prim2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
             <Spinner
                 android:id="@+id/spinner1"
                 android:layout_width="211dp"
@@ -493,6 +477,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/c2"
                 app:layout_constraintStart_toStartOf="@+id/c2"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="211dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/c2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/c2"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
