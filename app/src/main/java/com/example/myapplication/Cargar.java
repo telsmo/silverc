@@ -51,7 +51,7 @@ public class Cargar extends Activity {
 
         String result= databaseHandler.addMov("Compra",c11,Integer.parseInt(c12),c13,c16,Integer.parseInt(c14));
         //Integer cant= Integer.parseInt(c12)*Integer.parseInt(c14);
-        Toast.makeText(Cargar.this,result,Toast.LENGTH_LONG).show();
+        //Toast.makeText(Cargar.this,result,Toast.LENGTH_LONG).show();
         finish();
 
     }

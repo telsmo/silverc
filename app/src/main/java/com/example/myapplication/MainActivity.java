@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         */
 
+    }
+    public void actualizar (View view){
+        mitablita();
     }
 
 
@@ -144,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         }else{
             int i=0;
             while (datos.moveToNext()){
-                registro = new registros(datos.getString(1),datos.getString(2),datos.getString(4));
+                registro = new registros(datos.getString(1),datos.getString(2),"$"+datos.getString(4));
                 //la_lista.add(datos.getString(1));
                 la_lista.add(i,registro);
                 //ListAdapter listAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,la_lista);
@@ -156,6 +160,11 @@ public class MainActivity extends AppCompatActivity {
             ThreeColumn_ListAdapter adapter =  new ThreeColumn_ListAdapter(this,R.layout.columnas, la_lista);
             listView = (ListView) findViewById(R.id.listview);
             listView.setAdapter(adapter);
+            TextView bruh = (TextView) findViewById(R.id.textView34);
+            Integer result= databaseHandler.getSaldoTotal();
+            String total= Integer.toString(result);
+            total="$"+total;
+            bruh.setText(total);
         }
     }
 }

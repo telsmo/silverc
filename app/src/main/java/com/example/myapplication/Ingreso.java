@@ -36,7 +36,7 @@ public class Ingreso extends Activity {
         String c16 = i6.getSelectedItem().toString();
 
         String result= databaseHandler.addMov("Ingreso",c11,c12,"Ingreso",c16,1);
-        Toast.makeText(Ingreso.this,result,Toast.LENGTH_LONG).show();
+        //Toast.makeText(Ingreso.this,result,Toast.LENGTH_LONG).show();
         finish();
     }
 }

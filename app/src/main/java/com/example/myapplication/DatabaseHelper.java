@@ -152,6 +152,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return datos;
     }
+    public Cursor getTableBol(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor datos2 = db.rawQuery("SELECT * FROM "+ TABLE_BOL,null);
+        return datos2;
+    }
+    public Integer getSaldoTotal(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor datos = db.rawQuery("SELECT * FROM "+ TABLE_BOL,null);
+        Integer montoi;
+        Integer total=0;
+                while (datos.moveToNext()){
+                montoi=datos.getInt(datos.getColumnIndex(MONTO2));
+                total= montoi+total;
+        }
+        return total;
+    }
     public void updateBol(String bol, Integer cant){
 
         SQLiteDatabase db = this.getWritableDatabase();

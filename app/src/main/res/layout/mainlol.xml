@@ -91,21 +91,37 @@
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="282dp"
-            android:layout_height="58dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="170dp"
+            android:layout_height="61dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
             android:background="@color/prim0"
             android:gravity="right"
             android:onClick="gotobolsillo"
-            android:text="Ver más..."
+            android:text="Ver bolsillos..."
             android:textAllCaps="false"
             android:textColor="@color/prim2"
             android:textSize="19dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="114dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/prim3"
+            android:gravity="center"
+            android:onClick="actualizar"
+            android:text="Actualizar"
+            android:textAllCaps="false"
+            android:textColor="@color/prim0"
+            android:textSize="19dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView12"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/listview" />
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toTopOf="@+id/textView12" />
 
         <Button
             android:id="@+id/button2"
@@ -135,9 +151,11 @@
 
         <ListView
             android:id="@+id/listview"
-            android:layout_width="325dp"
-            android:layout_height="314dp"
+            android:layout_width="330dp"
+            android:layout_height="284dp"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/button3"
             app:layout_constraintEnd_toEndOf="@+id/button"
             app:layout_constraintHorizontal_bias="0.483"
             app:layout_constraintStart_toStartOf="@+id/button"
@@ -147,13 +165,24 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
             android:text="Ultimos movimientos:"
             android:textColor="@color/prim3"
             android:textSize="18dp"
-            app:layout_constraintStart_toStartOf="@+id/listview"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/prim1"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView13" />
 
         <TextView
             android:id="@+id/textView17"
@@ -170,7 +199,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:text="Nombre"
             android:textColor="@color/prim3"
