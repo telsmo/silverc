@@ -42,7 +42,7 @@ public class Cargar extends Activity {
         long result= databaseHandler.addMov("egreso",c11,Integer.parseInt(c12),c13,c16,Integer.parseInt(c14));
 
         Toast.makeText(Cargar.this,Long.toString(result),Toast.LENGTH_LONG).show();
-        setContentView(R.layout.mainlol);
+        finish ();
 
     }
 }
