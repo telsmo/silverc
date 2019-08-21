@@ -3,9 +3,14 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -18,10 +23,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
         private DatabaseHelper databaseHandler;
         public String name;
         ArrayList<registros> la_lista;
+        private DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +38,49 @@ public class MainActivity extends AppCompatActivity {
         }else{
             setContentView(R.layout.activity_main);
         }
+        drawer=findViewById(R.id.drawer_layout);
+        NavigationView navigationView= findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        ActionBarDrawerToggle toggle= new ActionBarDrawerToggle(this,drawer, R.string.open,R.string.close );
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
        /* Toolbar toolbar= findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         */
 
     }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch(menuItem.getItemId()){
+            case R.id.nav_cargar:
+                Intent getNameScreenIntent= new Intent(this,
+                        Cargar.class);
+                //No se puede pasar el handler de la base por parámetros, entonces pasamos los datos necesarios por parámetros para poder volver a pedir el handler
+                // en la actividad que queremos iniciar.
+                String name = nom_us() + contra();
+                //Bundle nos permite empaquetar varios strings, esto nos sirve para pasar multiples parámetros
+                Bundle extras = new Bundle();
+                //acá el "callingactivity" no era necesario, pero, de nuevo, era para ejemplificar como se podían pasar multiples parámetros por un solo "putextra"
+                extras.putString("CallingActivity","MainActivity");
+                extras.putString("namexd",name);
+                //acá se tiene que notar que se pone .putExtras, porque es un bundle
+                getNameScreenIntent.putExtras(extras);
+                //startActivity usa el intent que declaramos antes para empezar .Cargar
+                startActivity(getNameScreenIntent);
+
+                break;
+            case R.id.nav_ingreso:
+                gotoingreso(null);
+                break;
+            case R.id.nav_bolsillo:
+                gotobolsillo(null);
+                break;
+        }
+        return true;
+
+    }
+
     public void actualizar (View view){
         mitablita();
     }

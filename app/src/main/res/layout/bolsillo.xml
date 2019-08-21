@@ -142,7 +142,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:gravity="center"
-            android:text="Placeholder"
+            android:text="$0"
             android:textColor="@color/prim1"
             android:textSize="36sp"
             android:textStyle="bold"
