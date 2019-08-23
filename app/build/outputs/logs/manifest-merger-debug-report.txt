@@ -1,13 +1,14 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
-INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
-INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
-INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
+ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:2:1-27:12
 MERGED from [com.amitshekhar.android:debug-db:1.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\cf096dab3cd53bd9cf6ea81a2921ae22\AndroidManifest.xml:20:1-40:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\dbac7453f6f4682a96c9e460b20f85eb\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\a5fadf01fabd6bcbd20cb3d458f87c5c\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\b4cd5a7235d97418d7df017cc5529879\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\b73fa570a35c93d751303fd5f77fc5c5\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\ca8d598c6e42ba77d52f3227e8b50e60\AndroidManifest.xml:2:1-20:12
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\ab56a51677078cf08473709012ce1fd2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\475c47b6f8d157f9bdaa874a9e267920\AndroidManifest.xml:17:1-22:12
@@ -16,6 +17,7 @@ MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Cristian\.grad
 MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\42b346eb76632657faeb1df9dfd2caa8\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\2f8eca9f2f181f29d71de8a365555172\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:transition:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\5e99492ebf60bb7dd2b7ac44ce4e2801\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\7c3f68d428856eb85fc15b784f4a3089\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:loader:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\9d3dd4b408572cb9f34b1c14db60e713\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\d366139a7bb07d9ced927538788cce06\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\66ebf9c161b3c359258cd053d61690f2\AndroidManifest.xml:17:1-22:12
@@ -37,25 +39,25 @@ MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Cristian\.gradle\
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\b95bae46427f729adeba8127f9139e87\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\6bf2d10017f20e5ea5eab9d5ccaf0d32\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\bff022cff11f8290976c78edde7b0290\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
-INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
-INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
+INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:2:1-27:12
 	package
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:2:1-36
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:3:5-40
 		INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:2:1-27:12
 		INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:39-28:12
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:2:1-27:12
 		INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:1:49-107
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:4:1-27:15
+ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:5:5-25:19
 MERGED from [com.amitshekhar.android:debug-db:1.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\cf096dab3cd53bd9cf6ea81a2921ae22\AndroidManifest.xml:32:5-38:19
 MERGED from [com.amitshekhar.android:debug-db:1.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\cf096dab3cd53bd9cf6ea81a2921ae22\AndroidManifest.xml:32:5-38:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\dbac7453f6f4682a96c9e460b20f85eb\AndroidManifest.xml:22:5-20
@@ -69,45 +71,49 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Cristian\.
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\855bee49387480a949479b0f10737190\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:9:5-31
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:10:9-35
 	android:label
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:7:5-37
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:8:9-41
 	android:roundIcon
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:8:5-50
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:9:9-54
 	android:icon
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:6:5-39
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:7:9-43
 	android:allowBackup
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:5:5-31
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:10:5-36
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:11:9-40
 activity#com.example.myapplication.MainActivity
-ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:11:5-19:16
+ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:12:9-20:20
 	android:theme
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:13:9-52
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:14:13-56
 	android:name
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:12:9-37
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:13:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:14:9-18:25
+ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:15:13-65
+ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:15:21-62
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:17:13-73
+ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:17:23-70
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:18:27-74
 activity#com.example.myapplication.Cargar
-ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:21:5-22:43
+ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:21:9-44
 	android:name
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:22:9-31
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:21:19-41
 activity#com.example.myapplication.Ingreso
-ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:23:5-24:44
+ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:22:9-45
 	android:name
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:24:9-32
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:22:19-42
 activity#com.example.myapplication.bolsillo
-ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:25:5-26:45
+ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:23:9-46
 	android:name
-		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:26:9-33
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:23:19-43
+activity#com.example.myapplication.analisispiechart
+ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:24:9-54
+	android:name
+		ADDED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml:24:19-51
 uses-sdk
 INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Cristian\Documents\GitHub\silverc\app\src\main\AndroidManifest.xml
@@ -120,6 +126,8 @@ MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Cristian\.gradle\
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\a5fadf01fabd6bcbd20cb3d458f87c5c\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\b4cd5a7235d97418d7df017cc5529879\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\b4cd5a7235d97418d7df017cc5529879\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\b73fa570a35c93d751303fd5f77fc5c5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\b73fa570a35c93d751303fd5f77fc5c5\AndroidManifest.xml:20:5-44
 MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\ca8d598c6e42ba77d52f3227e8b50e60\AndroidManifest.xml:16:5-18:41
 MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\ca8d598c6e42ba77d52f3227e8b50e60\AndroidManifest.xml:16:5-18:41
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\ab56a51677078cf08473709012ce1fd2\AndroidManifest.xml:20:5-44
@@ -136,6 +144,8 @@ MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Cristi
 MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\2f8eca9f2f181f29d71de8a365555172\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\5e99492ebf60bb7dd2b7ac44ce4e2801\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\5e99492ebf60bb7dd2b7ac44ce4e2801\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\7c3f68d428856eb85fc15b784f4a3089\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\7c3f68d428856eb85fc15b784f4a3089\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:loader:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\9d3dd4b408572cb9f34b1c14db60e713\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:loader:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\9d3dd4b408572cb9f34b1c14db60e713\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Cristian\.gradle\caches\transforms-2\files-2.1\d366139a7bb07d9ced927538788cce06\AndroidManifest.xml:20:5-44

@@ -38,48 +38,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }else{
             setContentView(R.layout.activity_main);
         }
-        drawer=findViewById(R.id.drawer_layout);
-        NavigationView navigationView= findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        ActionBarDrawerToggle toggle= new ActionBarDrawerToggle(this,drawer, R.string.open,R.string.close );
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
        /* Toolbar toolbar= findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         */
 
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch(menuItem.getItemId()){
-            case R.id.nav_cargar:
-                Intent getNameScreenIntent= new Intent(this,
-                        Cargar.class);
-                //No se puede pasar el handler de la base por parámetros, entonces pasamos los datos necesarios por parámetros para poder volver a pedir el handler
-                // en la actividad que queremos iniciar.
-                String name = nom_us() + contra();
-                //Bundle nos permite empaquetar varios strings, esto nos sirve para pasar multiples parámetros
-                Bundle extras = new Bundle();
-                //acá el "callingactivity" no era necesario, pero, de nuevo, era para ejemplificar como se podían pasar multiples parámetros por un solo "putextra"
-                extras.putString("CallingActivity","MainActivity");
-                extras.putString("namexd",name);
-                //acá se tiene que notar que se pone .putExtras, porque es un bundle
-                getNameScreenIntent.putExtras(extras);
-                //startActivity usa el intent que declaramos antes para empezar .Cargar
-                startActivity(getNameScreenIntent);
 
-                break;
-            case R.id.nav_ingreso:
-                gotoingreso(null);
-                break;
-            case R.id.nav_bolsillo:
-                gotobolsillo(null);
-                break;
-        }
-        return true;
-
-    }
 
     public void actualizar (View view){
         mitablita();
@@ -140,6 +105,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bol.putExtra("nombre",name);
         startActivity(bol);
     }
+    public void gotoanalisis(View view){
+        Intent bol = new Intent(this,analisispiechart.class);
+        String name = nom_us() + contra();
+        bol.putExtra("nombre",name);
+        startActivity(bol);
+    }
     public void gotomainlol (View view){
 
         setContentView(R.layout.mainlol);
@@ -183,6 +154,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         registros registro;
         ListView lista =findViewById(R.id.listview);
         databaseHandler = new DatabaseHelper(this,name);
+        //
+        //
 
         //ArrayList<String> la_lista = new ArrayList<>();
         la_lista = new ArrayList<>();
@@ -209,6 +182,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             String total= Integer.toString(result);
             total="$"+total;
             bruh.setText(total);
+            Toolbar toolbar = findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+            drawer=findViewById(R.id.drawer_layout);
+            NavigationView navigationView= findViewById(R.id.nav_view);
+            ActionBarDrawerToggle toggle= new ActionBarDrawerToggle(this,drawer,toolbar, R.string.open,R.string.close );
+            drawer.addDrawerListener(toggle);
+            toggle.syncState();
+            navigationView.setNavigationItemSelectedListener(this);
         }
+    }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+
+            int id = menuItem.getItemId();
+
+            if (id == R.id.nav_cargar) {
+                setContentView(R.layout.cargar);
+            } else if (id == R.id.nav_ingreso) {
+                gotoingreso(null);
+            } else if (id == R.id.nav_bolsillo) {
+                gotobolsillo(null);
+            }
+                    return true;
+
     }
 }
