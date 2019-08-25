@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void gotoanalisis(View view){
         Intent bol = new Intent(this,analisispiechart.class);
         String name = nom_us() + contra();
-        bol.putExtra("nombre",name);
+        bol.putExtra("namexd",name);
         startActivity(bol);
     }
     public void gotomainlol (View view){
@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }else{
             int i=0;
             while (datos.moveToNext()){
-                registro = new registros(datos.getString(1),datos.getString(2),"$"+datos.getString(4));
+                registro = new registros(datos.getString(1),datos.getString(2),"$"+(datos.getInt(4))*datos.getInt(7));
                 //la_lista.add(datos.getString(1));
                 la_lista.add(i,registro);
                 //ListAdapter listAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,la_lista);

@@ -153,6 +153,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return datos;
     }
+    public Cursor getTableMovA(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor datos = db.rawQuery("SELECT monto,categoria,cantidad FROM "+ TABLE_MOV,null);
+
+        return datos;
+    }
     public Cursor getTableBol(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor datos2 = db.rawQuery("SELECT * FROM "+ TABLE_BOL,null);

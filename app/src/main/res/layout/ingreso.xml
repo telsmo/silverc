@@ -52,7 +52,7 @@
     android:background="@color/prim0">
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/button6"
         android:layout_width="222dp"
         android:layout_height="67dp"
         android:layout_marginStart="8dp"
