@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.LightingColorFilter;
@@ -21,6 +22,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
 public class Cargar extends Activity {
     private DatabaseHelper databaseHandler;
@@ -30,16 +34,16 @@ public class Cargar extends Activity {
         super.onCreate(savedInstanceState);
         Bundle extras = getIntent().getExtras();
         String name = extras.getString("namexd");
-        String CallingActivity = extras.getString("CallingActivity");
+
+        SharedPreferences prefs = getSharedPreferences("mp", MODE_PRIVATE);
+        Set<String> set = prefs.getStringSet("cat", null);
+        List lista_cat = new ArrayList(set);
+
         databaseHandler = new DatabaseHelper(this, name);
         setContentView(R.layout.cargar);
         Spinner spinner = (Spinner) findViewById(R.id.spinner1);
         Spinner spinner2= findViewById(R.id.spinner);
-        String[] categorias = new String[]{
-                "Entretenimiento", "Comida", "Transporte", "Impuestos", "Otros"};
-        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, categorias);
-        //String[] bolsilloxd = new String[]{
-        //        "Entretenimiento", "Comida", "Transporte", "Impuestos", "Otros"};
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, lista_cat);
         ArrayList<String> bolsilloxd = databaseHandler.getbolsillos();
         ArrayAdapter<String> spinnerArrayAdapter2 = new ArrayAdapter<String>(this, R.layout.spinner_item, bolsilloxd);
         spinnerArrayAdapter2.setDropDownViewResource(R.layout.spinner_item);
@@ -75,19 +79,29 @@ public class Cargar extends Activity {
         textView.setTextColor(Color.rgb(0,204,153));
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCustomTitle(textView);
-// Set up the input
         final EditText input = new EditText(this);
-// Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
         input.setInputType(InputType.TYPE_CLASS_TEXT );
         input.setPadding(20, 30, 20, 30);
         input.setTextColor(Color.rgb(204,51,51));
         builder.setView(input);
 
-// Set up the buttons
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                Spinner spinner = (Spinner) findViewById(R.id.spinner1);
                 m_Text = input.getText().toString();
+                SharedPreferences prefs = getSharedPreferences("mp", MODE_PRIVATE);
+                Set<String> set = prefs.getStringSet("cat", null);
+                set.add(m_Text);
+                List lista_cat = new ArrayList(set);
+                SharedPreferences.Editor prefs2 = getSharedPreferences("mp", MODE_PRIVATE).edit();
+                prefs2.putStringSet("cat", set);
+                prefs2.apply();
+                Collections.reverse(lista_cat);
+                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(Cargar.this, R.layout.spinner_item, lista_cat);
+                spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
+                spinner.setAdapter(spinnerArrayAdapter);
+
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

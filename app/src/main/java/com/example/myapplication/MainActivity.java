@@ -21,6 +21,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -143,6 +146,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         SharedPreferences.Editor editor = getSharedPreferences("mp", MODE_PRIVATE).edit();
         editor.putString("user", us);
         editor.putString("pass", pass);
+        List<String> list;
+        list = new ArrayList<String>();
+        list.add("Entretenimiento");
+        list.add("Comida");
+        list.add("Transporte");
+        list.add("Impuestos");
+        list.add("Otros");
+        Set<String> set = new HashSet<String>();
+        set.addAll(list);
+        editor.putStringSet("cat", set);
         editor.apply();
 
 
