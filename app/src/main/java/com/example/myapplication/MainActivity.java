@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setContentView(R.layout.mainlol);
         databaseHandler = new DatabaseHelper(this, name);
+        mitablita();
     }
 
     //seleccionar para ir a cargar un gasto o ingreso.

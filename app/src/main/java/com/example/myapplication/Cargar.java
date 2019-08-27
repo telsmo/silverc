@@ -1,18 +1,30 @@
 package com.example.myapplication;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.LightingColorFilter;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v4.content.res.ResourcesCompat;
+import android.support.v7.app.AlertDialog;
+import android.text.InputType;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class Cargar extends Activity {
     private DatabaseHelper databaseHandler;
+    private String m_Text = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,5 +66,39 @@ public class Cargar extends Activity {
         //Toast.makeText(Cargar.this,result,Toast.LENGTH_LONG).show();
         finish();
 
+    }
+    public void show_popup (View view){
+        TextView textView = new TextView(this);
+        textView.setText("Crear Categoría");
+        textView.setPadding(20, 30, 20, 30);
+        //textView.setTextSize(20F);
+        textView.setTextColor(Color.rgb(0,204,153));
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCustomTitle(textView);
+// Set up the input
+        final EditText input = new EditText(this);
+// Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+        input.setInputType(InputType.TYPE_CLASS_TEXT );
+        input.setPadding(20, 30, 20, 30);
+        input.setTextColor(Color.rgb(204,51,51));
+        builder.setView(input);
+
+// Set up the buttons
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                m_Text = input.getText().toString();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog bg = builder.show();
+        bg.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(0,0,51)));
+        bg.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.rgb(204,51,51));
+        bg.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.rgb(204,51,51));
     }
 }
