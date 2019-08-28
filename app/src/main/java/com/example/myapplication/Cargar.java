@@ -95,13 +95,14 @@ public class Cargar extends Activity {
                 set.add(m_Text);
                 List lista_cat = new ArrayList(set);
                 SharedPreferences.Editor prefs2 = getSharedPreferences("mp", MODE_PRIVATE).edit();
-                prefs2.putStringSet("cat", set);
-                prefs2.apply();
+                
                 Collections.reverse(lista_cat);
                 ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(Cargar.this, R.layout.spinner_item, lista_cat);
                 spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
                 spinner.setAdapter(spinnerArrayAdapter);
-
+                set.a
+                prefs2.putStringSet("cat", set);
+                prefs2.apply();
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
