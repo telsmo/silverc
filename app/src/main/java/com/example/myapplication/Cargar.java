@@ -34,16 +34,12 @@ public class Cargar extends Activity {
         super.onCreate(savedInstanceState);
         Bundle extras = getIntent().getExtras();
         String name = extras.getString("namexd");
-
-        SharedPreferences prefs = getSharedPreferences("mp", MODE_PRIVATE);
-        Set<String> set = prefs.getStringSet("cat", null);
-        List lista_cat = new ArrayList(set);
-
         databaseHandler = new DatabaseHelper(this, name);
+        List<String> todo= databaseHandler.loadCate();
         setContentView(R.layout.cargar);
         Spinner spinner = (Spinner) findViewById(R.id.spinner1);
         Spinner spinner2= findViewById(R.id.spinner);
-        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, lista_cat);
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, todo);
         ArrayList<String> bolsilloxd = databaseHandler.getbolsillos();
         ArrayAdapter<String> spinnerArrayAdapter2 = new ArrayAdapter<String>(this, R.layout.spinner_item, bolsilloxd);
         spinnerArrayAdapter2.setDropDownViewResource(R.layout.spinner_item);
@@ -90,18 +86,13 @@ public class Cargar extends Activity {
             public void onClick(DialogInterface dialog, int which) {
                 Spinner spinner = (Spinner) findViewById(R.id.spinner1);
                 m_Text = input.getText().toString();
-                SharedPreferences prefs = getSharedPreferences("mp", MODE_PRIVATE);
-                Set<String> set = prefs.getStringSet("cat", null);
-                set.add(m_Text);
-                List lista_cat = new ArrayList(set);
-                SharedPreferences.Editor prefs2 = getSharedPreferences("mp", MODE_PRIVATE).edit();
-                
-                Collections.reverse(lista_cat);
-                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(Cargar.this, R.layout.spinner_item, lista_cat);
+
+                long result= databaseHandler.addCate(m_Text);
+
+                List<String> todo= databaseHandler.loadCate();
+                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(Cargar.this, R.layout.spinner_item, todo);
                 spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
                 spinner.setAdapter(spinnerArrayAdapter);
-                prefs2.putStringSet("cat", set);
-                prefs2.apply();
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

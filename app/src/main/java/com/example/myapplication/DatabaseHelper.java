@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 // El nombre de la base de datos se asigna en la variable "name" que llega del main
@@ -52,6 +53,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TIPO = "tipo";
     private static final String FALTA = "falta";
 
+    //Tabla de categorias
+    private static final String Table_CATE= "cat";
+    private static  final String NOM_CATE="nombre_cate";
 
     /*CREATE TABLE students ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, phone_number TEXT.......);*/
 
@@ -72,6 +76,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_SUSC = "CREATE TABLE "
             + TABLE_SUSC + "(" + NOM_SUSC
             + " TEXT PRIMARY KEY ," + MONTO3 + " INTEGER ," + PER + " INTEGER ," + ESTADO + " TEXT ," + TIPO + " TEXT ," + FALTA + " INTEGER);";
+    private static final String CREATE_TABLE_CATE = "CREATE TABLE "
+            + Table_CATE + "(" + NOM_CATE
+            + " TEXT PRIMARY KEY );";
 
     public DatabaseHelper(Context context, String name) {
         super(context, name, null, 1);
@@ -80,6 +87,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.d("table", CREATE_TABLE_BOLSILLOS);
         Log.d("table", CREATE_TABLE_METAS);
         Log.d("table", CREATE_TABLE_SUSC);
+        Log.d("table", CREATE_TABLE_CATE);
     }
 
     @Override
@@ -88,6 +96,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_BOLSILLOS);
         db.execSQL(CREATE_TABLE_METAS);
        // db.execSQL(CREATE_TABLE_SUSC);
+        db.execSQL(CREATE_TABLE_CATE);
     }
 
     @Override
@@ -96,9 +105,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS '" + TABLE_BOL + "'");
         db.execSQL("DROP TABLE IF EXISTS '" + TABLE_METAS + "'");
         db.execSQL("DROP TABLE IF EXISTS '" + TABLE_SUSC + "'");
+        db.execSQL("DROP TABLE IF EXISTS '" + Table_CATE + "'");
         onCreate(db);
     }
+    public Long addCate(String ca){
+        SQLiteDatabase db = this.getWritableDatabase();
+        // Creating content values
+        ContentValues values = new ContentValues();
+        values.put(NOM_CATE, ca);
+        // insert row in students table
+        long insert = db.insert(Table_CATE, null, values);
 
+        return insert;
+    }
+    public List<String> loadCate(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor datos = db.rawQuery("SELECT * FROM "+ Table_CATE,null);
+        List<String> array = new ArrayList<String>();
+        while(datos.moveToNext()){
+            String uname = datos.getString(datos.getColumnIndex(NOM_CATE));
+            array.add(uname);
+        }
+        return array;
+    }
     public String addMov(String mov2, String nom2, int monto2, String cat2, String bol2, int cant2) {
         SQLiteDatabase db = this.getWritableDatabase();
         // Creating content values

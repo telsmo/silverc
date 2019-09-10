@@ -68,6 +68,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setContentView(R.layout.mainlol);
         databaseHandler = new DatabaseHelper(this, name);
+
+        long result= databaseHandler.addCate("Entretenimiento");
+        result=databaseHandler.addCate("Comida");
+        result=databaseHandler.addCate("Transporte");
+        result=databaseHandler.addCate("Impuestos");
+        result=databaseHandler.addCate("Otros");
         mitablita();
     }
 
@@ -147,19 +153,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         SharedPreferences.Editor editor = getSharedPreferences("mp", MODE_PRIVATE).edit();
         editor.putString("user", us);
         editor.putString("pass", pass);
-        List<String> list;
-        list = new ArrayList<String>();
-        list.add("Entretenimiento");
-        list.add("Comida");
-        list.add("Transporte");
-        list.add("Impuestos");
-        list.add("Otros");
-        Set<String> set = new HashSet<String>();
-        set.addAll(list);
-        editor.putStringSet("cat", set);
         editor.apply();
-
-
     }
 
     public void mitablita() {
