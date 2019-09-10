@@ -16,6 +16,7 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class analisispiechart extends Activity {
     private DatabaseHelper databaseHandler;
@@ -24,19 +25,38 @@ public class analisispiechart extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.analisispiechart);
+        codigo();
+    }
+    public void actualizar(View view){
+        codigo();
+    }
+    private void codigo(){
         Bundle extras = getIntent().getExtras();
         String name = extras.getString("namexd");
         databaseHandler = new DatabaseHelper(this, name);
         Cursor datos = databaseHandler.getTableMov();
-        int entre=0;
-        int comid=0;
-        int trans=0;
-        int impue=0;
-        int otros=0;
+        List<String> cates = databaseHandler.loadCate();
+        List<Integer> catnum = new ArrayList<Integer>();
+        int size = cates.size();
+        for (int i = 0; i < size; i++)
+        {
+            catnum.add(0);
+        }
+        String a;
+        //int entre,comid,trans,impue,otros=0;
         if (datos.getCount() == 0){
             Toast.makeText(this,"No hay datos",Toast.LENGTH_LONG).show();
         }else{
             while (datos.moveToNext()){
+
+                for (int i = 0; i < size; i++)
+                {
+                    a = cates.get(i);
+                    if (datos.getString(datos.getColumnIndex("categoria")).equals(a)){
+                        catnum.add(i, catnum.get(i)+((datos.getInt(datos.getColumnIndex("monto")))*(datos.getInt(datos.getColumnIndex("cantidad")))));
+                    }
+                }
+/*
                 if (datos.getString(datos.getColumnIndex("categoria")).equals("Entretenimiento")){
                     entre= entre+((datos.getInt(datos.getColumnIndex("monto")))*(datos.getInt(datos.getColumnIndex("cantidad"))));
                 }else if (datos.getString(datos.getColumnIndex("categoria")).equals("Comida")){
@@ -48,7 +68,7 @@ public class analisispiechart extends Activity {
                 }else if (datos.getString(datos.getColumnIndex("categoria")).equals("Otros")){
                     otros= otros+((datos.getInt(datos.getColumnIndex("monto")))*(datos.getInt(datos.getColumnIndex("cantidad"))));
                 }
-
+*/
             }}
         pieChart= (PieChart) findViewById(R.id.piechart);
         pieChart.setUsePercentValues(true);
@@ -58,11 +78,17 @@ public class analisispiechart extends Activity {
         pieChart.setHoleColor(getResources().getColor(R.color.prim0));
         pieChart.setTransparentCircleRadius(60f);
         ArrayList<PieEntry> yValues = new ArrayList<>();
+        for (int i = 0; i < size; i++)
+        {
+            yValues.add(new PieEntry(catnum.get(i),cates.get(i)));
+        }
+        /*
         yValues.add(new PieEntry(entre,"Entretenimiento"));
         yValues.add(new PieEntry(comid,"Comida"));
         yValues.add(new PieEntry(impue,"Impuestos"));
         yValues.add(new PieEntry(otros,"Otros"));
         yValues.add(new PieEntry(trans,"Transporte"));
+         */
         PieDataSet dataSet = new PieDataSet(yValues,"");
         dataSet.setSliceSpace(3f);
         dataSet.setSelectionShift(5f);
@@ -75,56 +101,6 @@ public class analisispiechart extends Activity {
 
         pieChart.setData(data);
 
-    }
-    public void actualizar(View view){
-        Bundle extras = getIntent().getExtras();
-        String name = extras.getString("namexd");
-        databaseHandler = new DatabaseHelper(this, name);
-        Cursor datos = databaseHandler.getTableMov();
-        int entre=0;
-        int comid=0;
-        int trans=0;
-        int impue=0;
-        int otros=0;
-        if (datos.getCount() == 0){
-            Toast.makeText(this,"No hay datos",Toast.LENGTH_LONG).show();
-        }else{
-            while (datos.moveToNext()){
-                if (datos.getString(datos.getColumnIndex("categoria")).equals("Entretenimiento")){
-                    entre= entre+((datos.getInt(datos.getColumnIndex("monto")))*(datos.getInt(datos.getColumnIndex("cantidad"))));
-                }else {
-                    if (datos.getString(datos.getColumnIndex("categoria")).equals("Comida")){
-                        comid= comid+((datos.getInt(datos.getColumnIndex("monto")))*(datos.getInt(datos.getColumnIndex("cantidad"))));
-                }else {if (datos.getString(datos.getColumnIndex("categoria")).equals("Transporte")){
-                    trans= trans+((datos.getInt(datos.getColumnIndex("monto")))*(datos.getInt(datos.getColumnIndex("cantidad"))));
-                }else {if (datos.getString(datos.getColumnIndex("categoria")).equals("Impuestos")){
-                    impue= impue +((datos.getInt(datos.getColumnIndex("monto")))*(datos.getInt(datos.getColumnIndex("cantidad"))));
-                }else {if (datos.getString(datos.getColumnIndex("categoria")).equals("Otros")){
-                    otros= otros+((datos.getInt(datos.getColumnIndex("monto")))*(datos.getInt(datos.getColumnIndex("cantidad"))));}
-                }}}}}
-
-            }
-        pieChart= (PieChart) findViewById(R.id.piechart);
-        pieChart.setUsePercentValues(true);
-        pieChart.getDescription().setEnabled(false);
-        pieChart.setExtraOffsets(5,10,5,5);
-        pieChart.setDragDecelerationFrictionCoef(0.95f);
-        pieChart.setHoleColor(getResources().getColor(R.color.prim0));
-        pieChart.setTransparentCircleRadius(60f);
-        ArrayList<PieEntry> yValues = new ArrayList<>();
-        yValues.add(new PieEntry(entre,"Entretenimiento"));
-        yValues.add(new PieEntry(comid,"Comida"));
-        yValues.add(new PieEntry(impue,"Impuestos"));
-        yValues.add(new PieEntry(otros,"Otros"));
-        yValues.add(new PieEntry(trans,"Transporte"));
-        PieDataSet dataSet = new PieDataSet(yValues,"");
-        dataSet.setSliceSpace(3f);
-        dataSet.setSelectionShift(5f);
-        dataSet.setColors(ColorTemplate.JOYFUL_COLORS);
-        PieData data= new PieData((dataSet));
-        data.setValueTextSize(10f);
-        data.setValueTextColor(getResources().getColor(R.color.prim0));
-        pieChart.setData(data);
     }
 }
 
