@@ -35,6 +35,7 @@
         <activity android:name="com.example.myapplication.Ingreso" />
         <activity android:name="com.example.myapplication.bolsillo" />
         <activity android:name="com.example.myapplication.analisispiechart" />
+        <activity android:name="com.example.myapplication.buscador" />
 
         <provider
             android:name="com.amitshekhar.DebugDBInitProvider"

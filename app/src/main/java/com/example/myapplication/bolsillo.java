@@ -31,6 +31,11 @@ public class bolsillo extends Activity {
     public void gotocrearbol (View view){
         setContentView(R.layout.crearbolsillo);
     }
+    public void gotobuscador(View view){
+        Intent bol = new Intent(this,buscador.class);
+        bol.putExtra("namexd",name);
+        startActivity(bol);
+    }
     public void agregar_bol (View view){
         final EditText b1 = (EditText) findViewById(R.id.cb1);
         final EditText b2 = (EditText) findViewById(R.id.cb2);
@@ -41,7 +46,7 @@ public class bolsillo extends Activity {
         Integer cb3 = Integer.parseInt(wea);
         long result= databaseHandler.addBol(cb1,cb2,cb3);
         //Toast.makeText(this,Long.toString(result),Toast.LENGTH_LONG).show();
-        String movcreacion= databaseHandler.addMov("Ingreso","Creacion del bolsillo "+cb1,cb3,"carga",cb1,1);
+        String movcreacion= databaseHandler.addMov("Ingreso","Creacion del bolsillo "+cb1,cb3,"Carga",cb1,1);
         finish();
     }
     public void mitablita2() {

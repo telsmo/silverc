@@ -57,8 +57,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:text="Descripcion"
             android:textColor="@color/prim3"
+            app:layout_constraintBottom_toTopOf="@+id/listview7"
             app:layout_constraintEnd_toStartOf="@+id/textView31"
             app:layout_constraintStart_toEndOf="@+id/textView28"
             app:layout_constraintTop_toBottomOf="@+id/textView29" />
@@ -166,11 +168,11 @@
             android:layout_width="325dp"
             android:layout_height="314dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/button8"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView27" />
+            app:layout_constraintStart_toStartOf="parent" />
         <!--<ScrollView
             android:id="@+id/scrollView2"
             android:layout_width="336dp"
@@ -289,19 +291,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
             android:text="Bolsillos individuales"
             android:textColor="@color/prim3"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+            app:layout_constraintTop_toBottomOf="@+id/button5" />
 
         <Button
             android:id="@+id/button8"
             android:layout_width="222dp"
             android:layout_height="67dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="36dp"
             android:background="@color/prim2"
             android:onClick="gotocrearbol"
             android:text="Agregar un bolsillo"
@@ -309,10 +309,23 @@
             android:textSize="19dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/listview7"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="@+id/listview7" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="177dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/prim2"
+            android:onClick="gotobuscador"
+            android:text="Ver movimientos"
+            android:textColor="@color/prim0"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/listview7"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/listview7"
-            app:layout_constraintTop_toBottomOf="@+id/listview7" />
-
-
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
 
     </android.support.constraint.ConstraintLayout>

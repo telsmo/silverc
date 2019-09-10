@@ -100,7 +100,6 @@ public class Cargar extends Activity {
                 ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(Cargar.this, R.layout.spinner_item, lista_cat);
                 spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
                 spinner.setAdapter(spinnerArrayAdapter);
-                set.a
                 prefs2.putStringSet("cat", set);
                 prefs2.apply();
             }

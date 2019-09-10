@@ -6,4 +6,20 @@
         <item>Transporte</item>
         <item>Impuestos</item>
     </string-array>
+    <string-array name="cabecera_tabla">
+        <item>Tipo</item>
+        <item>Nombre</item>
+        <item>Monto</item>
+        <item>Cantidad</item>
+        <item>Total</item>
+        <item>Fecha</item>
+        <item>Bolsillo</item>
+        <item>Categoria</item>
+    </string-array>
+    <string-array name="opciones">
+        <item>mov</item>
+        <item>nombre_mov</item>
+        <item>categoria</item>
+        <item>bolsillo</item>
+    </string-array>
 </resources>

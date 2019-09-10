@@ -175,6 +175,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return total;
     }
+    public Cursor getBuscador(String values, String column){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor datos= db.rawQuery("SELECT * FROM "+TABLE_MOV+" WHERE "+column+" = ?", new String[] {values});
+        return datos;
+    }
     public void updateBol(String bol, Integer cant){
 
         SQLiteDatabase db = this.getWritableDatabase();

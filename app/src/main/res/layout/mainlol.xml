@@ -99,7 +99,7 @@
             android:background="@color/prim0"
             android:gravity="right"
             android:onClick="gotobolsillo"
-            android:text="Ver más..."
+            android:text="Ver bolsillos"
             android:textAllCaps="false"
             android:textColor="@color/prim2"
             android:textSize="19dp"
