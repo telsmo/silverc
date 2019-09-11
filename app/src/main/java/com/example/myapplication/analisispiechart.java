@@ -1,12 +1,12 @@
 package com.example.myapplication;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.PieChart;
@@ -27,9 +27,11 @@ public class analisispiechart extends Activity {
         setContentView(R.layout.analisispiechart);
         codigo();
     }
+    /*
     public void actualizar(View view){
         codigo();
     }
+    */
     private void codigo(){
         Bundle extras = getIntent().getExtras();
         String name = extras.getString("namexd");
@@ -80,7 +82,9 @@ public class analisispiechart extends Activity {
         ArrayList<PieEntry> yValues = new ArrayList<>();
         for (int i = 0; i < size; i++)
         {
-            yValues.add(new PieEntry(catnum.get(i),cates.get(i)));
+            if(catnum.get(i)>5){
+                yValues.add(new PieEntry(catnum.get(i),""));
+            }
         }
         /*
         yValues.add(new PieEntry(entre,"Entretenimiento"));
@@ -98,9 +102,20 @@ public class analisispiechart extends Activity {
         data.setValueTextSize(10f);
         data.setValueTextColor(getResources().getColor(R.color.prim0));
 
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.llcate);;
+        //setContentView(linearLayout);
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
+        for( int i = 0; i < size; i++ )
+        {
+            TextView textView = new TextView(this);
+            textView.setText(cates.get(i)+" : $"+catnum.get(i));
+            textView.setTextColor(dataSet.getColor(i));
+            linearLayout.addView(textView);
+        }
 
         pieChart.setData(data);
 
     }
+
 }
 

@@ -46,32 +46,34 @@
         app:layout_constraintStart_toEndOf="@+id/textView35"
         app:layout_constraintTop_toTopOf="@+id/imageView9" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="177dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="32dp"
-        android:background="@color/prim2"
-        android:onClick="actualizar"
-        android:text="Actualizar"
-        android:textColor="@color/prim0"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/piechart"
         android:layout_width="358dp"
-        android:layout_height="532dp"
+        android:layout_height="400dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svcate"></com.github.mikephil.charting.charts.PieChart>
+
+    <ScrollView
+        android:id="@+id/svcate"
+        android:layout_width="290dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"></com.github.mikephil.charting.charts.PieChart>
+        app:layout_constraintTop_toBottomOf="@+id/imageView9">
+
+        <LinearLayout
+            android:id="@+id/llcate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
