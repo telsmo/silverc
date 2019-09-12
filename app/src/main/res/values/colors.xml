@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="prim0">#000e23</color>
-    <color name="prim1">#ffffcc</color>
-    <color name="prim2">#ffffff</color>
+    <color name="prim2">#ffffcc</color>
+    <color name="prim1">#ffffff</color>
     <color name="prim3">#00cc99</color>
-    <color name="colorPrimary">#000e23</color>
-    <color name="colorPrimaryDark">#ffffff</color>
-    <color name="colorAccent">#00cc99</color>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#000e23</color>
+    <color name="colorAccent">#00cc99</color>#000e23
 </resources>
