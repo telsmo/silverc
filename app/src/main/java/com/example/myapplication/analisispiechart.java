@@ -82,9 +82,9 @@ public class analisispiechart extends Activity {
         ArrayList<PieEntry> yValues = new ArrayList<>();
         for (int i = 0; i < size; i++)
         {
-            if(catnum.get(i)>5){
+
                 yValues.add(new PieEntry(catnum.get(i),""));
-            }
+
         }
         /*
         yValues.add(new PieEntry(entre,"Entretenimiento"));
