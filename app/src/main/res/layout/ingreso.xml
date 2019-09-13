@@ -189,7 +189,7 @@
         android:tint="@color/prim1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/getinpaid" />
+        android:src="@drawable/getinpaid" />
 
     <Spinner
         android:id="@+id/spinner3"

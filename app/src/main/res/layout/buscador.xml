@@ -8,6 +8,17 @@
     android:background="@color/prim0">
 
     <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_search"
+        android:tint="@color/prim1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/imageView12"
         android:layout_width="65dp"
         android:layout_height="65dp"
