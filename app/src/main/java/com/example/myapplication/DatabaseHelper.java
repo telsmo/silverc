@@ -178,7 +178,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     public Cursor getTableMov(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor datos = db.rawQuery("SELECT * FROM "+ TABLE_MOV,null);
+        Cursor datos = db.rawQuery("SELECT * FROM "+ TABLE_MOV+" ORDER BY "+KEY_ID+" DESC",null);
 
         return datos;
     }
@@ -206,7 +206,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     public Cursor getBuscador(String values, String column){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor datos= db.rawQuery("SELECT * FROM "+TABLE_MOV+" WHERE "+column+" = ?", new String[] {values});
+        Cursor datos= db.rawQuery("SELECT * FROM "+TABLE_MOV+" WHERE "+column+" like ?", new String[] {"%"+values+"%"});
         return datos;
     }
     public void updateBol(String bol, Integer cant){
