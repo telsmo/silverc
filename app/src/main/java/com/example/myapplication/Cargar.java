@@ -52,13 +52,13 @@ public class Cargar extends Activity {
         final EditText c2 = (EditText) findViewById(R.id.c2);
         final Spinner c3 = (Spinner) findViewById(R.id.spinner1);
         final EditText c4 = (EditText) findViewById(R.id.c4);
-        final EditText c5 = (EditText) findViewById(R.id.c5);
+        //final EditText c5 = (EditText) findViewById(R.id.c5);
         final Spinner c6 = (Spinner) findViewById(R.id.spinner);
         String c11 = c1.getText().toString();
         String c12 = c2.getText().toString();
         String c13 = c3.getSelectedItem().toString();
         String c14 = c4.getText().toString();
-        String c15 = c5.getText().toString();
+        //String c15 = c5.getText().toString();
         String c16 = c6.getSelectedItem().toString();
 
         String result= databaseHandler.addMov("Compra",c11,Integer.parseInt(c12),c13,c16,Integer.parseInt(c14));
@@ -78,7 +78,7 @@ public class Cargar extends Activity {
         final EditText input = new EditText(this);
         input.setInputType(InputType.TYPE_CLASS_TEXT );
         input.setPadding(20, 30, 20, 30);
-        input.setTextColor(Color.rgb(204,51,51));
+        input.setTextColor((getResources().getColor(R.color.prim2)));
         builder.setView(input);
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -102,8 +102,8 @@ public class Cargar extends Activity {
             }
         });
         AlertDialog bg = builder.show();
-        bg.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(0,0,51)));
-        bg.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.rgb(204,51,51));
-        bg.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.rgb(204,51,51));
+        bg.getWindow().setBackgroundDrawable(new ColorDrawable((getResources().getColor(R.color.prim0))));
+        bg.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor((getResources().getColor(R.color.prim2)));
+        bg.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor((getResources().getColor(R.color.prim2)));
     }
 }

@@ -369,7 +369,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/c2" />
 
-            <TextView
+          <!--  <TextView
                 android:id="@+id/textView8"
                 android:layout_width="223dp"
                 android:layout_height="21dp"
@@ -381,7 +381,7 @@
                 android:textSize="14dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/c4" />
+                app:layout_constraintTop_toBottomOf="@+id/c4" />-->
 
             <TextView
                 android:id="@+id/textView11"
@@ -395,7 +395,7 @@
                 android:textSize="14dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/c5" />
+                app:layout_constraintTop_toBottomOf="@+id/c4" />
 
             <EditText
                 android:id="@+id/c1"
@@ -452,7 +452,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-            <EditText
+          <!--  <EditText
                 android:id="@+id/c5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -466,7 +466,7 @@
                 android:textColor="@color/prim2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />-->
 
             <Spinner
                 android:id="@+id/spinner1"

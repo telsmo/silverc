@@ -33,6 +33,7 @@ public class analisispiechart extends Activity {
     }
     */
     private void codigo(){
+        Integer lol;
         Bundle extras = getIntent().getExtras();
         String name = extras.getString("namexd");
         databaseHandler = new DatabaseHelper(this, name);
@@ -40,7 +41,7 @@ public class analisispiechart extends Activity {
         List<String> cates = databaseHandler.loadCate();
         List<Integer> catnum = new ArrayList<Integer>();
         int size = cates.size();
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < size+1; i++)
         {
             catnum.add(0);
         }
@@ -55,7 +56,8 @@ public class analisispiechart extends Activity {
                 {
                     a = cates.get(i);
                     if (datos.getString(datos.getColumnIndex("categoria")).equals(a)){
-                        catnum.add(i, catnum.get(i)+((datos.getInt(datos.getColumnIndex("monto")))*(datos.getInt(datos.getColumnIndex("cantidad")))));
+                        lol=catnum.get(i);
+                        catnum.set(i, lol+((datos.getInt(datos.getColumnIndex("monto")))*(datos.getInt(datos.getColumnIndex("cantidad")))));
                     }
                 }
 /*
@@ -96,7 +98,7 @@ public class analisispiechart extends Activity {
         PieDataSet dataSet = new PieDataSet(yValues,"");
         dataSet.setSliceSpace(3f);
         dataSet.setSelectionShift(5f);
-        dataSet.setColors(ColorTemplate.JOYFUL_COLORS);
+        dataSet.setColors(new int[] { getResources().getColor(R.color.white), getResources().getColor(R.color.prim3),getResources().getColor(R.color.orange),getResources().getColor(R.color.red),getResources().getColor(R.color.prim2),getResources().getColor(R.color.pale_violet_red),getResources().getColor(R.color.light_sky_blue),getResources().getColor(R.color.light_pink),getResources().getColor(R.color.light_grey),getResources().getColor(R.color.pale_violet_red),getResources().getColor(R.color.fire_brick)});
         dataSet.setValueLineColor(getResources().getColor(R.color.prim1));
         PieData data= new PieData((dataSet));
         data.setValueTextSize(10f);
