@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/prim0"
+    android:background="@drawable/gradient"
     android:fitsSystemWindows="true"
     >
 
@@ -45,164 +45,164 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/prim0">
+        android:background="@color/black">
 
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/icono_del_proyecto"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
-            android:id="@+id/textView32"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="Silver"
-            android:textColor="@color/prim3"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-            app:layout_constraintStart_toEndOf="@+id/imageView8"
-            app:layout_constraintTop_toTopOf="@+id/imageView8" />
-
-        <TextView
-            android:id="@+id/textView33"
+        <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="C"
-            android:textColor="@color/prim2"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/textView32"
-            app:layout_constraintStart_toEndOf="@+id/textView32"
-            app:layout_constraintTop_toTopOf="@+id/textView32" />
-
-        <ImageView
-            android:id="@+id/imageView11"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:tint="@color/prim1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_bolsillo" />
-
-        <TextView
-            android:id="@+id/textView39"
-            android:layout_width="223dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Nombre del bolsillo"
-            android:textColor="@color/prim3"
-            android:textSize="14dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.529"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
-
-        <EditText
-            android:id="@+id/cb1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:hint="Ingrese el nombre del bolsillo"
-            android:inputType="textPersonName"
-            android:textColor="@color/prim2"
-            android:textColorHint="@color/prim2"
+            android:layout_height="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/gradient"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView39" />
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:tint="#E9E9E9"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icono_del_proyecto" />
 
-        <EditText
-            android:id="@+id/cb3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/icono_del_proyecto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:hint="Ingrese el monto inicial del bolsillo"
-            android:inputType="number"
-            android:textColor="@color/prim2"
-            android:textColorHint="@color/prim2"
-            app:layout_constraintEnd_toEndOf="@+id/cb1"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/cb1"
-            app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
-        <TextView
-            android:id="@+id/textView40"
-            android:layout_width="223dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Descripcion del bolsillo"
-            android:textColor="@color/prim3"
-            android:textSize="14dp"
-            app:layout_constraintEnd_toEndOf="@+id/textView39"
-            app:layout_constraintHorizontal_bias="0.505"
-            app:layout_constraintStart_toStartOf="@+id/textView39"
-            app:layout_constraintTop_toBottomOf="@+id/cb1" />
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_bolsillo"
+                android:tint="@color/prim1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView30"
-            android:layout_width="223dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Monto inicial"
-            android:textColor="@color/prim3"
-            android:textSize="14dp"
-            app:layout_constraintEnd_toEndOf="@+id/textView39"
-            app:layout_constraintHorizontal_bias="0.529"
-            app:layout_constraintStart_toStartOf="@+id/textView39"
-            app:layout_constraintTop_toBottomOf="@+id/cb2" />
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="223dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="Nombre del bolsillo"
+                android:textColor="@color/prim3"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.529"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
-        <EditText
-            android:id="@+id/cb2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:ems="10"
-            android:gravity="start|top"
-            android:hint="Ingrese descripcion"
-            android:inputType="textPersonName"
-            android:textColor="@color/prim2"
-            android:textColorHint="@color/prim2"
-            app:layout_constraintEnd_toEndOf="@+id/cb1"
-            app:layout_constraintStart_toStartOf="@+id/cb1"
-            app:layout_constraintTop_toBottomOf="@+id/textView40" />
+            <EditText
+                android:id="@+id/cb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        <Button
-            android:id="@+id/button8"
-            android:layout_width="222dp"
-            android:layout_height="67dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:background="@color/prim2"
-            android:onClick="agregar_bol"
-            android:text="Agregar un bolsillo"
-            android:textColor="@color/prim0"
-            android:textSize="19dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cb3" />
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:hint="Ingrese el nombre del bolsillo"
+                android:inputType="textPersonName"
+                android:textColor="@color/prim2"
+                android:textColorHint="@color/prim2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+            <EditText
+                android:id="@+id/cb3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:hint="Ingrese el monto inicial del bolsillo"
+                android:inputType="number"
+                android:textColor="@color/prim2"
+                android:textColorHint="@color/prim2"
+                app:layout_constraintEnd_toEndOf="@+id/cb1"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/cb1"
+                app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="223dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="Descripcion del bolsillo"
+                android:textColor="@color/prim3"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView39"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="@+id/textView39"
+                app:layout_constraintTop_toBottomOf="@+id/cb1" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="223dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="Monto inicial"
+                android:textColor="@color/prim3"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView39"
+                app:layout_constraintHorizontal_bias="0.529"
+                app:layout_constraintStart_toStartOf="@+id/textView39"
+                app:layout_constraintTop_toBottomOf="@+id/cb2" />
+
+            <EditText
+                android:id="@+id/cb2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Ingrese descripcion"
+                android:inputType="textPersonName"
+                android:textColor="@color/prim2"
+                android:textColorHint="@color/prim2"
+                app:layout_constraintEnd_toEndOf="@+id/cb1"
+                app:layout_constraintStart_toStartOf="@+id/cb1"
+                app:layout_constraintTop_toBottomOf="@+id/textView40" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="222dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/prim2"
+                android:onClick="agregar_bol"
+                android:text="Agregar un bolsillo"
+                android:textColor="@color/prim0"
+                android:textSize="19dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cb3" />
+
+
+        </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
 </android.support.v4.widget.DrawerLayout>

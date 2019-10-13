@@ -5,8 +5,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/prim0">
-
+    android:background="@color/black">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/gradient">
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:tint="#E9E9E9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icono_del_proyecto" />
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="65dp"
@@ -28,33 +49,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icono_del_proyecto" />
 
-    <TextView
-        android:id="@+id/textView37"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Silver"
-        android:textColor="@color/prim3"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
-        app:layout_constraintStart_toEndOf="@+id/imageView12"
-        app:layout_constraintTop_toTopOf="@+id/imageView12" />
-
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="54dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="C"
-        android:textColor="@color/prim2"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
-        app:layout_constraintStart_toEndOf="@+id/textView37"
-        app:layout_constraintTop_toTopOf="@+id/imageView12" />
-
-    <LinearLayout
+        <LinearLayout
         android:id="@+id/layoutTabla"
         android:layout_width="354dp"
         android:layout_height="486dp"
@@ -158,5 +153,9 @@
         android:textColor="@color/prim0"
         app:layout_constraintEnd_toEndOf="@+id/layoutTabla"
         app:layout_constraintTop_toBottomOf="@+id/layoutTabla" />
+
+
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

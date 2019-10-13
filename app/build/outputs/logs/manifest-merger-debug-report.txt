@@ -85,19 +85,19 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\T3500\.gra
 activity#com.example.myapplication.MainActivity
 ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:13:9-21:20
 	android:theme
-		ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:15:13-56
+		ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:15:13-45
 	android:name
 		ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:14:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:16:13-20:29
+ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:16:13-19:29
 action#android.intent.action.MAIN
 ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:17:17-69
 	android:name
 		ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:18:27-74
 activity#com.example.myapplication.Cargar
 ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:22:9-44
 	android:name
