@@ -72,7 +72,7 @@ public class Cargar extends Activity {
         textView.setText("Crear Categoría");
         textView.setPadding(20, 30, 20, 30);
         //textView.setTextSize(20F);
-        textView.setTextColor(Color.rgb(0,204,153));
+        textView.setTextColor((getResources().getColor(R.color.prim2)));
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCustomTitle(textView);
         final EditText input = new EditText(this);

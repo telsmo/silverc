@@ -2,7 +2,8 @@
 <resources>
     <color name="prim0">#ffffff</color>
     <color name="prim2">#000000</color>
-    <color name="prim1">#d9d9d9</color>
+    <color name="prim1">#000000</color>
+    <color name="prim4">#d9d9d9</color>
     <color name="prim3">#fe502d</color>
     <color name="colorPrimary">#ffffff</color>
     <color name="colorPrimaryDark">#000000</color>

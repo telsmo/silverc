@@ -26,7 +26,7 @@
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
 
         </FrameLayout>
@@ -61,16 +61,28 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <ImageView
                 android:id="@+id/imageView15"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_marginBottom="32dp"
+                android:src="@drawable/icono_del_proyecto"
                 android:tint="#E9E9E9"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/icono_del_proyecto" />
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/icono_del_proyecto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -120,42 +132,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/icono_del_proyecto"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Silver"
-                android:textColor="@color/prim3"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-                app:layout_constraintStart_toEndOf="@+id/imageView7"
-                app:layout_constraintTop_toTopOf="@+id/imageView7" />
-
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="C"
-                android:textColor="@color/prim2"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/textView23"
-                app:layout_constraintStart_toEndOf="@+id/textView23"
-                app:layout_constraintTop_toTopOf="@+id/textView23" />
-
             <TextView
                 android:id="@+id/textView25"
                 android:layout_width="261dp"
@@ -165,7 +141,7 @@
                 android:layout_marginEnd="8dp"
                 android:gravity="center"
                 android:text="$0"
-                android:textColor="@color/prim1"
+                android:textColor="@color/prim3"
                 android:textSize="36sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -176,20 +152,19 @@
                 android:id="@+id/textView26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
                 android:text="Dinero total entre los bolsillos"
                 android:textColor="@color/prim3"
+                app:layout_constraintEnd_toEndOf="@+id/textView25"
                 app:layout_constraintStart_toStartOf="@+id/textView25"
-                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView16" />
 
             <ListView
                 android:id="@+id/listview7"
-                android:layout_width="325dp"
-                android:layout_height="314dp"
-                android:layout_marginStart="8dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="32dp"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toTopOf="@+id/button8"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -313,11 +288,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
                 android:text="Bolsillos individuales"
                 android:textColor="@color/prim3"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button5" />
+                app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
             <Button
                 android:id="@+id/button8"
@@ -333,21 +309,6 @@
                 app:layout_constraintEnd_toEndOf="@+id/listview7"
                 app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="@+id/listview7" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="177dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/prim2"
-                android:onClick="gotobuscador"
-                android:text="Ver movimientos"
-                android:textColor="@color/prim0"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/listview7"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/listview7"
-                app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
 
         </android.support.constraint.ConstraintLayout>

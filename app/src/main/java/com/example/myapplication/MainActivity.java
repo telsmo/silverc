@@ -115,7 +115,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bol.putExtra("nombre",name);
         startActivity(bol);
     }
-
+    public void gotobuscador(View view){
+        Intent bol = new Intent(this,buscador.class);
+        String name = nom_us() + contra();
+        bol.putExtra("namexd",name);
+        startActivity(bol);
+    }
     public void gotoanalisis(View view){
         Intent bol = new Intent(this,analisispiechart.class);
         String name = nom_us() + contra();

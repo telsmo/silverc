@@ -29,7 +29,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icono_del_proyecto" />
+            android:src="@drawable/icono_del_proyecto" />
 
         <ImageView
             android:id="@+id/imageView14"

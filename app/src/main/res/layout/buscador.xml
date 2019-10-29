@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black">
+
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -13,147 +15,154 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
+        android:background="@drawable/gradient"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/gradient">
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:tint="#E9E9E9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icono_del_proyecto" />
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_search"
-        android:tint="@color/prim1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icono_del_proyecto" />
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="32dp"
+            android:tint="#E9E9E9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icono_del_proyecto" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/icono_del_proyecto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_search"
+            android:tint="@color/prim1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-        android:id="@+id/layoutTabla"
-        android:layout_width="354dp"
-        android:layout_height="486dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2">
-
-        <ScrollView
-            android:id="@+id/scrollvertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/layoutTabla"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="70dp"
             android:layout_weight="1"
-            android:scrollbars="vertical">
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner2">
 
-            <HorizontalScrollView
-                android:id="@+id/scrollhorizontal"
+            <ScrollView
+                android:id="@+id/scrollvertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:scrollbars="horizontal">
+                android:scrollbars="vertical">
 
-                <LinearLayout
+                <HorizontalScrollView
+                    android:id="@+id/scrollhorizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_weight="1"
+                    android:scrollbars="horizontal">
 
-                    <TableLayout
-                        android:id="@+id/tabla"
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"></TableLayout>
-                </LinearLayout>
-            </HorizontalScrollView>
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-        </ScrollView>
+                        <TableLayout
+                            android:id="@+id/tabla"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></TableLayout>
+                    </LinearLayout>
+                </HorizontalScrollView>
 
-    </LinearLayout>
+            </ScrollView>
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:background="@color/prim2"
-        android:onClick="buscar"
-        android:text="Buscar"
-        android:textColor="@color/prim0"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner2"
-        app:layout_constraintStart_toEndOf="@+id/spinner2"
-        app:layout_constraintTop_toTopOf="@+id/spinner2" />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="96dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Ingrese"
-        android:inputType="textPersonName"
-        android:textColor="@color/prim2"
-        android:textColorHint="@color/prim2"
-        app:layout_constraintStart_toStartOf="@+id/layoutTabla"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="@color/prim2"
+            android:onClick="buscar"
+            android:text="Buscar"
+            android:textColor="@color/prim0"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner2"
+            app:layout_constraintStart_toEndOf="@+id/spinner2"
+            app:layout_constraintTop_toTopOf="@+id/spinner2" />
 
-    <TextView
-        android:id="@+id/textView41"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="En "
-        android:textColor="@color/prim1"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="@+id/editText" />
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="96dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Ingrese"
+            android:inputType="textPersonName"
+            android:textColor="@color/prim2"
+            android:textColorHint="@color/prim2"
+            app:layout_constraintStart_toStartOf="@+id/layoutTabla"
+            app:layout_constraintTop_toBottomOf="@+id/imageView17" />
 
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="126dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="8dp"
-        android:entries="@array/opciones"
-        app:layout_constraintBottom_toBottomOf="@+id/editText"
-        app:layout_constraintStart_toEndOf="@+id/textView41"
-        app:layout_constraintTop_toTopOf="@+id/editText" />
+        <TextView
+            android:id="@+id/textView41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="En "
+            android:textColor="@color/prim1"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editText"
+            app:layout_constraintStart_toEndOf="@+id/editText"
+            app:layout_constraintTop_toTopOf="@+id/editText" />
 
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="154dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@color/prim2"
-        android:onClick="vertodo"
-        android:text="VER TODO"
-        android:textColor="@color/prim0"
-        app:layout_constraintEnd_toEndOf="@+id/layoutTabla"
-        app:layout_constraintTop_toBottomOf="@+id/layoutTabla" />
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="126dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:entries="@array/opciones"
+            app:layout_constraintBottom_toBottomOf="@+id/editText"
+            app:layout_constraintStart_toEndOf="@+id/textView41"
+            app:layout_constraintTop_toTopOf="@+id/editText" />
 
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="154dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/prim2"
+            android:onClick="vertodo"
+            android:text="VER TODO"
+            android:textColor="@color/prim0"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+            app:layout_constraintEnd_toEndOf="@+id/layoutTabla"
+            app:layout_constraintTop_toBottomOf="@+id/layoutTabla" />
 
 
     </android.support.constraint.ConstraintLayout>

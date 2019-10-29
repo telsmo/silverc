@@ -31,11 +31,7 @@ public class bolsillo extends Activity {
     public void gotocrearbol (View view){
         setContentView(R.layout.crearbolsillo);
     }
-    public void gotobuscador(View view){
-        Intent bol = new Intent(this,buscador.class);
-        bol.putExtra("namexd",name);
-        startActivity(bol);
-    }
+
     public void agregar_bol (View view){
         final EditText b1 = (EditText) findViewById(R.id.cb1);
         final EditText b2 = (EditText) findViewById(R.id.cb2);

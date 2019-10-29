@@ -49,7 +49,7 @@ public class Tabla {
             texto.setText(arraycabecera[i]);
             texto.setGravity(Gravity.CENTER);
             texto.setBackgroundColor(ContextCompat.getColor(actividad, R.color.prim3));
-            texto.setTextColor(ContextCompat.getColor(actividad,R.color.prim0));
+            texto.setTextColor(ContextCompat.getColor(actividad,R.color.prim1));
             texto.setLayoutParams(layoutCelda);
             texto.setTextSize(22);
             fila.addView(texto);
@@ -72,7 +72,7 @@ public class Tabla {
             TextView texto = new TextView(actividad);
             texto.setText(String.valueOf(elementos.get(i)));
             texto.setGravity(Gravity.CENTER /*| Gravity.LEFT*/);
-            texto.setTextColor(ContextCompat.getColor(actividad,R.color.prim1));
+            texto.setTextColor(ContextCompat.getColor(actividad,R.color.prim2));
             texto.setTextSize(18);
             texto.setBackgroundColor(ContextCompat.getColor(actividad, R.color.prim0));
             layoutCelda = new TableRow.LayoutParams(obtenerAnchoPixelesTexto(texto.getText().toString()), TableRow.LayoutParams.WRAP_CONTENT);

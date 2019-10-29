@@ -59,27 +59,28 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <ImageView
                 android:id="@+id/imageView15"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:src="@drawable/icono_del_proyecto"
                 android:tint="#E9E9E9"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/icono_del_proyecto" />
+                app:layout_constraintTop_toTopOf="parent" />
+
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/imageView4"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/icono_del_proyecto"
+                android:background="@drawable/icono_del_proyecto"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <ImageView
                 android:id="@+id/imageView11"
@@ -97,7 +98,6 @@
                 android:layout_width="223dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:text="Nombre del bolsillo"
                 android:textColor="@color/prim3"
@@ -105,7 +105,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.529"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
             <EditText
                 android:id="@+id/cb1"
