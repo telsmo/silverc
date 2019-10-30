@@ -1,13 +1,8 @@
 package com.example.myapplication;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.database.Cursor;
-import android.graphics.Paint;
-import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -15,13 +10,11 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TableLayout;
-import android.widget.TableRow;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import android.app.Activity;
-import android.widget.Toast;
 
 
 
@@ -53,7 +46,10 @@ public class buscador extends AppCompatActivity {
             Toast.makeText(this, "La tabla esta vacía", Toast.LENGTH_LONG).show();
         } else {
             int i = 0;
+            int x= datos.getColumnCount();
+            int y= datos.getCount();
             while (datos.moveToNext()) {
+                i=i+1;
                 ArrayList<String> elementos = new ArrayList<String>();
                 elementos.add(datos.getString(1));
                 elementos.add(datos.getString(2));
@@ -63,7 +59,7 @@ public class buscador extends AppCompatActivity {
                 elementos.add(datos.getString(3));
                 elementos.add(datos.getString(6));
                 elementos.add(datos.getString(5));
-                tabla.agregarFilaTabla(elementos);
+                tabla.agregarFilaTabla(elementos,x,y,i);
             }
         }
 
@@ -82,7 +78,11 @@ public class buscador extends AppCompatActivity {
 
             table.removeAllViews();
             tabla.agregarCabecera(R.array.cabecera_tabla);
+            int i = 0;
+            int x= datos.getColumnCount();
+            int y= datos.getCount();
             while (datos.moveToNext()) {
+                i=i+1;
                 ArrayList<String> elementos = new ArrayList<String>();
                 elementos.add(datos.getString(1));
                 elementos.add(datos.getString(2));
@@ -92,7 +92,7 @@ public class buscador extends AppCompatActivity {
                 elementos.add(datos.getString(3));
                 elementos.add(datos.getString(6));
                 elementos.add(datos.getString(5));
-                tabla.agregarFilaTabla(elementos);
+                tabla.agregarFilaTabla(elementos,x,y,i);
             }
         }
 
@@ -107,7 +107,10 @@ public class buscador extends AppCompatActivity {
             Toast.makeText(this, "La tabla esta vacía", Toast.LENGTH_LONG).show();
         } else {
             int i = 0;
+            int x= datos.getColumnCount();
+            int y= datos.getCount();
             while (datos.moveToNext()) {
+                i=i+1;
                 ArrayList<String> elementos = new ArrayList<String>();
                 elementos.add(datos.getString(1));
                 elementos.add(datos.getString(2));
@@ -117,7 +120,7 @@ public class buscador extends AppCompatActivity {
                 elementos.add(datos.getString(3));
                 elementos.add(datos.getString(6));
                 elementos.add(datos.getString(5));
-                tabla.agregarFilaTabla(elementos);
+                tabla.agregarFilaTabla(elementos,x,y,i);
             }
         }
     }

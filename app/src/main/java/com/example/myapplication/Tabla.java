@@ -1,21 +1,22 @@
 package com.example.myapplication;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
-import java.util.ArrayList;
-import android.app.Activity;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 public class Tabla {
@@ -60,25 +61,29 @@ public class Tabla {
 
         FILAS++;
     }
-    public void agregarFilaTabla(ArrayList<String> elementos)
+    public void agregarFilaTabla(ArrayList<String> elementos, int col,int fil,int actual)
     {
         TableRow.LayoutParams layoutCelda;
         TableRow.LayoutParams layoutFila = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
         TableRow fila = new TableRow(actividad);
         fila.setLayoutParams(layoutFila);
 
+        Button[] texto = new Button[col*fil];
+        int i2;
         for(int i = 0; i< elementos.size(); i++)
         {
-            TextView texto = new TextView(actividad);
-            texto.setText(String.valueOf(elementos.get(i)));
-            texto.setGravity(Gravity.CENTER /*| Gravity.LEFT*/);
-            texto.setTextColor(ContextCompat.getColor(actividad,R.color.prim2));
-            texto.setTextSize(18);
-            texto.setBackgroundColor(ContextCompat.getColor(actividad, R.color.prim0));
-            layoutCelda = new TableRow.LayoutParams(obtenerAnchoPixelesTexto(texto.getText().toString()), TableRow.LayoutParams.WRAP_CONTENT);
-            texto.setLayoutParams(layoutCelda);
+            i2=i*actual;
+            texto[i2] = new Button(actividad);
+            texto[i2].setText(String.valueOf(elementos.get(i)));
+            texto[i2].setGravity(Gravity.CENTER /*| Gravity.LEFT*/);
+            texto[i2].setTextColor(ContextCompat.getColor(actividad,R.color.prim2));
+            texto[i2].setTextSize(18);
+            texto[i2].setBackgroundColor(ContextCompat.getColor(actividad, R.color.prim0));
+            texto[i2].setOnClickListener(popupea2);
+            layoutCelda = new TableRow.LayoutParams(obtenerAnchoPixelesTexto(texto[i].getText().toString()), TableRow.LayoutParams.WRAP_CONTENT);
+            texto[i2].setLayoutParams(layoutCelda);
 
-            fila.addView(texto);
+            fila.addView(texto[i]);
         }
 
         tabla.addView(fila);
@@ -95,4 +100,44 @@ public class Tabla {
         p.getTextBounds(texto, 0, texto.length(), bounds);
         return bounds.width();
     }
+
+    View.OnClickListener popupea2 =  new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            show_popup(v,v.getId());
+        }
+    };
+
+    public void show_popup (View view, final int id){
+        TextView textView = new TextView(actividad);
+        textView.setText("Modificar: " + id);
+        textView.setPadding(20, 30, 20, 30);
+        //textView.setTextSize(20F);
+        //textView.setTextColor(getResources().getColor(R.color.white));
+        AlertDialog.Builder builder = new AlertDialog.Builder(actividad);
+        builder.setCustomTitle(textView);
+        final EditText input = new EditText(actividad);
+        input.setInputType(InputType.TYPE_CLASS_TEXT );
+        input.setPadding(20, 30, 20, 30);
+        //input.setTextColor((getResources().getColor(R.color.colorAccent)));
+        builder.setView(input);
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //si es positivo poner el codigo aqui xd
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog bg = builder.show();
+        //bg.getWindow().setBackgroundDrawable(new ColorDrawable((getResources().getColor(R.color.colorPrimaryDark))));
+        //bg.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor((getResources().getColor(R.color.colorAccent)));
+        //bg.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor((getResources().getColor(R.color.colorPrimary)));
+    }
+
 }
