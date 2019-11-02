@@ -267,6 +267,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(referencia[Integer.parseInt(caso)],dato);
         db.update(TABLE_MOV, cv, "id_mov="+id, null);
     }
+    public void deleteMov(String id, String dato, String caso){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        String[] referencia = {
+                MOV,
+                NOM,
+                MONTO,
+                CANT,
+                "Drug Addiction",
+                FECHA,
+                BOL,
+                CAT
+        };
+        db.execSQL("DELETE FROM "+TABLE_MOV+" WHERE "+KEY_ID+"="+id);
+    }
     /*public ArrayList<String> getAllStudentsList() {
         ArrayList<String> studentsArrayList = new ArrayList<String>();
         String name="";

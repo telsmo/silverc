@@ -73,7 +73,8 @@ public class Tabla {
         String aux;
         Button[] texto = new Button[col*fil];
         int i2;
-        for(int i = 0; i< elementos.size()-1; i++)
+        int i;
+        for(i = 0; i< elementos.size()-1; i++)
         {
             i2=i*actual;
             texto[i2] = new Button(actividad);
@@ -85,12 +86,18 @@ public class Tabla {
             texto[i2].setTextSize(18);
             texto[i2].setBackgroundColor(ContextCompat.getColor(actividad, R.color.prim0));
             texto[i2].setOnClickListener(popupea2);
-            layoutCelda = new TableRow.LayoutParams(obtenerAnchoPixelesTexto(texto[i].getText().toString()), TableRow.LayoutParams.WRAP_CONTENT);
+            layoutCelda = new TableRow.LayoutParams(obtenerAnchoPixelesTexto(texto[i2].getText().toString()), TableRow.LayoutParams.WRAP_CONTENT);
             texto[i2].setLayoutParams(layoutCelda);
 
-            fila.addView(texto[i]);
+            fila.addView(texto[i2]);
         }
-
+        Button eliminar = new Button(actividad);
+        eliminar.setTag(aux=elementos.get(1)+"&"+elementos.get(elementos.size()-1)+"&"+i);
+        eliminar.setBackgroundColor(ContextCompat.getColor(actividad, R.color.prim3));
+        eliminar.setText("X");
+        eliminar.setTextSize(18);
+        eliminar.setOnClickListener(popDel);
+        fila.addView(eliminar);
         tabla.addView(fila);
         filas.add(fila);
 
@@ -138,7 +145,7 @@ public class Tabla {
                 actividad.startActivity(intento);
             }
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
@@ -149,5 +156,41 @@ public class Tabla {
         //bg.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor((getResources().getColor(R.color.colorAccent)));
         //bg.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor((getResources().getColor(R.color.colorPrimary)));
     }
+    View.OnClickListener popDel =  new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            show_popup_del(v,v.getTag().toString());
+        }
+    };
+    public void show_popup_del (View view, String actual){
+        TextView textView = new TextView(actividad);
+        final String[] aux= actual.split("&");
+        //textView.setTextSize(20F);
+        //textView.setTextColor(getResources().getColor(R.color.white));
+        AlertDialog.Builder builder = new AlertDialog.Builder(actividad);
+        builder.setCustomTitle(textView);
+        final TextView input = new TextView(actividad);
+        input.setInputType(InputType.TYPE_CLASS_TEXT );
+        input.setText("Esta seguro que desea eliminar esta fila?");
+        input.setPadding(20, 30, 20, 30);
+        //input.setTextColor((getResources().getColor(R.color.colorAccent)));
+        builder.setView(input);
 
+        builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                databaseHandler.deleteMov(aux[1],"",aux[2]);
+                actividad.finish();
+                Intent intento = actividad.getIntent();
+                actividad.startActivity(intento);
+            }
+        });
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog bg = builder.show();
+    }
 }
