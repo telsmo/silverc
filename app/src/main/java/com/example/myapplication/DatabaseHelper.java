@@ -7,7 +7,6 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -252,7 +251,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return bolsillosArray;
 
     }
-
+    public void updateMov(String id, String dato, String caso){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        String[] referencia = {
+                MOV,
+                NOM,
+                MONTO,
+                CANT,
+                "Drug Addiction",
+                FECHA,
+                BOL,
+                CAT
+        };
+        cv.put(referencia[Integer.parseInt(caso)],dato);
+        db.update(TABLE_MOV, cv, "id_mov="+id, null);
+    }
     /*public ArrayList<String> getAllStudentsList() {
         ArrayList<String> studentsArrayList = new ArrayList<String>();
         String name="";

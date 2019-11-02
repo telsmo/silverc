@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -20,14 +21,16 @@ import java.util.ArrayList;
 
 
 public class Tabla {
+    private DatabaseHelper databaseHandler;
     private TableLayout tabla; // Layout donde se pintará la tabla
     private ArrayList<TableRow> filas; // Array de las filas de la tabla
     private Activity actividad;
     private Resources rs;
     private int FILAS, COLUMNAS; // Filas y columnas de nuestra tabla
 
-    public Tabla(Activity actividad, TableLayout tabla)
+    public Tabla(Activity actividad, TableLayout tabla, String name)
     {
+        databaseHandler = new DatabaseHelper(actividad, name);
         this.actividad = actividad;
         this.tabla = tabla;
         rs = this.actividad.getResources();
@@ -67,14 +70,16 @@ public class Tabla {
         TableRow.LayoutParams layoutFila = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
         TableRow fila = new TableRow(actividad);
         fila.setLayoutParams(layoutFila);
-
+        String aux;
         Button[] texto = new Button[col*fil];
         int i2;
-        for(int i = 0; i< elementos.size(); i++)
+        for(int i = 0; i< elementos.size()-1; i++)
         {
             i2=i*actual;
             texto[i2] = new Button(actividad);
             texto[i2].setText(String.valueOf(elementos.get(i)));
+            aux=elementos.get(i)+"&"+elementos.get(elementos.size()-1)+"&"+i;
+            texto[i2].setTag(aux);
             texto[i2].setGravity(Gravity.CENTER /*| Gravity.LEFT*/);
             texto[i2].setTextColor(ContextCompat.getColor(actividad,R.color.prim2));
             texto[i2].setTextSize(18);
@@ -104,13 +109,14 @@ public class Tabla {
     View.OnClickListener popupea2 =  new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            show_popup(v,v.getId());
+            show_popup(v,v.getTag().toString());
         }
     };
 
-    public void show_popup (View view, final int id){
+    public void show_popup (View view, String actual){
         TextView textView = new TextView(actividad);
-        textView.setText("Modificar: " + id);
+        final String[] aux= actual.split("&");
+        textView.setText("Modificar: ");
         textView.setPadding(20, 30, 20, 30);
         //textView.setTextSize(20F);
         //textView.setTextColor(getResources().getColor(R.color.white));
@@ -118,6 +124,7 @@ public class Tabla {
         builder.setCustomTitle(textView);
         final EditText input = new EditText(actividad);
         input.setInputType(InputType.TYPE_CLASS_TEXT );
+        input.setText(aux[0]);
         input.setPadding(20, 30, 20, 30);
         //input.setTextColor((getResources().getColor(R.color.colorAccent)));
         builder.setView(input);
@@ -125,7 +132,10 @@ public class Tabla {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //si es positivo poner el codigo aqui xd
+                databaseHandler.updateMov(aux[1],input.getText().toString(),aux[2]);
+                actividad.finish();
+                Intent intento = actividad.getIntent();
+                actividad.startActivity(intento);
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

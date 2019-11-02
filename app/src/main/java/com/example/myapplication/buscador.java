@@ -23,10 +23,11 @@ public class buscador extends AppCompatActivity {
     TableLayout table;
     List<String> lista;
     String[] str;
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();
-        String name = intent.getExtras().getString("namexd");
+        name = intent.getExtras().getString("namexd");
         databaseHandler = new DatabaseHelper(this, name);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.buscador);
@@ -39,7 +40,7 @@ public class buscador extends AppCompatActivity {
         spinner.setAdapter(spinnerArrayAdapter);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Tabla tabla = new Tabla(this, (TableLayout) findViewById(R.id.tabla));
+        Tabla tabla = new Tabla(this, (TableLayout) findViewById(R.id.tabla), name);
         tabla.agregarCabecera(R.array.cabecera_tabla);
         Cursor datos = databaseHandler.getTableMov();
         if (datos.getCount() == 0) {
@@ -59,6 +60,7 @@ public class buscador extends AppCompatActivity {
                 elementos.add(datos.getString(3));
                 elementos.add(datos.getString(6));
                 elementos.add(datos.getString(5));
+                elementos.add(datos.getString(0));
                 tabla.agregarFilaTabla(elementos,x,y,i);
             }
         }
@@ -69,7 +71,7 @@ public class buscador extends AppCompatActivity {
         final Spinner c3 = (Spinner) findViewById(R.id.spinner2);
         String c13 = c3.getSelectedItem().toString();
         String c12 = c2.getText().toString();
-        Tabla tabla = new Tabla(this, (TableLayout) findViewById(R.id.tabla));
+        Tabla tabla = new Tabla(this, (TableLayout) findViewById(R.id.tabla), name);
         table = (TableLayout)findViewById(R.id.tabla);
         Cursor datos= databaseHandler.getBuscador(c12,c13);
         if (datos.getCount() == 0) {
@@ -92,6 +94,7 @@ public class buscador extends AppCompatActivity {
                 elementos.add(datos.getString(3));
                 elementos.add(datos.getString(6));
                 elementos.add(datos.getString(5));
+                elementos.add(datos.getString(0));
                 tabla.agregarFilaTabla(elementos,x,y,i);
             }
         }
@@ -100,7 +103,7 @@ public class buscador extends AppCompatActivity {
     public void vertodo (View view){
         table = (TableLayout)findViewById(R.id.tabla);
         table.removeAllViews();
-        Tabla tabla = new Tabla(this, (TableLayout) findViewById(R.id.tabla));
+        Tabla tabla = new Tabla(this, (TableLayout) findViewById(R.id.tabla), name);
         tabla.agregarCabecera(R.array.cabecera_tabla);
         Cursor datos = databaseHandler.getTableMov();
         if (datos.getCount() == 0) {
@@ -120,6 +123,7 @@ public class buscador extends AppCompatActivity {
                 elementos.add(datos.getString(3));
                 elementos.add(datos.getString(6));
                 elementos.add(datos.getString(5));
+                elementos.add(datos.getString(0));
                 tabla.agregarFilaTabla(elementos,x,y,i);
             }
         }
