@@ -26,15 +26,15 @@ import java.util.List;
 
 public class analisispiechart extends Activity {
     int amount=0;
-    String query="";
-    String query2="";
     Cursor datos;
     Cursor datos2;
     int[] c;
     ArrayList<Integer>colores= new ArrayList<Integer>();
     ArrayList<String>categoriaseleccionadas= new ArrayList<String>();
+    ArrayList<Integer>colorescategoriaseleccionadas= new ArrayList<Integer>();
     ArrayList<Integer>coriginales = new ArrayList<Integer>();
     List<String> cates;
+    List<String> cates2;
     private DatabaseHelper databaseHandler;
     PieChart pieChart;
     @Override
@@ -123,11 +123,10 @@ public class analisispiechart extends Activity {
         cates = databaseHandler.loadCate();
         colores.clear();
         categoriaseleccionadas.clear();
+        colorescategoriaseleccionadas.clear();
         for (int i = 0; i < c.length; i++)
             colores.add(new Integer(c[i]));
         codigo(datos,cates,colores);
-        query="";
-        query2="";
         amount=0;
     }
     public void setLista(Cursor datos, List<String> cates){
@@ -182,27 +181,53 @@ public class analisispiechart extends Activity {
             final String[] aux= actual.split("&");
             int remover= Integer.parseInt(aux[1]);
             String booleano="F";
+            int aux2;
             Integer bool= categoriaseleccionadas.indexOf(aux[0]);
             if (bool==-1){
-            if (amount==0){
-                colores.remove(remover);
-                datos2=databaseHandler.getTableMovPiechartSelection(query="categoria='"+aux[0]+"'");
-                query2="nombre_cate='"+aux[0]+"'";
-                amount=1;
-                cates = databaseHandler.loadCatePiechartSelection(query2);
-                codigo(datos2,cates,colores);
-            }else{
-                colores.remove(remover-amount);
+                categoriaseleccionadas.add(aux[0]);
+                colorescategoriaseleccionadas.add(coriginales.get(remover));
+                if (amount==0){
+                    colores.remove(remover);
+                }else{
+                    if ((remover-amount)<0){
+                        colores.remove(remover);
+                    }else{
+                    colores.remove(remover-amount);}
+                }
                 amount=amount+1;
-                datos2=databaseHandler.getTableMovPiechartSelection(query=query+" AND NOT categoria='"+aux[0]+"'");
-                query2=query2+" AND NOT nombre_cate='"+aux[0]+"'";
-                cates = databaseHandler.loadCatePiechartSelection(query2);
-                codigo(datos2,cates,colores);
+            }else{
+                amount=amount-1;
+                categoriaseleccionadas.remove(categoriaseleccionadas.indexOf(aux[0]));
+                colorescategoriaseleccionadas.remove(coriginales.indexOf(remover)+1);
+                colores.clear();
+                for (int i = 0; i < c.length; i++) {
+                    colores.add(new Integer(c[i]));
+                }
+                    for (int i=coriginales.size();i>0;i=i-1){
+                        for (int a=0;a<colorescategoriaseleccionadas.size();a++){
+                            if (coriginales.get(i-1)==colorescategoriaseleccionadas.get(a)){
+                                colores.remove(coriginales.indexOf(i)+1);
+
+                            }
+                        }
+                    }
             }
-            categoriaseleccionadas.add(aux[0]);
+            if (0<categoriaseleccionadas.size()){
+                datos2=databaseHandler.getTableMovPiechartSelection(categoriaseleccionadas);
+                cates2 = databaseHandler.loadCatePiechartSelection(categoriaseleccionadas);
+                codigo(datos2,cates2,colores);
+            }else{
+                datos = databaseHandler.getTableMov();
+                cates = databaseHandler.loadCate();
+                colores.clear();
+                amount=0;
+                categoriaseleccionadas.clear();
+                colorescategoriaseleccionadas.clear();
+                for (int i = 0; i < c.length; i++)
+                    colores.add(new Integer(c[i]));
+                codigo(datos,cates,colores);
             }
 
-        }
-    };
-}
+    }
+};}
 

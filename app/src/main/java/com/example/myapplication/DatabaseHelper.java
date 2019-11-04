@@ -181,15 +181,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return datos;
     }
-    public Cursor getTableMovPiechartSelection(String xd){
+    public Cursor getTableMovPiechartSelection(ArrayList<String> xd){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor datos = db.rawQuery("SELECT * FROM "+ TABLE_MOV+" WHERE NOT "+xd+" ORDER BY "+KEY_ID+" DESC",null);
+        String query="";
+        for (int i=0;i<xd.size();i++){
+            if (i==0){
+                query= "categoria='"+xd.get(i)+"'";
+            }else{
+                query= query+" AND NOT categoria='"+xd.get(i)+"'";
+            }
+        }
+
+        Cursor datos = db.rawQuery("SELECT * FROM "+ TABLE_MOV+" WHERE NOT "+query+" ORDER BY "+KEY_ID+" DESC",null);
 
         return datos;
     }
-    public List<String> loadCatePiechartSelection(String bruh){
+    public List<String> loadCatePiechartSelection(ArrayList<String> xd){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor datos = db.rawQuery("SELECT * FROM "+ Table_CATE +" WHERE NOT "+bruh,null);
+        String query="";
+        for (int i=0;i<xd.size();i++){
+            if (i==0){
+                query= "nombre_cate='"+xd.get(i)+"'";
+            }else{
+                query= query+" AND NOT nombre_cate='"+xd.get(i)+"'";
+            }
+        }
+        Cursor datos = db.rawQuery("SELECT * FROM "+ Table_CATE +" WHERE NOT "+query,null);
         List<String> array = new ArrayList<String>();
         while(datos.moveToNext()){
             String uname = datos.getString(datos.getColumnIndex(NOM_CATE));
