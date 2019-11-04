@@ -88,7 +88,7 @@
         </ScrollView>
 
 
-        <Button
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/button18"
             android:layout_width="206dp"
             android:layout_height="299dp"
@@ -97,21 +97,21 @@
             android:text="Button"
             app:layout_constraintBottom_toBottomOf="@+id/imageView15"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/piechart" />
+            app:layout_constraintTop_toBottomOf="@+id/piechart" >
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="209dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/button4"
-            android:onClick="verTodo"
-            android:text="Mostrar todo"
-            android:textColor="@color/prim0"
-            app:layout_constraintEnd_toEndOf="@+id/button18"
-            app:layout_constraintStart_toStartOf="@+id/button18"
-            app:layout_constraintTop_toTopOf="@+id/button18" />
-
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="209dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button4"
+                android:onClick="verTodo"
+                android:text="Mostrar todo"
+                android:textColor="@color/prim0"
+                app:layout_constraintEnd_toEndOf="@+id/button18"
+                app:layout_constraintStart_toStartOf="@+id/button18"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

@@ -32,6 +32,7 @@ public class analisispiechart extends Activity {
     Cursor datos2;
     int[] c;
     ArrayList<Integer>colores= new ArrayList<Integer>();
+    ArrayList<String>categoriaseleccionadas= new ArrayList<String>();
     ArrayList<Integer>coriginales = new ArrayList<Integer>();
     List<String> cates;
     private DatabaseHelper databaseHandler;
@@ -120,9 +121,8 @@ public class analisispiechart extends Activity {
     public void verTodo (View view){
         datos = databaseHandler.getTableMov();
         cates = databaseHandler.loadCate();
-        for (int i = 0; i < c.length; i++) {
-            colores.clear();
-        }
+        colores.clear();
+        categoriaseleccionadas.clear();
         for (int i = 0; i < c.length; i++)
             colores.add(new Integer(c[i]));
         codigo(datos,cates,colores);
@@ -181,19 +181,25 @@ public class analisispiechart extends Activity {
             String actual= v.getTag().toString();
             final String[] aux= actual.split("&");
             int remover= Integer.parseInt(aux[1]);
-            colores.remove(remover-amount);
+            String booleano="F";
+            Integer bool= categoriaseleccionadas.indexOf(aux[0]);
+            if (bool==-1){
             if (amount==0){
-            datos2=databaseHandler.getTableMovPiechartSelection(query="categoria='"+aux[0]+"'");
-            query2="nombre_cate='"+aux[0]+"'";
-            amount=1;
-            cates = databaseHandler.loadCatePiechartSelection(query2);
+                colores.remove(remover);
+                datos2=databaseHandler.getTableMovPiechartSelection(query="categoria='"+aux[0]+"'");
+                query2="nombre_cate='"+aux[0]+"'";
+                amount=1;
+                cates = databaseHandler.loadCatePiechartSelection(query2);
                 codigo(datos2,cates,colores);
             }else{
+                colores.remove(remover-amount);
                 amount=amount+1;
                 datos2=databaseHandler.getTableMovPiechartSelection(query=query+" AND NOT categoria='"+aux[0]+"'");
                 query2=query2+" AND NOT nombre_cate='"+aux[0]+"'";
                 cates = databaseHandler.loadCatePiechartSelection(query2);
                 codigo(datos2,cates,colores);
+            }
+            categoriaseleccionadas.add(aux[0]);
             }
 
         }
