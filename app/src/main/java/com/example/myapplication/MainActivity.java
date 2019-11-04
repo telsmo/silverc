@@ -190,6 +190,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
             ThreeColumn_ListAdapter adapter =  new ThreeColumn_ListAdapter(this,R.layout.columnas, la_lista);
             listView = (ListView) findViewById(R.id.listview);
+
             listView.setAdapter(adapter);
             TextView bruh = (TextView) findViewById(R.id.textView34);
             Integer result= databaseHandler.getSaldoTotal();

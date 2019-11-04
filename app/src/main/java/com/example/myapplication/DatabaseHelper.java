@@ -181,6 +181,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return datos;
     }
+    public Cursor getTableMovPiechartSelection(String xd){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor datos = db.rawQuery("SELECT * FROM "+ TABLE_MOV+" WHERE NOT "+xd+" ORDER BY "+KEY_ID+" DESC",null);
+
+        return datos;
+    }
+    public List<String> loadCatePiechartSelection(String bruh){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor datos = db.rawQuery("SELECT * FROM "+ Table_CATE +" WHERE NOT "+bruh,null);
+        List<String> array = new ArrayList<String>();
+        while(datos.moveToNext()){
+            String uname = datos.getString(datos.getColumnIndex(NOM_CATE));
+            array.add(uname);
+        }
+        return array;
+    }
+
     public Cursor getTableMovA(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor datos = db.rawQuery("SELECT monto,categoria,cantidad FROM "+ TABLE_MOV,null);
@@ -205,7 +222,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     public Cursor getBuscador(String values, String column){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor datos= db.rawQuery("SELECT * FROM "+TABLE_MOV+" WHERE "+column+" like ?", new String[] {"%"+values+"%"});
+        Cursor datos= db.rawQuery("SELECT * FROM "+TABLE_MOV+" WHERE "+column+" LIKE ? ORDER BY "+KEY_ID+" DESC", new String[] {"%"+values+"%"});
         return datos;
     }
     public void updateBol(String bol, Integer cant){

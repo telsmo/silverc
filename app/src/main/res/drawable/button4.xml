@@ -5,8 +5,7 @@
         android:centerColor="@color/prim3"
         android:endColor="@color/prim3"
         android:angle="180" />
-    <corners  android:bottomLeftRadius="10dp" />
-
+    <corners android:bottomLeftRadius="10dp" android:topLeftRadius="10dp"/>
     <stroke android:width="10px" android:color="@color/prim2" />
 
 </shape>

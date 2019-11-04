@@ -33,7 +33,7 @@ public class buscador extends AppCompatActivity {
         setContentView(R.layout.buscador);
         Spinner spinner = (Spinner) findViewById(R.id.spinner2);
         lista = new ArrayList<>();
-        str = new String[] {"mov", "nombre_mov", "categoria", "bolsillo"};
+        str = new String[] {"Tipo", "Nombre", "Categoria", "Bolsillo"};
         Collections.addAll(lista, str);
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, lista);
         spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
@@ -73,6 +73,16 @@ public class buscador extends AppCompatActivity {
         String c12 = c2.getText().toString();
         Tabla tabla = new Tabla(this, (TableLayout) findViewById(R.id.tabla), name);
         table = (TableLayout)findViewById(R.id.tabla);
+
+        if (c13=="Tipo"){
+            c13="mov";
+        }else if (c13=="Nombre"){
+            c13="nombre_mov";
+        }else if (c13=="Categoria"){
+            c13="categoria";
+        }else if(c13=="Bolsillo"){
+            c13="bolsillo";
+        }
         Cursor datos= databaseHandler.getBuscador(c12,c13);
         if (datos.getCount() == 0) {
             Toast.makeText(this, "La tabla esta vacía", Toast.LENGTH_LONG).show();

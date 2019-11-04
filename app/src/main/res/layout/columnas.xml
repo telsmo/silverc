@@ -6,7 +6,7 @@
     >
 
     <TextView
-        android:textStyle="bold"
+
         android:textSize="20sp"
         android:layout_weight="33"
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:textColor="@color/prim1"
         android:layout_gravity="center"/>
     <TextView
-        android:textStyle="bold"
+
         android:textSize="20sp"
         android:layout_weight="33"
         android:layout_width="match_parent"

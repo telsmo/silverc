@@ -49,16 +49,33 @@ public class Tabla {
         for(int i = 0; i < arraycabecera.length; i++)
         {
             TextView texto = new TextView(actividad);
-            layoutCelda = new TableRow.LayoutParams(obtenerAnchoPixelesTexto(arraycabecera[i]), TableRow.LayoutParams.WRAP_CONTENT);
-            texto.setText(arraycabecera[i]);
+            layoutCelda = new TableRow.LayoutParams((TableRow.LayoutParams.WRAP_CONTENT), TableRow.LayoutParams.WRAP_CONTENT);
+            if (i==3){
+                texto.setText(arraycabecera[i]+"        ");
+            }else{texto.setText(arraycabecera[i]);}
+
             texto.setGravity(Gravity.CENTER);
+            if (i==4 || i==2 || i==3){
+                texto.setGravity(Gravity.LEFT);
+                texto.setGravity(Gravity.CENTER_VERTICAL);
+            }else{
+                texto.setGravity(Gravity.CENTER);
+            }
             texto.setBackgroundColor(ContextCompat.getColor(actividad, R.color.prim3));
             texto.setTextColor(ContextCompat.getColor(actividad,R.color.prim1));
             texto.setLayoutParams(layoutCelda);
             texto.setTextSize(22);
             fila.addView(texto);
         }
+        TextView texto = new TextView(actividad);
+        layoutCelda = new TableRow.LayoutParams(100, TableRow.LayoutParams.WRAP_CONTENT);
 
+        texto.setGravity(Gravity.CENTER);
+        texto.setBackgroundColor(ContextCompat.getColor(actividad, R.color.prim3));
+        texto.setTextColor(ContextCompat.getColor(actividad,R.color.prim1));
+        texto.setLayoutParams(layoutCelda);
+        texto.setTextSize(22);
+        fila.addView(texto);
         tabla.addView(fila);
         filas.add(fila);
 
@@ -81,9 +98,16 @@ public class Tabla {
             texto[i2].setText(String.valueOf(elementos.get(i)));
             aux=elementos.get(i)+"&"+elementos.get(elementos.size()-1)+"&"+i;
             texto[i2].setTag(aux);
+
             texto[i2].setGravity(Gravity.CENTER /*| Gravity.LEFT*/);
+            if (i==4 || i==2 || i==3){
+                texto[i2].setGravity(Gravity.LEFT);
+                texto[i2].setGravity(Gravity.CENTER_VERTICAL);
+            }else{
+                texto[i2].setGravity(Gravity.CENTER);
+            }
             texto[i2].setTextColor(ContextCompat.getColor(actividad,R.color.prim2));
-            texto[i2].setTextSize(18);
+            texto[i2].setTextSize(15);
             texto[i2].setBackgroundColor(ContextCompat.getColor(actividad, R.color.prim0));
             texto[i2].setOnClickListener(popupea2);
             layoutCelda = new TableRow.LayoutParams(obtenerAnchoPixelesTexto(texto[i2].getText().toString()), TableRow.LayoutParams.WRAP_CONTENT);
@@ -93,9 +117,13 @@ public class Tabla {
         }
         Button eliminar = new Button(actividad);
         eliminar.setTag(aux=elementos.get(1)+"&"+elementos.get(elementos.size()-1)+"&"+i);
-        eliminar.setBackgroundColor(ContextCompat.getColor(actividad, R.color.prim3));
+        eliminar.setWidth(5);
+        eliminar.setHeight(5);
         eliminar.setText("X");
-        eliminar.setTextSize(18);
+        eliminar.setTextColor(ContextCompat.getColor(actividad,R.color.prim0));
+        eliminar.setBackgroundResource(R.drawable.ic_delete_black_24dp);
+        eliminar.setLayoutParams(new TableRow.LayoutParams(40,100));
+        eliminar.setTextSize(20);
         eliminar.setOnClickListener(popDel);
         fila.addView(eliminar);
         tabla.addView(fila);
