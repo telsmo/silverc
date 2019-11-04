@@ -196,12 +196,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (option=="a"){
             query2= query2+" (strftime('%Y',fecha))='"+(year)+"' ";
         }else if (option=="b"){
-            query2= query2+" (strftime('%m',fecha))='"+(month+1)+"' ";
+            if (month<10){
+                query2= query2+" (strftime('%m',fecha))='"+"0"+(month+1)+"' ";
+            }else{
+                query2= query2+" (strftime('%m',fecha))='"+(month+1)+"' ";
+            }
         }else if (option=="c"){
             query2= query2+" (strftime('%d',fecha))<='"+day+"' AND strftime('%d',fecha)>='"+(day-7)+"' ";
         }
         else if(option=="d"){
-            query2=query2+" (strftime('%d',fecha))='"+day+"' ";
+            if (day<10){
+                query2=query2+" (strftime('%d',fecha))='"+"0"+(day)+"' ";
+            }else{
+                query2=query2+" (strftime('%d',fecha))='"+(day)+"' ";
+            }
+
         }
         SQLiteDatabase db = this.getWritableDatabase();
         String query="";
