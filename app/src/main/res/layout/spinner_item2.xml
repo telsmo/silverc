@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textSize="18sp"
-    android:textColor="@color/prim2"
+    android:textColor="@color/prim0"
     android:layout_gravity="center"
     android:paddingTop="15sp"
     android:gravity="center_horizontal"
-
+    android:background="@drawable/button4"
     />

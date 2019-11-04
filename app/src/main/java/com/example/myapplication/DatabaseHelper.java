@@ -7,8 +7,10 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -181,24 +183,45 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return datos;
     }
-    public Cursor getTableMovPiechartSelection(ArrayList<String> xd){
+    public Cursor getTableMovPiechartSelection(ArrayList<String> xd,String option,String option2){
+        String query2;
+        Calendar calendar = Calendar.getInstance();
+        query2="";
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        int month = Calendar.getInstance().get(Calendar.MONTH);
+        int day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+        if (option2=="a"){
+            query2=" AND";
+        }
+        if (option=="a"){
+            query2= query2+" (strftime('%Y',fecha))='"+(year)+"' ";
+        }else if (option=="b"){
+            query2= query2+" (strftime('%m',fecha))='"+(month+1)+"' ";
+        }else if (option=="c"){
+            query2= query2+" (strftime('%d',fecha))<='"+day+"' AND strftime('%d',fecha)>='"+(day-7)+"' ";
+        }
+        else if(option=="d"){
+            query2=query2+" (strftime('%d',fecha))='"+day+"' ";
+        }
         SQLiteDatabase db = this.getWritableDatabase();
         String query="";
         for (int i=0;i<xd.size();i++){
             if (i==0){
-                query= "categoria='"+xd.get(i)+"'";
+                query= " NOT categoria='"+xd.get(i)+"'";
             }else{
                 query= query+" AND NOT categoria='"+xd.get(i)+"'";
             }
         }
 
-        Cursor datos = db.rawQuery("SELECT * FROM "+ TABLE_MOV+" WHERE NOT "+query+" ORDER BY "+KEY_ID+" DESC",null);
+        Cursor datos = db.rawQuery("SELECT * FROM "+ TABLE_MOV+" WHERE"+query+query2+" ORDER BY "+KEY_ID+" DESC",null);
 
         return datos;
     }
     public List<String> loadCatePiechartSelection(ArrayList<String> xd){
         SQLiteDatabase db = this.getWritableDatabase();
         String query="";
+        Calendar calendar = Calendar.getInstance();
+
         for (int i=0;i<xd.size();i++){
             if (i==0){
                 query= "nombre_cate='"+xd.get(i)+"'";

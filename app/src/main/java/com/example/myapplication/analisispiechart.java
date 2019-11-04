@@ -7,10 +7,13 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +25,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class analisispiechart extends Activity {
@@ -29,6 +33,8 @@ public class analisispiechart extends Activity {
     Cursor datos;
     Cursor datos2;
     int[] c;
+    List<String> lista;
+    String[] str;
     ArrayList<Integer>colores= new ArrayList<Integer>();
     ArrayList<String>categoriaseleccionadas= new ArrayList<String>();
     ArrayList<Integer>colorescategoriaseleccionadas= new ArrayList<Integer>();
@@ -55,7 +61,13 @@ public class analisispiechart extends Activity {
         datos = databaseHandler.getTableMov();
         cates = databaseHandler.loadCate();
         setLista(datos,cates);
-
+        Spinner spinner = (Spinner) findViewById(R.id.spinner5);
+        lista = new ArrayList<>();
+        str = new String[] {"Todo el tiempo", "Último mes", "Última semana", "Hoy"};
+        Collections.addAll(lista, str);
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item2, lista);
+        spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item3);
+        spinner.setAdapter(spinnerArrayAdapter);
 
     }
     /*
@@ -119,10 +131,21 @@ public class analisispiechart extends Activity {
         pieChart.invalidate();
     }
     public void verTodo (View view){
-        datos = databaseHandler.getTableMov();
+        final Spinner c3 = (Spinner) findViewById(R.id.spinner5);
+        String c13 = c3.getSelectedItem().toString();
+        if (c13=="Todo el tiempo"){
+            c13="a";
+        }else if(c13=="Último mes"){
+            c13="b";
+        }else if(c13=="Última semana"){
+            c13="c";
+        }else if(c13=="Hoy"){
+            c13="d";
+        }
+        categoriaseleccionadas.clear();
+        datos = databaseHandler.getTableMovPiechartSelection(categoriaseleccionadas,c13,"b");
         cates = databaseHandler.loadCate();
         colores.clear();
-        categoriaseleccionadas.clear();
         colorescategoriaseleccionadas.clear();
         for (int i = 0; i < c.length; i++)
             colores.add(new Integer(c[i]));
@@ -182,6 +205,17 @@ public class analisispiechart extends Activity {
             int remover= Integer.parseInt(aux[1]);
             String booleano="F";
             int aux2;
+            final Spinner c3 = (Spinner) findViewById(R.id.spinner5);
+            String c13 = c3.getSelectedItem().toString();
+            if (c13=="Todo el tiempo"){
+                c13="a";
+            }else if(c13=="Último mes"){
+                c13="b";
+            }else if(c13=="Última semana"){
+                c13="c";
+            }else if(c13=="Hoy"){
+                c13="d";
+            }
             Integer bool= categoriaseleccionadas.indexOf(aux[0]);
             if (bool==-1){
                 categoriaseleccionadas.add(aux[0]);
@@ -213,7 +247,7 @@ public class analisispiechart extends Activity {
                     }
             }
             if (0<categoriaseleccionadas.size()){
-                datos2=databaseHandler.getTableMovPiechartSelection(categoriaseleccionadas);
+                datos2=databaseHandler.getTableMovPiechartSelection(categoriaseleccionadas,c13,"a");
                 cates2 = databaseHandler.loadCatePiechartSelection(categoriaseleccionadas);
                 codigo(datos2,cates2,colores);
             }else{

@@ -110,8 +110,20 @@
                 android:text="Mostrar todo"
                 android:textColor="@color/prim0"
                 app:layout_constraintEnd_toEndOf="@+id/button18"
-                app:layout_constraintStart_toStartOf="@+id/button18"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinner5"
+                android:layout_width="206dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button4" />
         </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
+
 </android.support.constraint.ConstraintLayout>
