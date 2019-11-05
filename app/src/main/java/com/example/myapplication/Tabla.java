@@ -116,7 +116,7 @@ public class Tabla {
             fila.addView(texto[i2]);
         }
         Button eliminar = new Button(actividad);
-        eliminar.setTag(aux=elementos.get(1)+"&"+elementos.get(elementos.size()-1)+"&"+i);
+        eliminar.setTag(aux=elementos.get(1)+"&"+elementos.get(elementos.size()-1)+"&"+i+"&"+elementos.get(4)+"&"+elementos.get(0)+"&"+elementos.get(6));
         eliminar.setWidth(5);
         eliminar.setHeight(5);
         eliminar.setText("X");

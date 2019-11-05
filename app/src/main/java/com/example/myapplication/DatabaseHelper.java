@@ -332,6 +332,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
         cv.put(referencia[Integer.parseInt(caso)],dato);
         db.update(TABLE_MOV, cv, "id_mov="+id, null);
+
     }
     public void deleteMov(String id, String dato, String caso, String tipo, String bol2){
         //dato es el total
@@ -354,12 +355,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String lol = DatabaseUtils.dumpCursorToString(datos2);
         datos2.moveToFirst();
         String lol2= String.valueOf(datos2.getInt(datos2.getColumnIndex(MONTO2)));
-        Integer cant = Integer.parseInt(dato);
+        StringBuilder builder = new StringBuilder(dato); // removing first character
+        builder.deleteCharAt(0);
+        Integer cant = Integer.parseInt(builder.toString());
         Integer mont = Integer.parseInt(lol2);
         if (tipo.equals("Compra")) {
-            mont= mont-cant;
+            mont= mont+cant;
         }else{if (tipo.equals("Ingreso")){
-            mont=mont+cant;
+            mont=mont-cant;
         }}
         String montovich= String.valueOf(mont);
         Cursor bruh= db.rawQuery("UPDATE "+TABLE_BOL+" SET "+MONTO2+" ="+montovich+" WHERE "+BOLSILLOS+" =?",bolsillo2);
