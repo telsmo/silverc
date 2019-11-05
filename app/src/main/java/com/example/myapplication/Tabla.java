@@ -96,7 +96,7 @@ public class Tabla {
             i2=i*actual;
             texto[i2] = new Button(actividad);
             texto[i2].setText(String.valueOf(elementos.get(i)));
-            aux=elementos.get(i)+"&"+elementos.get(elementos.size()-1)+"&"+i;
+            aux=elementos.get(i)+"&"+elementos.get(elementos.size()-1)+"&"+i+"&"+elementos.get(4)+"&"+elementos.get(0)+"&"+elementos.get(6);
             texto[i2].setTag(aux);
 
             texto[i2].setGravity(Gravity.CENTER /*| Gravity.LEFT*/);
@@ -207,7 +207,7 @@ public class Tabla {
         builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                databaseHandler.deleteMov(aux[1],"",aux[2]);
+                databaseHandler.deleteMov(aux[1],aux[3],aux[2],aux[4],aux[5]);
                 actividad.finish();
                 Intent intento = actividad.getIntent();
                 actividad.startActivity(intento);

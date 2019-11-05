@@ -333,7 +333,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(referencia[Integer.parseInt(caso)],dato);
         db.update(TABLE_MOV, cv, "id_mov="+id, null);
     }
-    public void deleteMov(String id, String dato, String caso){
+    public void deleteMov(String id, String dato, String caso, String tipo, String bol2){
+        //dato es el total
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         String[] referencia = {
@@ -347,6 +348,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 CAT
         };
         db.execSQL("DELETE FROM "+TABLE_MOV+" WHERE "+KEY_ID+"="+id);
+
+        String[] bolsillo2= new String[]{bol2};
+        Cursor datos2 = db.rawQuery("SELECT * FROM "+ TABLE_BOL +" WHERE "+ BOLSILLOS +" = ?",bolsillo2);
+        String lol = DatabaseUtils.dumpCursorToString(datos2);
+        datos2.moveToFirst();
+        String lol2= String.valueOf(datos2.getInt(datos2.getColumnIndex(MONTO2)));
+        Integer cant = Integer.parseInt(dato);
+        Integer mont = Integer.parseInt(lol2);
+        if (tipo.equals("Compra")) {
+            mont= mont-cant;
+        }else{if (tipo.equals("Ingreso")){
+            mont=mont+cant;
+        }}
+        String montovich= String.valueOf(mont);
+        Cursor bruh= db.rawQuery("UPDATE "+TABLE_BOL+" SET "+MONTO2+" ="+montovich+" WHERE "+BOLSILLOS+" =?",bolsillo2);
+        bruh.moveToFirst();
+        bruh.close();
     }
     /*public ArrayList<String> getAllStudentsList() {
         ArrayList<String> studentsArrayList = new ArrayList<String>();
