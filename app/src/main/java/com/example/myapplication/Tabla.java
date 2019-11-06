@@ -97,7 +97,6 @@ public class Tabla {
             texto[i2] = new Button(actividad);
             texto[i2].setText(String.valueOf(elementos.get(i)));
             aux=elementos.get(i)+"&"+elementos.get(elementos.size()-1)+"&"+i+"&"+elementos.get(4)+"&"+elementos.get(0)+"&"+elementos.get(6);
-            texto[i2].setTag(aux);
 
             texto[i2].setGravity(Gravity.CENTER /*| Gravity.LEFT*/);
             if (i==4 || i==2 || i==3){
@@ -106,6 +105,15 @@ public class Tabla {
             }else{
                 texto[i2].setGravity(Gravity.CENTER);
             }
+            if (i==0 || i==4 || i==5){
+                texto[i2].setEnabled(false);
+            }
+            if (i==2 || i==4){
+                aux=aux+"&si";
+            }else{
+                aux=aux+"&no";
+            }
+            texto[i2].setTag(aux);
             texto[i2].setTextColor(ContextCompat.getColor(actividad,R.color.prim2));
             texto[i2].setTextSize(15);
             texto[i2].setBackgroundColor(ContextCompat.getColor(actividad, R.color.prim0));
@@ -159,7 +167,13 @@ public class Tabla {
         builder.setCustomTitle(textView);
         final EditText input = new EditText(actividad);
         input.setInputType(InputType.TYPE_CLASS_TEXT );
-        input.setText(aux[0]);
+        if(aux[6].equals("si")){
+            StringBuilder precios = new StringBuilder(aux[0]); // removing first character
+            precios.deleteCharAt(0);
+            input.setText(precios);
+        }else{
+            input.setText(aux[0]);
+        }
         input.setPadding(20, 30, 20, 30);
         //input.setTextColor((getResources().getColor(R.color.colorAccent)));
         builder.setView(input);
@@ -167,7 +181,7 @@ public class Tabla {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                databaseHandler.updateMov(aux[1],input.getText().toString(),aux[2]);
+                databaseHandler.updateMov(aux[1],input.getText().toString(),aux[2],aux[4],aux[5]);
                 actividad.finish();
                 Intent intento = actividad.getIntent();
                 actividad.startActivity(intento);

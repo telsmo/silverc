@@ -317,7 +317,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return bolsillosArray;
 
     }
-    public void updateMov(String id, String dato, String caso){
+    public void updateMov(String id, String dato, String caso, String tipo, String bol2){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         String[] referencia = {
@@ -331,8 +331,55 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 CAT
         };
         cv.put(referencia[Integer.parseInt(caso)],dato);
-        db.update(TABLE_MOV, cv, "id_mov="+id, null);
+        if(caso.equals("2")){
+            //monto
+            String[] id2= new String[]{id};
+            Cursor datos2 = db.rawQuery("SELECT * FROM "+ TABLE_MOV +" WHERE "+ KEY_ID +" = ?",id2);
+            String lol = DatabaseUtils.dumpCursorToString(datos2);
+            datos2.moveToFirst();
+            String monto1= String.valueOf(datos2.getInt(datos2.getColumnIndex(MONTO)));
+            String cant1= String.valueOf(datos2.getInt(datos2.getColumnIndex(CANT)));
+            double mviejo=Double.parseDouble(monto1)*Double.parseDouble(cant1);
+            double mnuevo=Double.parseDouble(dato)*Double.parseDouble(cant1);
+            mnuevo = mnuevo - mviejo;
+            String[] bolsilloso= new String[]{bol2};
+            Cursor bolviejo = db.rawQuery("SELECT * FROM "+ TABLE_BOL +" WHERE "+ BOLSILLOS +" = ?",bolsilloso);
+            String lol3 = DatabaseUtils.dumpCursorToString(bolviejo);
+            bolviejo.moveToFirst();
+            String lol2= String.valueOf(bolviejo.getInt(bolviejo.getColumnIndex(MONTO2)));
+            double mont = Integer.parseInt(lol2);
+            mont=mont+mnuevo;
+            String montovich= String.valueOf(mont);
+            db.execSQL("UPDATE "+TABLE_BOL+" SET "+MONTO2+" ="+montovich+" WHERE "+BOLSILLOS+" =?",bolsilloso);
+        }else{
+            if(caso.equals("3")){
+                //cantidad
+                String[] id2= new String[]{id};
+                Cursor datos2 = db.rawQuery("SELECT * FROM "+ TABLE_MOV +" WHERE "+ KEY_ID +" = ?",id2);
+                String lol = DatabaseUtils.dumpCursorToString(datos2);
+                datos2.moveToFirst();
+                String monto1= String.valueOf(datos2.getInt(datos2.getColumnIndex(CANT)));
+                String cant1= String.valueOf(datos2.getInt(datos2.getColumnIndex(MONTO)));
+                double mviejo=Double.parseDouble(monto1)*Double.parseDouble(cant1);
+                double mnuevo=Double.parseDouble(dato)*Double.parseDouble(cant1);
+                mnuevo = mnuevo - mviejo;
+                String[] bolsilloso= new String[]{bol2};
+                Cursor bolviejo = db.rawQuery("SELECT * FROM "+ TABLE_BOL +" WHERE "+ BOLSILLOS +" = ?",bolsilloso);
+                String lol3 = DatabaseUtils.dumpCursorToString(bolviejo);
+                bolviejo.moveToFirst();
+                String lol2= String.valueOf(bolviejo.getInt(bolviejo.getColumnIndex(MONTO2)));
+                double mont = Integer.parseInt(lol2);
+                mont=mont+mnuevo;
+                String montovich= String.valueOf(mont);
+                db.execSQL("UPDATE "+TABLE_BOL+" SET "+MONTO2+" ="+montovich+" WHERE "+BOLSILLOS+" =?",bolsilloso);
 
+            }else{
+
+            }
+        }
+//      ----------------------------
+//      ----------------------------
+        db.update(TABLE_MOV, cv, "id_mov="+id, null);
     }
     public void deleteMov(String id, String dato, String caso, String tipo, String bol2){
         //dato es el total
@@ -355,9 +402,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String lol = DatabaseUtils.dumpCursorToString(datos2);
         datos2.moveToFirst();
         String lol2= String.valueOf(datos2.getInt(datos2.getColumnIndex(MONTO2)));
-        StringBuilder builder = new StringBuilder(dato); // removing first character
-        builder.deleteCharAt(0);
-        Integer cant = Integer.parseInt(builder.toString());
+        Integer cant = Integer.parseInt(dato);
         Integer mont = Integer.parseInt(lol2);
         if (tipo.equals("Compra")) {
             mont= mont+cant;
