@@ -193,6 +193,8 @@ public class analisispiechart extends Activity {
             TextView jaja= new TextView(this);
             jaja.setLayoutParams(new LinearLayout.LayoutParams(300, 10));
             linearLayout.addView(jaja);
+            eliminar.setBackgroundColor(00000000);
+            //eliminar.setAlpha(00);
             linearLayout.addView(eliminar);
 
         }
