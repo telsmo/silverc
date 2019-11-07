@@ -30,6 +30,7 @@ public class bolsillo extends Activity {
 
     public void gotocrearbol (View view){
         setContentView(R.layout.crearbolsillo);
+        overridePendingTransition(R.transition.mina,R.transition.anim);
     }
 
     public void agregar_bol (View view){

@@ -24,6 +24,7 @@
         <activity android:name=".bolsillo" />
         <activity android:name=".analisispiechart" />
         <activity android:name=".buscador" />
+        <activity android:name=".buscador2" />
     </application>
 
 </manifest>

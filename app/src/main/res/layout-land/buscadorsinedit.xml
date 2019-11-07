@@ -144,7 +144,6 @@
             android:layout_width="126dp"
             android:layout_height="44dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="14dp"
             android:entries="@array/opciones"
             app:layout_constraintBottom_toBottomOf="@+id/editText"
             app:layout_constraintStart_toEndOf="@+id/textView41"

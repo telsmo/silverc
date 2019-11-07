@@ -26,6 +26,7 @@ public class buscador extends AppCompatActivity {
     String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Toast.makeText(this, "Verificación correcta, ahora puede editar sus datos.", Toast.LENGTH_LONG).show();
         Intent intent = getIntent();
         name = intent.getExtras().getString("namexd");
         databaseHandler = new DatabaseHelper(this, name);

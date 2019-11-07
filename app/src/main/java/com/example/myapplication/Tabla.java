@@ -68,7 +68,7 @@ public class Tabla {
             fila.addView(texto);
         }
         TextView texto = new TextView(actividad);
-        layoutCelda = new TableRow.LayoutParams(100, TableRow.LayoutParams.WRAP_CONTENT);
+        layoutCelda = new TableRow.LayoutParams(80, TableRow.LayoutParams.WRAP_CONTENT);
 
         texto.setGravity(Gravity.CENTER);
         texto.setBackgroundColor(ContextCompat.getColor(actividad, R.color.prim3));
@@ -130,7 +130,7 @@ public class Tabla {
         eliminar.setText("X");
         eliminar.setTextColor(ContextCompat.getColor(actividad,R.color.prim0));
         eliminar.setBackgroundResource(R.drawable.ic_delete_black_24dp);
-        eliminar.setLayoutParams(new TableRow.LayoutParams(40,100));
+        eliminar.setLayoutParams(new TableRow.LayoutParams(40,80));
         eliminar.setTextSize(20);
         eliminar.setOnClickListener(popDel);
         fila.addView(eliminar);

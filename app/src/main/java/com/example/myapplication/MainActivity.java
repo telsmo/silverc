@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getNameScreenIntent.putExtras(extras);
         //startActivity usa el intent que declaramos antes para empezar .Cargar
         startActivity(getNameScreenIntent);
+        overridePendingTransition(R.transition.mina,R.transition.anim);
 
     }
     public void gotoingreso (View view){
@@ -104,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //acá un ejemplo pasando sólo un parametro, entonces sólo se pone putExtra, (1)
         getNameScreenIntent.putExtra("namexd",name);
         startActivity(getNameScreenIntent);
+        overridePendingTransition(R.transition.mina,R.transition.anim);
 
     }
 
@@ -114,18 +116,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String name = nom_us() + contra();
         bol.putExtra("nombre",name);
         startActivity(bol);
+        overridePendingTransition(R.transition.mina,R.transition.anim);
     }
     public void gotobuscador(View view){
-        Intent bol = new Intent(this,buscador.class);
+        Intent bol = new Intent(this,buscador2.class);
         String name = nom_us() + contra();
         bol.putExtra("namexd",name);
         startActivity(bol);
+        overridePendingTransition(R.transition.mina,R.transition.anim);
     }
     public void gotoanalisis(View view){
         Intent bol = new Intent(this,analisispiechart.class);
         String name = nom_us() + contra();
         bol.putExtra("namexd",name);
         startActivity(bol);
+        overridePendingTransition(R.transition.mina,R.transition.anim);
     }
     public void gotomainlol (View view){
 
