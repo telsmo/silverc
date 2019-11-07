@@ -170,7 +170,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(BOLSILLOS, nom);
         values.put(DESCRIPCION,desc);
-        cant=cant-cant;
         values.put(MONTO2, cant);
         // insert row in students table
         long insert = db.insert(TABLE_BOL, null, values);

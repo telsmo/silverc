@@ -40,6 +40,7 @@ public class bolsillo extends Activity {
         String cb1 = b1.getText().toString();
         String cb2 = b2.getText().toString();
         String wea =b3.getText().toString();
+        int cb3;
         if (cb1.equals("") || (wea.equals(""))) {
             Toast.makeText(this, "Hay un dato incompleto.", Toast.LENGTH_LONG).show();
             b1.setHintTextColor(getResources().getColor(R.color.red));
@@ -47,12 +48,12 @@ public class bolsillo extends Activity {
             b3.setHintTextColor(getResources().getColor(R.color.red));
             b3.setHint("Complete sus datos");
         }else{
+
             if (cb2.equals("")) {
                 cb2 = "Sin descripción";
                 Toast.makeText(this, "Se autorellenó la descripción.", Toast.LENGTH_LONG).show();
             }
-
-        Integer cb3 = Integer.parseInt(wea);
+            cb3 = Integer.parseInt(wea);
         long result= databaseHandler.addBol(cb1,cb2,cb3);
         //Toast.makeText(this,Long.toString(result),Toast.LENGTH_LONG).show();
         String movcreacion= databaseHandler.addMov(" Ingreso ","Creacion del bolsillo "+cb1,cb3,"Carga",cb1,1);

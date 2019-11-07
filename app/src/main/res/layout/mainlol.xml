@@ -95,7 +95,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/icono_del_proyecto"
-                android:onClick="gotomainlol"
+                android:onClick="actualizar"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -162,24 +162,6 @@
 
             </android.support.constraint.ConstraintLayout>
 
-            <Button
-                android:id="@+id/button76"
-                android:layout_width="114dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:background="@color/prim3"
-                android:gravity="center"
-                android:onClick="actualizar"
-                android:text="Actualizar"
-                android:textAllCaps="false"
-                android:textColor="@color/prim0"
-                android:textSize="19dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView12"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView12"
-                app:layout_constraintTop_toTopOf="@+id/textView12" />
-
             <ListView
                 android:id="@+id/listview"
                 style="textsty"
@@ -198,8 +180,7 @@
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:text="Ultimos movimientos:"
                 android:textColor="@color/prim3"
                 android:textSize="18dp"
@@ -221,7 +202,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
                 android:text="Nombre"
                 android:textColor="@color/prim3"
