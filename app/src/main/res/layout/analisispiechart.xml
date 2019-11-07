@@ -58,25 +58,27 @@
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/piechart"
             android:layout_width="0dp"
-            android:layout_height="300dp"
+            android:layout_height="370dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9"></com.github.mikephil.charting.charts.PieChart>
+            app:layout_constraintTop_toTopOf="@+id/imageView15"></com.github.mikephil.charting.charts.PieChart>
 
         <ScrollView
             android:id="@+id/svcate"
-            android:layout_width="185dp"
-            android:layout_height="283dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView15"
             app:layout_constraintEnd_toStartOf="@+id/button18"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView13">
 
             <LinearLayout
                 android:id="@+id/llcate"
@@ -89,13 +91,13 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/button18"
             android:layout_width="206dp"
-            android:layout_height="299dp"
+            android:layout_height="0dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/bg1"
             android:text="Button"
             app:layout_constraintBottom_toBottomOf="@+id/imageView15"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/piechart" >
+            app:layout_constraintTop_toBottomOf="@+id/piechart">
 
             <Button
                 android:id="@+id/button4"
@@ -138,7 +140,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:text="Toque una categoria:"
             android:textColor="@color/black"
@@ -148,6 +150,7 @@
             app:layout_constraintStart_toStartOf="@+id/imageView15"
             app:layout_constraintTop_toBottomOf="@+id/piechart"
             app:layout_constraintTop_toTopOf="@+id/button18" />
+
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

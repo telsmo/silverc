@@ -110,7 +110,9 @@ public class analisispiechart extends Activity {
         pieChart.setExtraOffsets(5,10,5,5);
         pieChart.setDragDecelerationFrictionCoef(0.95f);
         pieChart.setHoleColor(00000000);
-        pieChart.setTransparentCircleRadius(60f);
+        pieChart.setHoleRadius(40f);
+        pieChart.setTransparentCircleRadius(50f);
+        pieChart.setTransparentCircleAlpha(100);
         pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, Highlight h) {
