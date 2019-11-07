@@ -20,7 +20,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class Tabla {
+public class Tabla2 {
     private DatabaseHelper databaseHandler;
     private TableLayout tabla; // Layout donde se pintará la tabla
     private ArrayList<TableRow> filas; // Array de las filas de la tabla
@@ -28,7 +28,7 @@ public class Tabla {
     private Resources rs;
     private int FILAS, COLUMNAS; // Filas y columnas de nuestra tabla
 
-    public Tabla(Activity actividad, TableLayout tabla, String name)
+    public Tabla2(Activity actividad, TableLayout tabla, String name)
     {
         databaseHandler = new DatabaseHelper(actividad, name);
         this.actividad = actividad;
@@ -56,7 +56,7 @@ public class Tabla {
 
             texto.setGravity(Gravity.CENTER);
             if (i==4 || i==2 || i==3){
-                texto.setGravity(Gravity.RIGHT);
+                texto.setGravity(Gravity.LEFT);
                 texto.setGravity(Gravity.CENTER_VERTICAL);
             }else{
                 texto.setGravity(Gravity.CENTER);
