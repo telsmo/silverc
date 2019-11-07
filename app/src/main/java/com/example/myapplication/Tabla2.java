@@ -45,10 +45,20 @@ public class Tabla2 {
 
         for(int i = 0; i < arraycabecera.length; i++)
         {
+
             TextView texto = new TextView(actividad);
             layoutCelda = new TableRow.LayoutParams(obtenerAnchoPixelesTexto(arraycabecera[i]), TableRow.LayoutParams.WRAP_CONTENT);
-            texto.setText(arraycabecera[i]);
+            if (i==3){
+                texto.setText(arraycabecera[i]+"        ");
+            }else{texto.setText(arraycabecera[i]);}
+
             texto.setGravity(Gravity.CENTER);
+            if (i==4 || i==2 || i==3){
+                texto.setGravity(Gravity.RIGHT);
+                texto.setGravity(Gravity.CENTER_VERTICAL);
+            }else{
+                texto.setGravity(Gravity.CENTER);
+            }
             texto.setBackgroundColor(ContextCompat.getColor(actividad, R.color.prim3));
             texto.setTextColor(ContextCompat.getColor(actividad,R.color.prim1));
             texto.setLayoutParams(layoutCelda);
@@ -71,8 +81,13 @@ public class Tabla2 {
         for(int i = 0; i< elementos.size(); i++)
         {
             Button texto = new Button(actividad);
+            if (i==4 || i==2 || i==3){
+                texto.setGravity(Gravity.RIGHT);
+                texto.setGravity(Gravity.CENTER_VERTICAL);
+            }else{
+                texto.setGravity(Gravity.CENTER);
+            }
             texto.setText(String.valueOf(elementos.get(i)));
-            texto.setGravity(Gravity.CENTER /*| Gravity.LEFT*/);
             texto.setTextColor(ContextCompat.getColor(actividad,R.color.prim2));
             texto.setTextSize(15);
             texto.setBackgroundColor(ContextCompat.getColor(actividad, R.color.prim0));
