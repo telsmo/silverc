@@ -25,6 +25,7 @@
             android:id="@+id/imageView15"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
             android:tint="#E9E9E9"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +61,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="70dp"
+            android:layout_marginBottom="16dp"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
@@ -160,9 +161,25 @@
             android:onClick="vertodo"
             android:text="VER TODO"
             android:textColor="@color/prim0"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView15"
-            app:layout_constraintEnd_toEndOf="@+id/layoutTabla"
-            app:layout_constraintTop_toBottomOf="@+id/layoutTabla" />
+            app:layout_constraintBottom_toTopOf="@+id/layoutTabla"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="154dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/prim1"
+            android:text="Editar"
+            android:textColor="@color/prim0"
+            app:layout_constraintBottom_toTopOf="@+id/layoutTabla"
+            app:layout_constraintEnd_toStartOf="@+id/button10"
+            app:layout_constraintStart_toEndOf="@+id/button7"
+            app:layout_constraintTop_toBottomOf="@+id/imageView13" />
 
 
     </android.support.constraint.ConstraintLayout>

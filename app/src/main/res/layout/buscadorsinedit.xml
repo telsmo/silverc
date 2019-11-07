@@ -164,6 +164,20 @@
             app:layout_constraintEnd_toEndOf="@+id/layoutTabla"
             app:layout_constraintTop_toBottomOf="@+id/layoutTabla" />
 
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="154dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/prim1"
+            android:text="Editar"
+            android:textColor="@color/prim0"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+            app:layout_constraintStart_toStartOf="@+id/layoutTabla"
+            app:layout_constraintTop_toBottomOf="@+id/layoutTabla" />
+
 
     </android.support.constraint.ConstraintLayout>
 
