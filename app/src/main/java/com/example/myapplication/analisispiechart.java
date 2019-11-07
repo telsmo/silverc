@@ -18,9 +18,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
@@ -43,6 +46,7 @@ public class analisispiechart extends Activity {
     List<String> cates2;
     private DatabaseHelper databaseHandler;
     PieChart pieChart;
+    TextView text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,13 +109,23 @@ public class analisispiechart extends Activity {
         pieChart.getDescription().setEnabled(false);
         pieChart.setExtraOffsets(5,10,5,5);
         pieChart.setDragDecelerationFrictionCoef(0.95f);
-        pieChart.setHoleColor(getResources().getColor(R.color.prim0));
+        pieChart.setHoleColor(00000000);
         pieChart.setTransparentCircleRadius(60f);
+        pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+
+            }
+
+            @Override
+            public void onNothingSelected() {
+            }
+        });
         ArrayList<PieEntry> yValues = new ArrayList<>();
         for (int i = 0; i < size; i++)
         {
 
-                yValues.add(new PieEntry(catnum.get(i),""));
+                yValues.add(new PieEntry(catnum.get(i),"$"+catnum.get(i)));
 
         }
         PieDataSet dataSet = new PieDataSet(yValues,"");
@@ -185,7 +199,7 @@ public class analisispiechart extends Activity {
 
             Button eliminar = new Button(this);
             eliminar.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 70));
-            eliminar.setText(cates.get(i)+" : $"+catnum.get(i));
+            eliminar.setText(cates.get(i));
             eliminar.setBackgroundResource(R.drawable.button2);
             eliminar.setTextColor(coriginales.get(i).intValue());
             eliminar.setTag(cates.get(i)+"&"+i);
@@ -264,6 +278,11 @@ public class analisispiechart extends Activity {
                 codigo(datos,cates,colores);
             }
 
+
     }
-};}
+}
+
+
+;}
+
 
