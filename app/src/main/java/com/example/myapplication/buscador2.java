@@ -15,6 +15,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -46,7 +47,7 @@ public class buscador2 extends AppCompatActivity {
         setContentView(R.layout.buscadorsinedit);
         Spinner spinner = (Spinner) findViewById(R.id.spinner2);
         lista = new ArrayList<>();
-        str = new String[] {"mov", "nombre_mov", "categoria", "bolsillo"};
+        str = new String[] {"Tipo", "Nombre", "Categoria", "Bolsillo"};
         Collections.addAll(lista, str);
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, lista);
         spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
@@ -85,7 +86,7 @@ public class buscador2 extends AppCompatActivity {
             builder.setCustomTitle(textView);
             final EditText eddit= new EditText(this);
             eddit.setHint("Contraseña");
-
+            eddit.setTransformationMethod(PasswordTransformationMethod.getInstance());
             builder.setView(eddit);
             builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                 String pass1;
@@ -129,6 +130,15 @@ public class buscador2 extends AppCompatActivity {
         String c12 = c2.getText().toString();
         Tabla2 tabla = new Tabla2(this, (TableLayout) findViewById(R.id.tabla));
         table = (TableLayout)findViewById(R.id.tabla);
+        if (c13=="Tipo"){
+            c13="mov";
+        }else if (c13=="Nombre"){
+            c13="nombre_mov";
+        }else if (c13=="Categoria"){
+            c13="categoria";
+        }else if(c13=="Bolsillo"){
+            c13="bolsillo";
+        }
         Cursor datos= databaseHandler.getBuscador(c12,c13);
         if (datos.getCount() == 0) {
             Toast.makeText(this, "La tabla esta vacía", Toast.LENGTH_LONG).show();

@@ -6,6 +6,7 @@
     android:textColor="@color/prim2"
     android:layout_gravity="center"
     android:paddingTop="15sp"
-    android:gravity="center_horizontal"
+    android:gravity="left"
+    android:paddingBottom="15sp"
 
     />

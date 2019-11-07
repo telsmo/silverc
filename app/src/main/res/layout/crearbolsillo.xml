@@ -72,6 +72,17 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
+            <Button
+                android:id="@+id/button20"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/ic_info_outline_black_24dp"
+                android:onClick="toast"
+                app:layout_constraintBottom_toBottomOf="@+id/cb2"
+                app:layout_constraintStart_toEndOf="@+id/cb2"
+                app:layout_constraintTop_toTopOf="@+id/cb2" />
+
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="65dp"

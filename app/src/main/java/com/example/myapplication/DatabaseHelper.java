@@ -183,6 +183,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return datos;
     }
+    public List<String> loadCompras(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor datos = db.rawQuery("SELECT nombre_mov FROM "+ TABLE_MOV+" WHERE mov='Compra' ORDER BY "+KEY_ID+" DESC",null);
+
+        List<String> array = new ArrayList<String>();
+        while(datos.moveToNext()){
+            String uname = datos.getString(datos.getColumnIndex("nombre_mov"));
+            array.add(uname);
+        }
+        return array;
+    }
+    public List<String> loadIngres(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor datos = db.rawQuery("SELECT nombre_mov FROM "+ TABLE_MOV+" WHERE mov='Ingreso' ORDER BY "+KEY_ID+" DESC",null);
+
+        List<String> array = new ArrayList<String>();
+        while(datos.moveToNext()){
+            String uname = datos.getString(datos.getColumnIndex("nombre_mov"));
+            array.add(uname);
+        }
+        return array;
+    }
     public Cursor getTableMovPiechartSelection(ArrayList<String> xd,String option,String option2){
         String query2;
         Calendar calendar = Calendar.getInstance();

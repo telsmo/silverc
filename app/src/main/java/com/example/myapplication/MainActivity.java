@@ -73,7 +73,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         result=databaseHandler.addCate("Comida");
         result=databaseHandler.addCate("Transporte");
         result=databaseHandler.addCate("Impuestos");
-        result=databaseHandler.addCate("Otros");
         mitablita();
     }
 

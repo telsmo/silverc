@@ -214,7 +214,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/c4" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/c1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -287,17 +287,16 @@
 
                 <Spinner
                     android:id="@+id/spinner1"
-                    android:layout_width="211dp"
+                    android:layout_width="0dp"
                     android:layout_height="44dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="@+id/c2"
                     app:layout_constraintStart_toStartOf="@+id/c2"
                     app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
                 <Spinner
                     android:id="@+id/spinner"
-                    android:layout_width="211dp"
+                    android:layout_width="0dp"
                     android:layout_height="44dp"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="@+id/c2"
@@ -319,6 +318,17 @@
                     app:layout_constraintBottom_toBottomOf="@+id/spinner1"
                     app:layout_constraintStart_toEndOf="@+id/spinner1"
                     app:layout_constraintTop_toTopOf="@+id/spinner1" />
+
+                <Button
+                    android:id="@+id/button17"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/ic_info_outline_black_24dp"
+                    android:onClick="toast"
+                    app:layout_constraintBottom_toBottomOf="@+id/c4"
+                    app:layout_constraintStart_toEndOf="@+id/c4"
+                    app:layout_constraintTop_toTopOf="@+id/c4" />
             </android.support.constraint.ConstraintLayout>
         </ScrollView>
     </android.support.constraint.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -23,20 +25,32 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class Cargar extends Activity {
     private DatabaseHelper databaseHandler;
     private String m_Text = "";
+    SharedPreferences prefs;
+    AutoCompleteTextView autocomplete;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle extras = getIntent().getExtras();
+
         String name = extras.getString("namexd");
         databaseHandler = new DatabaseHelper(this, name);
         List<String> todo= databaseHandler.loadCate();
         setContentView(R.layout.cargar);
+
+        autocomplete = findViewById(R.id.c1);
+        List<String> autocompletebd= databaseHandler.loadCompras();
+        ArrayAdapter<String> autocompleteadapter= new ArrayAdapter<String>(this,R.layout.spinner_item,autocompletebd);
+        autocomplete.setThreshold(1);
+        autocomplete.setAdapter(autocompleteadapter);
+
+
         Spinner spinner = (Spinner) findViewById(R.id.spinner1);
         Spinner spinner2= findViewById(R.id.spinner);
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, todo);
@@ -47,7 +61,7 @@ public class Cargar extends Activity {
         spinner2.setAdapter(spinnerArrayAdapter2);
         spinner.setAdapter(spinnerArrayAdapter);
     }
-    public void cargar (View view){
+    public void cargar (View view) {
         final EditText c1 = (EditText) findViewById(R.id.c1);
         final EditText c2 = (EditText) findViewById(R.id.c2);
         final Spinner c3 = (Spinner) findViewById(R.id.spinner1);
@@ -60,11 +74,27 @@ public class Cargar extends Activity {
         String c14 = c4.getText().toString();
         //String c15 = c5.getText().toString();
         String c16 = c6.getSelectedItem().toString();
+        if (c11.equals("") || (c12.equals(""))) {
+            Toast.makeText(Cargar.this, "Hay uno o más datos incompletos.", Toast.LENGTH_LONG).show();
+            c1.setHintTextColor(getResources().getColor(R.color.red));
+            c1.setHint("Complete sus datos");
+            c2.setHintTextColor(getResources().getColor(R.color.red));
+            c2.setHint("Complete sus datos");
+        } else {
+            if (c14.equals("")) {
+                c14 = "1";
+                Toast.makeText(Cargar.this, "Como no ingresó una cantidad, se interpretó que era 1.", Toast.LENGTH_LONG).show();
+            }
 
-        String result= databaseHandler.addMov("Compra",c11,Integer.parseInt(c12),c13,c16,Integer.parseInt(c14));
+        String result = databaseHandler.addMov("Compra", c11, Integer.parseInt(c12), c13, c16, Integer.parseInt(c14));
+
         //Integer cant= Integer.parseInt(c12)*Integer.parseInt(c14);
         //Toast.makeText(Cargar.this,result,Toast.LENGTH_LONG).show();
         finish();
+    }
+    }
+    public void toast(View view){
+        Toast.makeText(this, "Este dato se rellenará con 1 en caso de no ingresar nada.", Toast.LENGTH_LONG).show();
 
     }
     public void show_popup (View view){
@@ -106,4 +136,5 @@ public class Cargar extends Activity {
         bg.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor((getResources().getColor(R.color.prim2)));
         bg.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor((getResources().getColor(R.color.prim2)));
     }
+
 }

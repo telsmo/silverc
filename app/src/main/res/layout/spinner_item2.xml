@@ -8,4 +8,5 @@
     android:paddingTop="15sp"
     android:gravity="center_horizontal"
     android:background="@drawable/button4"
+    android:paddingBottom="15sp"
     />
