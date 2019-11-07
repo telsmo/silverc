@@ -132,7 +132,7 @@ public class analisispiechart extends Activity {
         }
         PieDataSet dataSet = new PieDataSet(yValues,"");
         dataSet.setSliceSpace(0f);
-        dataSet.setSelectionShift(5f);
+        dataSet.setSelectionShift(7f);
         dataSet.setColors(colores);
         dataSet.setValueLineColor(getResources().getColor(R.color.prim1));
         PieData data= new PieData((dataSet));
@@ -201,7 +201,7 @@ public class analisispiechart extends Activity {
 
             Button eliminar = new Button(this);
             eliminar.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 70));
-            eliminar.setText(cates.get(i));
+            eliminar.setText("    ■  "+cates.get(i));
             eliminar.setBackgroundResource(R.drawable.button2);
             eliminar.setTextColor(coriginales.get(i).intValue());
             eliminar.setTag(cates.get(i)+"&"+i);
@@ -210,6 +210,7 @@ public class analisispiechart extends Activity {
             jaja.setLayoutParams(new LinearLayout.LayoutParams(300, 10));
             linearLayout.addView(jaja);
             eliminar.setBackgroundColor(00000000);
+            eliminar.setGravity(Gravity.LEFT);
             //eliminar.setAlpha(00);
             linearLayout.addView(eliminar);
 
