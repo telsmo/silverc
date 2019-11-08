@@ -54,7 +54,7 @@ public class analisispiechart extends Activity {
         Bundle extras = getIntent().getExtras();
         String name = extras.getString("namexd");
         databaseHandler = new DatabaseHelper(this, name);
-        c = new int[]{ getResources().getColor(R.color.black), getResources().getColor(R.color.blue),getResources().getColor(R.color.orange),getResources().getColor(R.color.red),getResources().getColor(R.color.dark_goldenrod),getResources().getColor(R.color.violet),getResources().getColor(R.color.deep_sky_blue),getResources().getColor(R.color.pink),getResources().getColor(R.color.green),getResources().getColor(R.color.prim3),getResources().getColor(R.color.fire_brick)};
+        c = new int[]{ getResources().getColor(R.color.black), getResources().getColor(R.color.blue),getResources().getColor(R.color.orange),getResources().getColor(R.color.red),getResources().getColor(R.color.green),getResources().getColor(R.color.violet),getResources().getColor(R.color.deep_sky_blue),getResources().getColor(R.color.pink),getResources().getColor(R.color.goldenrod),getResources().getColor(R.color.prim3),getResources().getColor(R.color.fire_brick)};
         datos = databaseHandler.getTableMov();
         cates = databaseHandler.loadCate();
         for (int i = 0; i < c.length; i++)

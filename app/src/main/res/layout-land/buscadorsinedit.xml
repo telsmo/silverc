@@ -173,6 +173,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:background="@color/prim1"
+            android:onClick="show_popup"
             android:text="Editar"
             android:textColor="@color/prim0"
             app:layout_constraintBottom_toTopOf="@+id/layoutTabla"

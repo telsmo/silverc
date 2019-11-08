@@ -173,7 +173,7 @@ public class Tabla {
         textView.setText("Modificar: ");
         textView.setPadding(20, 30, 20, 30);
         //TOAST de evaluacion xd
-        // Toast.makeText(actividad, aux[0].toString()+""+aux[1].toString()+""+aux[2].toString()+""+aux[3].toString()+""+aux[4].toString()+""+aux[5].toString()+""+aux[6].toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(actividad, "a "+ aux[0].toString()+" b "+aux[1].toString()+" c "+aux[2].toString()+" d "+aux[3].toString()+" e "+aux[4].toString()+" f "+aux[5].toString()+" g "+aux[6].toString(), Toast.LENGTH_LONG).show();
         //textView.setTextSize(20F);
         //textView.setTextColor(getResources().getColor(R.color.white));
         AlertDialog.Builder builder = new AlertDialog.Builder(actividad);
@@ -226,7 +226,7 @@ public class Tabla {
                 }else {
                     wea=input.getText().toString();
                 }
-                databaseHandler.updateMov(aux[1],wea,aux[2],aux[4],aux[5]);
+                databaseHandler.updateMov(aux[1],wea,aux[2],aux[4],aux[5],aux[0]);
                 actividad.finish();
                 Intent intento = actividad.getIntent();
                 actividad.startActivity(intento);}

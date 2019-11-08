@@ -178,13 +178,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     public Cursor getTableMov(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor datos = db.rawQuery("SELECT * FROM "+ TABLE_MOV+" ORDER BY "+KEY_ID+" DESC",null);
+        Cursor datos = db.rawQuery("SELECT * FROM "+ TABLE_MOV+" ORDER BY "+FECHA+" DESC",null);
 
         return datos;
     }
     public List<String> loadCompras(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor datos = db.rawQuery("SELECT nombre_mov FROM "+ TABLE_MOV+" WHERE mov='Compra' ORDER BY "+KEY_ID+" DESC",null);
+        Cursor datos = db.rawQuery("SELECT nombre_mov FROM "+ TABLE_MOV+" WHERE mov='Compra' ORDER BY "+FECHA+" DESC",null);
 
         List<String> array = new ArrayList<String>();
         while(datos.moveToNext()){
@@ -195,7 +195,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     public List<String> loadIngres(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor datos = db.rawQuery("SELECT nombre_mov FROM "+ TABLE_MOV+" WHERE mov='Ingreso' ORDER BY "+KEY_ID+" DESC",null);
+        Cursor datos = db.rawQuery("SELECT nombre_mov FROM "+ TABLE_MOV+" WHERE mov='Ingreso' ORDER BY "+FECHA+" DESC",null);
 
         List<String> array = new ArrayList<String>();
         while(datos.moveToNext()){
@@ -292,7 +292,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     public Cursor getBuscador(String values, String column){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor datos= db.rawQuery("SELECT * FROM "+TABLE_MOV+" WHERE "+column+" LIKE ? ORDER BY "+KEY_ID+" DESC", new String[] {"%"+values+"%"});
+        Cursor datos= db.rawQuery("SELECT * FROM "+TABLE_MOV+" WHERE "+column+" LIKE ? ORDER BY "+FECHA+" DESC", new String[] {"%"+values+"%"});
         return datos;
     }
     public void updateBol(String bol, Integer cant){
@@ -338,7 +338,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return bolsillosArray;
 
     }
-    public void updateMov(String id, String dato, String caso, String tipo, String bol2){
+    public void updateMov(String id, String dato, String caso, String tipo, String bol2, String viejo){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         String[] referencia = {
@@ -355,42 +355,75 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if(caso.equals("2")){
             //monto
             String[] id2= new String[]{id};
-            Cursor datos2 = db.rawQuery("SELECT * FROM "+ TABLE_MOV +" WHERE "+ KEY_ID +" = ?",id2);
+            Cursor datos2 = db.rawQuery("SELECT * FROM "+ TABLE_MOV +" WHERE "+KEY_ID+" = ?",id2);
             String lol = DatabaseUtils.dumpCursorToString(datos2);
             datos2.moveToFirst();
             String monto1= String.valueOf(datos2.getInt(datos2.getColumnIndex(MONTO)));
             String cant1= String.valueOf(datos2.getInt(datos2.getColumnIndex(CANT)));
             double mviejo=Double.parseDouble(monto1)*Double.parseDouble(cant1);
             double mnuevo=Double.parseDouble(dato)*Double.parseDouble(cant1);
-            mnuevo = mnuevo - mviejo;
             String[] bolsilloso= new String[]{bol2};
             Cursor bolviejo = db.rawQuery("SELECT * FROM "+ TABLE_BOL +" WHERE "+ BOLSILLOS +" = ?",bolsilloso);
             String lol3 = DatabaseUtils.dumpCursorToString(bolviejo);
             bolviejo.moveToFirst();
             String lol2= String.valueOf(bolviejo.getInt(bolviejo.getColumnIndex(MONTO2)));
             double mont = Integer.parseInt(lol2);
-            mont=mont+mnuevo;
+
+            if(tipo.equals("Compra")){
+
+                if (mnuevo<mviejo) {
+                    mnuevo = mviejo - mnuevo;
+                    mont=mont+mnuevo;
+                }else if (mnuevo>mviejo){
+                    mnuevo= mnuevo-mviejo;
+                    mont=mont-mnuevo;
+                }else{}
+            }else if(tipo.equals("Ingreso")){
+                if (mnuevo<mviejo) {
+                    mnuevo = mviejo - mnuevo;
+                    mont=mont-mnuevo;
+                }else if (mnuevo>mviejo){
+                    mnuevo= mnuevo-mviejo;
+                    mont=mont+mnuevo;}else {}
+            }
             String montovich= String.valueOf(mont);
             db.execSQL("UPDATE "+TABLE_BOL+" SET "+MONTO2+" ="+montovich+" WHERE "+BOLSILLOS+" =?",bolsilloso);
         }else{
             if(caso.equals("3")){
                 //cantidad
                 String[] id2= new String[]{id};
-                Cursor datos2 = db.rawQuery("SELECT * FROM "+ TABLE_MOV +" WHERE "+ KEY_ID +" = ?",id2);
+                Cursor datos2 = db.rawQuery("SELECT * FROM "+ TABLE_MOV +" WHERE "+KEY_ID+" = ?",id2);
                 String lol = DatabaseUtils.dumpCursorToString(datos2);
                 datos2.moveToFirst();
                 String monto1= String.valueOf(datos2.getInt(datos2.getColumnIndex(CANT)));
                 String cant1= String.valueOf(datos2.getInt(datos2.getColumnIndex(MONTO)));
                 double mviejo=Double.parseDouble(monto1)*Double.parseDouble(cant1);
                 double mnuevo=Double.parseDouble(dato)*Double.parseDouble(cant1);
-                mnuevo = mnuevo - mviejo;
+
                 String[] bolsilloso= new String[]{bol2};
                 Cursor bolviejo = db.rawQuery("SELECT * FROM "+ TABLE_BOL +" WHERE "+ BOLSILLOS +" = ?",bolsilloso);
                 String lol3 = DatabaseUtils.dumpCursorToString(bolviejo);
                 bolviejo.moveToFirst();
                 String lol2= String.valueOf(bolviejo.getInt(bolviejo.getColumnIndex(MONTO2)));
                 double mont = Integer.parseInt(lol2);
-                mont=mont+mnuevo;
+
+                if(tipo.equals("Compra")){
+
+                if (mnuevo<mviejo) {
+                    mnuevo = mviejo - mnuevo;
+                    mont=mont+mnuevo;
+                }else if (mnuevo>mviejo){
+                    mnuevo= mnuevo-mviejo;
+                    mont=mont-mnuevo;
+                }else{}
+                }else if(tipo.equals("Ingreso")){
+                    if (mnuevo<mviejo) {
+                        mnuevo = mviejo - mnuevo;
+                        mont=mont-mnuevo;
+                    }else if (mnuevo>mviejo){
+                        mnuevo= mnuevo-mviejo;
+                        mont=mont+mnuevo;}else {}
+                }
                 String montovich= String.valueOf(mont);
                 db.execSQL("UPDATE "+TABLE_BOL+" SET "+MONTO2+" ="+montovich+" WHERE "+BOLSILLOS+" =?",bolsilloso);
 
@@ -423,6 +456,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String lol = DatabaseUtils.dumpCursorToString(datos2);
         datos2.moveToFirst();
         String lol2= String.valueOf(datos2.getInt(datos2.getColumnIndex(MONTO2)));
+        StringBuilder precios = new StringBuilder(dato); // removing first character
+        precios.deleteCharAt(0);
+        dato=precios.toString();
         Integer cant = Integer.parseInt(dato);
         Integer mont = Integer.parseInt(lol2);
         if (tipo.equals("Compra")) {
