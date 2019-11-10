@@ -216,9 +216,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return datos;
 
     }
-    public List<String> loadCompras(){
+    public List<String> loadComprasTrim(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor datos = db.rawQuery("SELECT nombre_mov FROM "+ TABLE_MOV+" WHERE mov='Compra' ORDER BY "+FECHA+" DESC",null);
+        Cursor datos = db.rawQuery("SELECT nombre_mov FROM "+ TABLE_MOV+" WHERE mov='Compra' GROUP BY nombre_mov ORDER BY "+FECHA+" DESC",null);
 
         List<String> array = new ArrayList<String>();
         while(datos.moveToNext()){
@@ -229,7 +229,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     public List<String> loadIngres(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor datos = db.rawQuery("SELECT nombre_mov FROM "+ TABLE_MOV+" WHERE mov='Ingreso' ORDER BY "+FECHA+" DESC",null);
+        Cursor datos = db.rawQuery("SELECT nombre_mov FROM "+ TABLE_MOV+" WHERE mov='Ingreso' GROUP BY nombre_mov ORDER BY "+FECHA+" DESC",null);
 
         List<String> array = new ArrayList<String>();
         while(datos.moveToNext()){

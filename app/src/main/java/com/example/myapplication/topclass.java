@@ -51,7 +51,7 @@ public class topclass extends AppCompatActivity {
 
         Spinner spinner2 = (Spinner) findViewById(R.id.spinner4);
         lista2 = new ArrayList<>();
-        str2 = new String[] {"Cantidad de compras", "Total entre compras","Compras individuales"};
+        str2 = new String[] {"Cantidad de compras", "Monto total entre compras","Monto de compras individuales"};
         Collections.addAll(lista2, str2);
         ArrayAdapter<String> spinnerArrayAdapter2 = new ArrayAdapter<String>(this, R.layout.spinner_item2, lista2);
         spinnerArrayAdapter2.setDropDownViewResource(R.layout.spinner_item3);
@@ -76,9 +76,9 @@ public class topclass extends AppCompatActivity {
         String c14 = c4.getSelectedItem().toString();
         if (c14=="Cantidad de compras"){
             c14="a";
-        }else if(c14=="Total entre compras"){
+        }else if(c14=="Monto total entre compras"){
             c14="b";
-        }else if (c14=="Compras individuales"){
+        }else if (c14=="Monto de compras individuales"){
             c14="c";
         }
         if (c14=="c"){

@@ -103,7 +103,7 @@
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/button18"
-            android:layout_width="205dp"
+            android:layout_width="230dp"
             android:layout_height="146dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/bg1"
@@ -115,7 +115,7 @@
                 android:id="@+id/button4"
                 android:layout_width="209dp"
                 android:layout_height="49dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/button4"
                 android:onClick="verTodo"
@@ -129,7 +129,7 @@
                 android:id="@+id/spinner5"
                 android:layout_width="206dp"
                 android:layout_height="49dp"
-                android:layout_marginStart="13dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/button4"
                 app:layout_constraintBottom_toBottomOf="parent"

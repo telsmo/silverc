@@ -45,7 +45,7 @@ public class Cargar extends Activity {
         setContentView(R.layout.cargar);
 
         autocomplete = findViewById(R.id.c1);
-        List<String> autocompletebd= databaseHandler.loadCompras();
+        List<String> autocompletebd= databaseHandler.loadComprasTrim();
         ArrayAdapter<String> autocompleteadapter= new ArrayAdapter<String>(this,R.layout.spinner_item,autocompletebd);
         autocomplete.setThreshold(1);
         autocomplete.setAdapter(autocompleteadapter);
