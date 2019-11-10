@@ -228,8 +228,11 @@ public class Tabla {
                 }
                 databaseHandler.updateMov(aux[1],wea,aux[2],aux[4],aux[5],aux[0]);
                 actividad.finish();
+                actividad.overridePendingTransition(R.transition.mina,R.transition.anim);
                 Intent intento = actividad.getIntent();
-                actividad.startActivity(intento);}
+                actividad.startActivity(intento);
+                actividad.overridePendingTransition(R.transition.mina,R.transition.anim);
+                }
             }
         });
         builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -268,8 +271,10 @@ public class Tabla {
             public void onClick(DialogInterface dialog, int which) {
                 databaseHandler.deleteMov(aux[1],aux[3],aux[2],aux[4],aux[5]);
                 actividad.finish();
+                actividad.overridePendingTransition(R.transition.mina,R.transition.anim);
                 Intent intento = actividad.getIntent();
                 actividad.startActivity(intento);
+                actividad.overridePendingTransition(R.transition.mina,R.transition.anim);
             }
         });
         builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {

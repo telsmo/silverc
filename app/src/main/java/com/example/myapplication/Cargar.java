@@ -83,14 +83,19 @@ public class Cargar extends Activity {
         } else {
             if (c14.equals("")) {
                 c14 = "1";
-                Toast.makeText(Cargar.this, "Como no ingresó una cantidad, se interpretó que era 1.", Toast.LENGTH_LONG).show();
-            }
-
+                Toast.makeText(Cargar.this, "Como no ingresó una cantidad, se interpretó que era 1. Puede cargar otro gasto.", Toast.LENGTH_LONG).show();
+            }else { Toast.makeText(Cargar.this,"Se cargo su compra. Puede cargar otro gasto.",Toast.LENGTH_LONG).show();}
         String result = databaseHandler.addMov("Compra", c11, Integer.parseInt(c12), c13, c16, Integer.parseInt(c14));
 
         //Integer cant= Integer.parseInt(c12)*Integer.parseInt(c14);
-        //Toast.makeText(Cargar.this,result,Toast.LENGTH_LONG).show();
-        finish();
+
+        c1.setText("");
+        c2.setText("");
+        c4.setText("");
+        c1.setHint("Ingrese el nombre del producto");
+        c1.setHintTextColor(getResources().getColor(R.color.black));
+        c2.setHint("Ingrese el precio individual");
+        c2.setHintTextColor(getResources().getColor(R.color.black));
     }
     }
     public void toast(View view){
