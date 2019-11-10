@@ -292,17 +292,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/button4" />
             </android.support.constraint.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:text="Filtrar por:"
-                android:textColor="@color/prim0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button4" />
-
             <LinearLayout
                 android:id="@+id/layoutTabla"
                 android:layout_width="0dp"
