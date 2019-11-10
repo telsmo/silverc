@@ -182,6 +182,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return datos;
     }
+    public Cursor getTableTOPC(String option,String option2){
+        String query2="";
+        SQLiteDatabase db = this.getWritableDatabase();
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        int month = Calendar.getInstance().get(Calendar.MONTH)+1;
+        Cursor datos=null;
+        String Stringmonth;
+        if (month<10){
+                Stringmonth="0"+month;
+        }else{
+            Stringmonth=Integer.toString(month);
+        }
+        int day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+        if (option=="a"){
+            query2= query2+" (strftime('%Y',fecha))='"+(year)+"' ";
+        }else if (option=="b"){
+            query2=query2+" fecha BETWEEN datetime('now', 'start of month') AND datetime('now', 'localtime')";
+                //query2= query2+" (strftime('%m',fecha))='"+Stringmonth+"' AND  (strftime('%Y',fecha))='"+(year)+"' ";
+        }else if (option=="c"){
+            query2= query2+" fecha BETWEEN datetime('now', '-6 days') AND datetime('now', 'localtime')";
+        }
+        else if(option=="d"){
+            query2=query2+" fecha BETWEEN datetime('now', 'start of day') AND datetime('now', 'localtime')";
+        }
+        if (option2=="a") {
+            datos = db.rawQuery("SELECT nombre_mov, SUM(cantidad) AS F, AVG(monto), SUM(monto) AS E, categoria  FROM movimientos WHERE NOT mov=' Ingreso ' AND NOT mov='Ingreso' AND " + query2 + " GROUP BY nombre_mov ORDER BY F DESC LIMIT 10", null);
+        }else if (option2=="b"){
+            datos = db.rawQuery("SELECT nombre_mov, SUM(cantidad) AS F, AVG(monto), SUM(monto) AS E, categoria  FROM movimientos WHERE NOT mov=' Ingreso ' AND NOT mov='Ingreso' AND " + query2 + " GROUP BY nombre_mov ORDER BY E DESC LIMIT 10", null);
+        }else if (option2=="c"){
+            datos = db.rawQuery("SELECT nombre_mov, cantidad AS F, monto AS E, categoria  FROM movimientos WHERE NOT mov=' Ingreso ' AND NOT mov='Ingreso' AND " + query2 + " ORDER BY E DESC LIMIT 10", null);
+        }
+        return datos;
+
+    }
     public List<String> loadCompras(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor datos = db.rawQuery("SELECT nombre_mov FROM "+ TABLE_MOV+" WHERE mov='Compra' ORDER BY "+FECHA+" DESC",null);
@@ -217,21 +251,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (option=="a"){
             query2= query2+" (strftime('%Y',fecha))='"+(year)+"' ";
         }else if (option=="b"){
-            if (month<10){
-                query2= query2+" (strftime('%m',fecha))='"+"0"+(month+1)+"' ";
-            }else{
-                query2= query2+" (strftime('%m',fecha))='"+(month+1)+"' ";
-            }
+            query2=query2+" fecha BETWEEN datetime('now', 'start of month') AND datetime('now', 'localtime')";
+            //query2= query2+" (strftime('%m',fecha))='"+Stringmonth+"' AND  (strftime('%Y',fecha))='"+(year)+"' ";
         }else if (option=="c"){
-            query2= query2+" (strftime('%d',fecha))<='"+day+"' AND strftime('%d',fecha)>='"+(day-7)+"' ";
+            query2= query2+" fecha BETWEEN datetime('now', '-6 days') AND datetime('now', 'localtime')";
         }
         else if(option=="d"){
-            if (day<10){
-                query2=query2+" (strftime('%d',fecha))='"+"0"+(day)+"' ";
-            }else{
-                query2=query2+" (strftime('%d',fecha))='"+(day)+"' ";
-            }
-
+            query2=query2+" fecha BETWEEN datetime('now', 'start of day') AND datetime('now', 'localtime')";
         }
         SQLiteDatabase db = this.getWritableDatabase();
         String query="";

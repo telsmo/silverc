@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -47,12 +48,13 @@ public class analisispiechart extends Activity {
     private DatabaseHelper databaseHandler;
     PieChart pieChart;
     TextView text;
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.analisispiechart);
         Bundle extras = getIntent().getExtras();
-        String name = extras.getString("namexd");
+        name = extras.getString("namexd");
         databaseHandler = new DatabaseHelper(this, name);
         c = new int[]{ getResources().getColor(R.color.black), getResources().getColor(R.color.blue),getResources().getColor(R.color.orange),getResources().getColor(R.color.red),getResources().getColor(R.color.green),getResources().getColor(R.color.violet),getResources().getColor(R.color.deep_sky_blue),getResources().getColor(R.color.pink),getResources().getColor(R.color.goldenrod),getResources().getColor(R.color.prim3),getResources().getColor(R.color.fire_brick)};
         datos = databaseHandler.getTableMov();
@@ -67,11 +69,16 @@ public class analisispiechart extends Activity {
         setLista(datos,cates);
         Spinner spinner = (Spinner) findViewById(R.id.spinner5);
         lista = new ArrayList<>();
-        str = new String[] {"Todo el tiempo", "Último mes", "Última semana", "Hoy"};
+        str = new String[] {"Todo el tiempo", "Último mes", "Últimos 7 días", "Hoy"};
         Collections.addAll(lista, str);
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item2, lista);
         spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item3);
         spinner.setAdapter(spinnerArrayAdapter);
+
+    }
+    public void toast(View view){
+        Toast.makeText(this, "Esta es la zona de gráficos por sectores.                                  " +
+                " Toque el símbolo a la derecha para ciclar entre las herramientas de análisis.", Toast.LENGTH_LONG).show();
 
     }
     /*
@@ -80,6 +87,12 @@ public class analisispiechart extends Activity {
     }int[] colores={ getResources().getColor(R.color.black), getResources().getColor(R.color.blue),getResources().getColor(R.color.orange),getResources().getColor(R.color.red),getResources().getColor(R.color.dark_goldenrod),getResources().getColor(R.color.violet),getResources().getColor(R.color.deep_sky_blue),getResources().getColor(R.color.pink),getResources().getColor(R.color.green),getResources().getColor(R.color.prim3),getResources().getColor(R.color.fire_brick)};
 
     */
+    public void gototop(View view){
+        Intent bol = new Intent(this,topclass.class);
+        bol.putExtra("namexd",name);
+        startActivity(bol);
+        overridePendingTransition(R.transition.mina,R.transition.anim);
+    }
     private void codigo(Cursor datos, List<String> cates, ArrayList<Integer> colores){
         Integer lol;
         List<Integer> catnum = new ArrayList<Integer>();
@@ -153,7 +166,7 @@ public class analisispiechart extends Activity {
             c13="a";
         }else if(c13=="Último mes"){
             c13="b";
-        }else if(c13=="Última semana"){
+        }else if(c13=="Últimos 7 días"){
             c13="c";
         }else if(c13=="Hoy"){
             c13="d";

@@ -25,6 +25,7 @@
         <activity android:name=".analisispiechart" />
         <activity android:name=".buscador" />
         <activity android:name=".buscador2" />
+        <activity android:name=".topclass" />
     </application>
 
 </manifest>

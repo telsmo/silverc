@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-30:12
+ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-31:12
 MERGED from [com.amitshekhar.android:debug-db:1.0.0] C:\Users\T3500\.gradle\caches\transforms-2\files-2.1\d9343f7f08a102e1fdc8a11188eb466c\AndroidManifest.xml:20:1-40:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\T3500\.gradle\caches\transforms-2\files-2.1\5c1911afa9628ee1e698c0985a8b7a93\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\T3500\.gradle\caches\transforms-2\files-2.1\08820eb3c6b874d792c1e1ef815378bf\AndroidManifest.xml:17:1-22:12
@@ -39,25 +39,25 @@ MERGED from [com.android.support:interpolator:28.0.0] C:\Users\T3500\.gradle\cac
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\T3500\.gradle\caches\transforms-2\files-2.1\b0c91223badbfdf802fe7d2825fe3436\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\T3500\.gradle\caches\transforms-2\files-2.1\5a109ca09c666cb14da5782aeb5b0af2\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\T3500\.gradle\caches\transforms-2\files-2.1\1118ffbd979b39d484611cc67f67b81e\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-31:12
 	package
 		ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:3:5-40
 		INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-30:12
+		ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-31:12
 		INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-30:12
+		ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:1-31:12
 		INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:5:5-28:19
+ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:5:5-29:19
 MERGED from [com.amitshekhar.android:debug-db:1.0.0] C:\Users\T3500\.gradle\caches\transforms-2\files-2.1\d9343f7f08a102e1fdc8a11188eb466c\AndroidManifest.xml:32:5-38:19
 MERGED from [com.amitshekhar.android:debug-db:1.0.0] C:\Users\T3500\.gradle\caches\transforms-2\files-2.1\d9343f7f08a102e1fdc8a11188eb466c\AndroidManifest.xml:32:5-38:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\T3500\.gradle\caches\transforms-2\files-2.1\5c1911afa9628ee1e698c0985a8b7a93\AndroidManifest.xml:22:5-20
@@ -122,6 +122,10 @@ activity#com.example.myapplication.buscador2
 ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:27:9-47
 	android:name
 		ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:27:19-44
+activity#com.example.myapplication.topclass
+ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:28:9-46
+	android:name
+		ADDED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml:28:19-43
 uses-sdk
 INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\T3500\StudioProjects\silverc\app\src\main\AndroidManifest.xml

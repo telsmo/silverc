@@ -22,4 +22,19 @@
         <item>categoria</item>
         <item>bolsillo</item>
     </string-array>
+    <string-array name="cabecera_top">
+        <item>Puesto</item>
+        <item>Nombre</item>
+        <item>Cantidad</item>
+        <item>Promedio</item>
+        <item>Total</item>
+        <item>Categoria</item>
+    </string-array>
+    <string-array name="cabecera_top2">
+        <item>Puesto</item>
+        <item>Nombre</item>
+        <item>Cantidad</item>
+        <item>Monto</item>
+        <item>Categoria</item>
+    </string-array>
 </resources>

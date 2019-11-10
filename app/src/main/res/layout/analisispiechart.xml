@@ -33,16 +33,29 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
-        <ImageView
+        <Button
             android:id="@+id/imageView14"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/ic_pie_chart"
             android:tint="@color/prim1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="gototop"
+            android:background="@drawable/ic_pie_chart"
+            android:backgroundTint="@color/black"/>
+
+        <Button
+            android:id="@+id/button19"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_info_outline_black_24dp"
+            android:onClick="toast"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+            app:layout_constraintEnd_toStartOf="@+id/imageView14"
+            app:layout_constraintTop_toTopOf="@+id/imageView14" />
 
         <ImageView
             android:id="@+id/imageView9"
@@ -90,14 +103,13 @@
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/button18"
-            android:layout_width="206dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
+            android:layout_width="205dp"
+            android:layout_height="146dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/bg1"
             android:text="Button"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView15"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/piechart">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <Button
                 android:id="@+id/button4"
@@ -118,7 +130,9 @@
                 android:layout_width="206dp"
                 android:layout_height="49dp"
                 android:layout_marginStart="13dp"
+                android:layout_marginBottom="8dp"
                 android:background="@drawable/button4"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -128,7 +142,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
                 android:text="Filtrar por:"
                 android:textColor="@color/prim0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -148,8 +161,7 @@
             app:layout_constraintBottom_toTopOf="@+id/svcate"
             app:layout_constraintEnd_toEndOf="@+id/svcate"
             app:layout_constraintStart_toStartOf="@+id/imageView15"
-            app:layout_constraintTop_toBottomOf="@+id/piechart"
-            app:layout_constraintTop_toTopOf="@+id/button18" />
+            app:layout_constraintTop_toBottomOf="@+id/piechart" />
 
     </android.support.constraint.ConstraintLayout>
 
