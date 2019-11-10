@@ -77,8 +77,7 @@ public class analisispiechart extends Activity {
 
     }
     public void toast(View view){
-        Toast.makeText(this, "Esta es la zona de gráficos por sectores.                                  " +
-                " Toque el símbolo a la derecha para ciclar entre las herramientas de análisis.", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Toque el símbolo a la derecha para ciclar entre las herramientas de análisis.", Toast.LENGTH_LONG).show();
 
     }
     /*
@@ -283,15 +282,15 @@ public class analisispiechart extends Activity {
                 cates2 = databaseHandler.loadCatePiechartSelection(categoriaseleccionadas);
                 codigo(datos2,cates2,colores);
             }else{
-                datos = databaseHandler.getTableMov();
+                categoriaseleccionadas.clear();
+                datos = databaseHandler.getTableMovPiechartSelection(categoriaseleccionadas,c13,"b");
                 cates = databaseHandler.loadCate();
                 colores.clear();
-                amount=0;
-                categoriaseleccionadas.clear();
                 colorescategoriaseleccionadas.clear();
                 for (int i = 0; i < c.length; i++)
                     colores.add(new Integer(c[i]));
                 codigo(datos,cates,colores);
+                amount=0;
             }
 
 

@@ -108,8 +108,7 @@ public class topclass extends AppCompatActivity {
         }
     }
     public void toast(View view){
-        Toast.makeText(this, "Esta es la zona de top de gastos.                                          " +
-                "Toque el símbolo a la derecha para ciclar entre las herramientas de análisis.", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Toque el símbolo a la derecha para ciclar entre las herramientas de análisis.", Toast.LENGTH_LONG).show();
     }
     public void finish(View view){
 

@@ -62,7 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE_MOV = "CREATE TABLE "
             + TABLE_MOV + "(" + KEY_ID
-            + " INTEGER PRIMARY KEY AUTOINCREMENT," + MOV + " TEXT ," + NOM + " TEXT ," + FECHA + " DATETIME DEFAULT CURRENT_TIMESTAMP ," + MONTO + " INTEGER ," + CAT + " TEXT ," + BOL + " TEXT ," + CANT + " INTEGER );";
+            + " INTEGER PRIMARY KEY AUTOINCREMENT," + MOV + " TEXT ," + NOM + " TEXT ," + FECHA + " DATETIME DEFAULT (datetime('now','localtime')) ," + MONTO + " INTEGER ," + CAT + " TEXT ," + BOL + " TEXT ," + CANT + " INTEGER );";
 
     private static final String CREATE_TABLE_BOLSILLOS = "CREATE TABLE "
             + TABLE_BOL+ "(" + KEY_ID
@@ -204,7 +204,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             query2= query2+" fecha BETWEEN datetime('now', '-6 days') AND datetime('now', 'localtime')";
         }
         else if(option=="d"){
-            query2=query2+" fecha BETWEEN datetime('now', 'start of day') AND datetime('now', 'localtime')";
+            query2=query2+" fecha BETWEEN datetime('now', 'start of day') AND datetime('now', 'end of day')";
         }
         if (option2=="a") {
             datos = db.rawQuery("SELECT nombre_mov, SUM(cantidad) AS F, AVG(monto), SUM(monto) AS E, categoria  FROM movimientos WHERE NOT mov=' Ingreso ' AND NOT mov='Ingreso' AND " + query2 + " GROUP BY nombre_mov ORDER BY F DESC LIMIT 10", null);
