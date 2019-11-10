@@ -98,13 +98,12 @@ public class buscador2 extends AppCompatActivity {
                     if (pass1.equals(pass2)){
                         Intent bol = new Intent(getApplicationContext(),buscador.class);
                         bol.putExtra("namexd",name);
+                        finish();
                         startActivity(bol);
                         overridePendingTransition(R.transition.mina,R.transition.anim);
                     }
                     else{
-                        eddit.setText("");
-                        eddit.setHint("Contraseña incorrecta");
-                        eddit.setHintTextColor(ContextCompat.getColor(getApplicationContext(),R.color.prim0));
+                        Toast.makeText(getApplicationContext(), "Contraseña incorrecta.", Toast.LENGTH_LONG).show();
                     }
 
                 }

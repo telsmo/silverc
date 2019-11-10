@@ -371,7 +371,8 @@
                 app:layout_constraintBottom_toTopOf="@+id/textView14"
                 app:layout_constraintEnd_toStartOf="@+id/button18"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layoutTabla" />
+                app:layout_constraintTop_toBottomOf="@+id/layoutTabla"
+                />
 
             <TextView
                 android:id="@+id/textView14"
@@ -384,7 +385,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/button18"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>

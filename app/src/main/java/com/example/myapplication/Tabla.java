@@ -173,7 +173,7 @@ public class Tabla {
         textView.setText("Modificar: ");
         textView.setPadding(20, 30, 20, 30);
         //TOAST de evaluacion xd
-        Toast.makeText(actividad, "a "+ aux[0].toString()+" b "+aux[1].toString()+" c "+aux[2].toString()+" d "+aux[3].toString()+" e "+aux[4].toString()+" f "+aux[5].toString()+" g "+aux[6].toString(), Toast.LENGTH_LONG).show();
+        //Toast.makeText(actividad, "a "+ aux[0].toString()+" b "+aux[1].toString()+" c "+aux[2].toString()+" d "+aux[3].toString()+" e "+aux[4].toString()+" f "+aux[5].toString()+" g "+aux[6].toString(), Toast.LENGTH_LONG).show();
         //textView.setTextSize(20F);
         //textView.setTextColor(getResources().getColor(R.color.white));
         AlertDialog.Builder builder = new AlertDialog.Builder(actividad);

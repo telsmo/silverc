@@ -163,6 +163,32 @@
             app:layout_constraintStart_toStartOf="@+id/imageView15"
             app:layout_constraintTop_toBottomOf="@+id/piechart" />
 
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text='Esta herramienta presenta un gráfico de sectores, o de "torta".'
+            app:layout_constraintEnd_toEndOf="@+id/imageView15"
+            app:layout_constraintStart_toEndOf="@+id/svcate"
+            app:layout_constraintTop_toBottomOf="@+id/piechart" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Cada sector representa el monto gastado de cada categoría. También puede filtrar estos gastos por tiempo."
+            app:layout_constraintBottom_toTopOf="@+id/button18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/svcate"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            />
+
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
